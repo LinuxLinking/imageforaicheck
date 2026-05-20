@@ -3,496 +3,579 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI图片检测工具</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <title>AI 图片检测工具</title>
     <style>
-        .upload-area {
-            transition: all 0.3s ease;
-        }
-        .upload-area:hover {
-            transform: scale(1.02);
-        }
-        .upload-area.dragover {
-            border-color: #3b82f6;
-            background-color: #dbeafe;
-        }
-        .progress-bar {
-            transition: width 0.5s ease;
-        }
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        .card-hover:hover {
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
-        }
-        .probability-bar {
-            height: 20px;
-            border-radius: 10px;
-            background-color: #e5e7eb;
-            overflow: hidden;
-        }
-        .probability-fill {
-            height: 100%;
-            border-radius: 10px;
-            transition: width 0.5s ease;
-        }
-        .status-badge {
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        .status-yes {
-            background-color: #fee2e2;
-            color: #dc2626;
-        }
-        .status-no {
-            background-color: #dcfce7;
-            color: #16a34a;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .nav-tabs .nav-link.active {
-            border-bottom: 2px solid #3b82f6;
-            color: #3b82f6;
-            background-color: transparent;
-        }
+        body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fb; color: #1f2937; }
+        .page { max-width: 1120px; margin: 0 auto; padding: 24px; }
+        .card { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08); }
+        .layout { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+        .mode-row, .tab-row, .action-row { display: flex; flex-wrap: wrap; gap: 12px; }
+        .mode-button, .nav-link, .action-button { border: 1px solid #dbe2f0; background: #fff; border-radius: 12px; padding: 10px 16px; cursor: pointer; }
+        .mode-button.active, .nav-link.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+        .tab-content { display: none; margin-top: 16px; }
+        .tab-content.active { display: block; }
+        .muted { color: #6b7280; }
+        .upload-area { border: 2px dashed #93c5fd; border-radius: 16px; padding: 28px; background: #eff6ff; text-align: center; cursor: pointer; }
+        .upload-area:hover { border-color: #2563eb; background: #dbeafe; }
+        .primary-button { background: #2563eb; color: #fff; border: none; border-radius: 12px; padding: 12px 18px; cursor: pointer; }
+        .primary-button:disabled { background: #94a3b8; cursor: not-allowed; }
+        .secondary-box { margin-top: 16px; padding: 14px 16px; border-radius: 12px; background: #f8fafc; border: 1px solid #e2e8f0; }
+        .risk-card { margin: 18px 0; padding: 18px; border-radius: 16px; background: linear-gradient(135deg, #eff6ff, #f5f3ff); border: 1px solid #dbeafe; }
+        .risk-title { font-size: 14px; color: #64748b; margin-bottom: 8px; }
+        .risk-header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .risk-level { font-size: 28px; font-weight: bold; margin-bottom: 8px; }
+        .risk-high { color: #b91c1c; }
+        .risk-medium { color: #b45309; }
+        .risk-low { color: #15803d; }
+        .risk-unknown { color: #475569; }
+        .risk-badge { display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: bold; }
+        .badge-high { background: #fee2e2; color: #991b1b; }
+        .badge-medium { background: #fef3c7; color: #92400e; }
+        .badge-low { background: #dcfce7; color: #166534; }
+        .badge-unknown { background: #e2e8f0; color: #334155; }
+        .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .info-tag { display: inline-flex; align-items: center; padding: 6px 10px; border-radius: 999px; background: #eef2ff; color: #3730a3; font-size: 12px; font-weight: 600; }
+        .risk-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+        .risk-meta-item { background: white; border-radius: 12px; padding: 12px; border: 1px solid #e2e8f0; }
+        .evidence-list { margin-top: 14px; padding-left: 18px; color: #475569; }
+        .explain-panel { margin-top: 16px; background: #ffffff; border: 1px solid #dbeafe; border-radius: 14px; padding: 16px; }
+        .explain-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px; }
+        .explain-box { background: #f8fafc; border-radius: 12px; padding: 12px; border: 1px solid #e2e8f0; }
+        .explain-box h4 { margin: 0 0 8px 0; font-size: 14px; }
+        .group-list { margin: 8px 0 0 18px; color: #475569; }
+        .metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 14px; }
+        .metric-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; }
+        .metric-label { font-size: 13px; color: #64748b; margin-bottom: 6px; }
+        .metric-value { font-size: 18px; font-weight: bold; }
+        .status-text { margin-top: 10px; color: #475569; }
+        .progress { margin-top: 16px; height: 10px; border-radius: 999px; background: #e2e8f0; overflow: hidden; }
+        .progress-bar { height: 100%; width: 0; background: linear-gradient(90deg, #2563eb, #7c3aed); transition: width 0.25s ease; }
+        .hidden { display: none; }
+        #toast { position: fixed; top: 24px; right: 24px; background: #111827; color: #fff; border-radius: 12px; padding: 12px 16px; display: none; }
+        #history-list > div { padding: 12px; border-radius: 12px; background: #f8fafc; margin-bottom: 10px; }
+        @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen">
-    <div class="container mx-auto px-4 py-8 max-w-6xl">
-        <header class="text-center mb-10">
-            <div class="flex items-center justify-center gap-3 mb-4">
-                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-search text-white text-xl"></i>
-                </div>
-                <h1 class="text-3xl font-bold text-gray-800">AI图片检测工具</h1>
+<body>
+    <div id="toast">操作成功</div>
+    <div class="page">
+        <div class="card" style="margin-bottom: 20px;">
+            <h1>AI 图片检测工具</h1>
+            <p class="muted">支持全部检测、AI 检测、元数据、像素分析、隐写检测</p>
+            <div id="upload-area" class="upload-area" style="margin: 18px 0;">
+                <h3 style="margin-top: 0;">上传图片</h3>
+                <p class="muted">点击此区域选择图片，支持 PNG、JPG、JPEG</p>
+                <button id="upload-trigger" class="primary-button" type="button">选择图片</button>
+                <input id="file-input" type="file" accept="image/png,image/jpeg" style="display: none;">
             </div>
-            <p class="text-gray-500">上传图片进行AI生成检测、元数据分析和隐写检测</p>
-        </header>
-
-        <div id="upload-section" class="bg-white rounded-2xl shadow-lg p-8 mb-8">
-            <div 
-                class="upload-area border-2 border-dashed border-gray-300 rounded-xl p-12 text-center cursor-pointer"
-                id="upload-area"
-            >
-                <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-upload text-blue-500 text-3xl"></i>
+            <div class="secondary-box">
+                <div><strong>当前流程：</strong>上传图片 → 选择检测模式 → 点击开始检测 → 等待结果展示</div>
+                <div class="muted" style="margin-top: 8px;">选择图片后，点击开始检测。正在检测，请稍候。</div>
+                <div id="selected-file-name" class="muted" style="margin-top: 8px;">尚未选择图片</div>
+                <div style="margin-top: 12px;">
+                    <button id="start-detect-button" class="primary-button" type="button" disabled>开始检测</button>
                 </div>
-                <p class="text-lg font-medium text-gray-700 mb-2">点击或拖拽上传图片</p>
-                <p class="text-sm text-gray-400">支持 PNG, JPG, JPEG 格式</p>
-                <input type="file" id="file-input" accept="image/png,image/jpeg" class="hidden">
-            </div>
-            
-            <div id="progress-container" class="mt-6 hidden">
-                <div class="flex justify-between text-sm text-gray-600 mb-2">
-                    <span>正在分析...</span>
-                    <span id="progress-text">0%</span>
-                </div>
-                <div class="probability-bar">
-                    <div class="probability-fill bg-gradient-to-r from-blue-500 to-purple-500" id="progress-bar" style="width: 0%"></div>
+                <div id="progress-section" class="hidden">
+                    <div id="progress-text" class="muted" style="margin-top: 12px;">正在检测，请稍候</div>
+                    <div class="progress"><div id="progress-bar" class="progress-bar"></div></div>
                 </div>
             </div>
-        </div>
-
-        <div id="results-section" class="hidden">
-            <div class="flex gap-4 mb-6">
-                <button 
-                    class="nav-tabs nav-link active px-6 py-2 font-medium text-gray-600"
-                    data-tab="ai"
-                >AI检测结果</button>
-                <button 
-                    class="nav-tabs nav-link px-6 py-2 font-medium text-gray-600"
-                    data-tab="metadata"
-                >元数据</button>
-                <button 
-                    class="nav-tabs nav-link px-6 py-2 font-medium text-gray-600"
-                    data-tab="pixel"
-                >像素分析</button>
-                <button 
-                    class="nav-tabs nav-link px-6 py-2 font-medium text-gray-600"
-                    data-tab="steg"
-                >隐写检测</button>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="lg:col-span-2 space-y-6">
-                    <div id="ai-tab" class="tab-content active">
-                        <div class="card-hover bg-white rounded-2xl shadow-lg p-6">
-                            <div class="flex items-center justify-between mb-6">
-                                <h3 class="text-xl font-bold text-gray-800">AI生成检测</h3>
-                                <span class="status-badge" id="ai-status"></span>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <div class="flex justify-between text-sm text-gray-600 mb-2">
-                                    <span>AI概率</span>
-                                    <span id="ai-probability">0%</span>
-                                </div>
-                                <div class="probability-bar">
-                                    <div class="probability-fill" id="ai-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <div class="flex justify-between text-sm text-gray-600 mb-2">
-                                    <span>置信度</span>
-                                    <span id="ai-confidence">0%</span>
-                                </div>
-                                <div class="probability-bar">
-                                    <div class="probability-fill bg-gradient-to-r from-green-400 to-green-600" id="confidence-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            
-                            <div id="ai-indicators" class="hidden">
-                                <h4 class="text-sm font-semibold text-gray-700 mb-3">检测指标</h4>
-                                <ul class="space-y-2" id="indicators-list"></ul>
-                            </div>
+            <div class="risk-card">
+                <div class="risk-title">当前风险评估</div>
+                <div class="risk-header">
+                    <div id="risk-level" class="risk-level">未检测</div>
+                    <div id="risk-level-badge" class="risk-badge badge-unknown">结果待生成</div>
+                </div>
+                <div id="risk-summary" class="muted">完成检测后，这里会展示风险摘要与核心指标。</div>
+                <div id="risk-level-helper" class="muted" style="margin-top: 8px;">风险等级会结合元数据、视觉证据和水印异常综合解释。</div>
+                <div class="risk-meta">
+                    <div class="risk-meta-item">
+                        <div class="muted">任务ID</div>
+                        <div id="task-id">-</div>
+                    </div>
+                    <div class="risk-meta-item">
+                        <div class="muted">AI风险概率</div>
+                        <div id="risk-ai-probability">-</div>
+                    </div>
+                    <div class="risk-meta-item">
+                        <div class="muted">置信度</div>
+                        <div id="risk-confidence">-</div>
+                    </div>
+                </div>
+                <ul id="risk-evidence-list" class="evidence-list">
+                    <li>完成检测后，这里会展示风险证据摘要。</li>
+                </ul>
+                <div class="secondary-box">
+                    <div><strong>AI风险概率</strong></div>
+                    <div id="risk-probability-description" class="muted" style="margin-top: 8px;">该数值是启发式模型评分，不等同于真实后验概率。</div>
+                    <div id="image-classification-tags" class="tag-row">
+                        <span class="info-tag">待进一步判别</span>
+                    </div>
+                </div>
+                <div class="explain-panel">
+                    <div id="risk-explanation-level" class="metric-value">结果说明待生成</div>
+                    <div id="risk-explanation-description" class="muted" style="margin-top: 8px;">完成检测后，这里会解释当前风险等级意味着什么。</div>
+                    <div class="explain-grid">
+                        <div class="explain-box">
+                            <h4>主要原因</h4>
+                            <div id="risk-explanation-reason" class="muted">完成检测后，这里会说明主要判断依据。</div>
                         </div>
-
-                        <div id="metadata-tab" class="tab-content">
-                            <div class="card-hover bg-white rounded-2xl shadow-lg p-6">
-                                <h3 class="text-xl font-bold text-gray-800 mb-6">图片元数据</h3>
-                                
-                                <div class="grid grid-cols-2 gap-4 mb-6">
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <p class="text-sm text-gray-500 mb-1">文件名</p>
-                                        <p class="font-semibold text-gray-800" id="meta-filename"></p>
-                                    </div>
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <p class="text-sm text-gray-500 mb-1">文件大小</p>
-                                        <p class="font-semibold text-gray-800" id="meta-size"></p>
-                                    </div>
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <p class="text-sm text-gray-500 mb-1">格式</p>
-                                        <p class="font-semibold text-gray-800" id="meta-format"></p>
-                                    </div>
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <p class="text-sm text-gray-500 mb-1">尺寸</p>
-                                        <p class="font-semibold text-gray-800" id="meta-dimensions"></p>
-                                    </div>
-                                </div>
-
-                                <div id="png-chunks" class="hidden">
-                                    <h4 class="text-sm font-semibold text-gray-700 mb-3">PNG Chunks</h4>
-                                    <div class="grid grid-cols-2 gap-2" id="chunks-list"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="pixel-tab" class="tab-content">
-                            <div class="card-hover bg-white rounded-2xl shadow-lg p-6">
-                                <h3 class="text-xl font-bold text-gray-800 mb-6">像素分析</h3>
-                                
-                                <div class="grid grid-cols-2 gap-4 mb-6">
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <p class="text-sm text-gray-500 mb-1">颜色多样性</p>
-                                        <p class="font-semibold text-gray-800" id="pixel-diversity"></p>
-                                    </div>
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <p class="text-sm text-gray-500 mb-1">平均熵值</p>
-                                        <p class="font-semibold text-gray-800" id="pixel-entropy"></p>
-                                    </div>
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <p class="text-sm text-gray-500 mb-1">噪声等级</p>
-                                        <p class="font-semibold" id="pixel-noise"></p>
-                                    </div>
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <p class="text-sm text-gray-500 mb-1">块效应</p>
-                                        <p class="font-semibold" id="pixel-blockiness"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="steg-tab" class="tab-content">
-                            <div class="card-hover bg-white rounded-2xl shadow-lg p-6">
-                                <div class="flex items-center justify-between mb-6">
-                                    <h3 class="text-xl font-bold text-gray-800">隐写检测</h3>
-                                    <span class="status-badge" id="steg-status"></span>
-                                </div>
-                                
-                                <div class="mb-6">
-                                    <div class="flex justify-between text-sm text-gray-600 mb-2">
-                                        <span>可疑检测项</span>
-                                        <span id="steg-suspicious">0/4</span>
-                                    </div>
-                                    <div class="probability-bar">
-                                        <div class="probability-fill bg-gradient-to-r from-yellow-400 to-orange-500" id="steg-bar" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                                
-                                <div class="mb-6">
-                                    <div class="flex justify-between text-sm text-gray-600 mb-2">
-                                        <span>总体置信度</span>
-                                        <span id="steg-confidence">0%</span>
-                                    </div>
-                                    <div class="probability-bar">
-                                        <div class="probability-fill bg-gradient-to-r from-orange-400 to-red-500" id="steg-confidence-bar" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="explain-box">
+                            <h4>建议动作</h4>
+                            <div id="risk-explanation-action" class="muted">完成检测后，这里会给出下一步建议。</div>
                         </div>
                     </div>
-
-                    <div class="lg:col-span-1">
-                        <div class="card-hover bg-white rounded-2xl shadow-lg p-6 sticky top-8">
-                            <h3 class="text-lg font-bold text-gray-800 mb-4">操作</h3>
-                            
-                            <div class="space-y-3">
-                                <button 
-                                    class="w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
-                                    id="btn-export-md"
-                                >
-                                    <i class="fas fa-file-alt"></i>
-                                    导出为 Markdown
-                                </button>
-                                <button 
-                                    class="w-full py-3 px-4 bg-gray-100 text-gray-700 rounded-xl font-medium flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors"
-                                    id="btn-export-txt"
-                                >
-                                    <i class="fas fa-file-text"></i>
-                                    导出为 TXT
-                                </button>
-                                <button 
-                                    class="w-full py-3 px-4 bg-gray-100 text-gray-700 rounded-xl font-medium flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors"
-                                    id="btn-export-json"
-                                >
-                                    <i class="fas fa-file-code"></i>
-                                    导出为 JSON
-                                </button>
-                            </div>
-
-                            <div class="mt-6 pt-6 border-t border-gray-100">
-                                <button 
-                                    class="w-full py-3 px-4 bg-red-50 text-red-600 rounded-xl font-medium flex items-center justify-center gap-2 hover:bg-red-100 transition-colors"
-                                    id="btn-reset"
-                                >
-                                    <i class="fas fa-upload"></i>
-                                    重新上传
-                                </button>
-                            </div>
+                    <div class="explain-box" style="margin-top: 12px;">
+                        <h4>分层证据</h4>
+                        <div id="risk-evidence-groups" class="muted">完成检测后，这里会按元数据、视觉证据和水印异常分层展示。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mode-row">
+                <button class="mode-button active" data-mode="all">全部检测</button>
+                <button class="mode-button" data-mode="ai">仅AI</button>
+                <button class="mode-button" data-mode="metadata">仅元数据</button>
+                <button class="mode-button" data-mode="pixel">仅像素</button>
+                <button class="mode-button" data-mode="steg">仅隐写</button>
+            </div>
+        </div>
+        <div class="layout">
+            <div class="card">
+                <div class="tab-row nav-tabs">
+                    <button class="nav-link active" data-tab="ai">AI检测结果</button>
+                    <button class="nav-link" data-tab="metadata">元数据</button>
+                    <button class="nav-link" data-tab="pixel">像素分析</button>
+                    <button class="nav-link" data-tab="steg">隐写检测</button>
+                </div>
+                <div id="ai-tab" class="tab-content active">
+                    <h2>AI 检测结果</h2>
+                    <p id="ai-summary" class="muted">展示 AI 风险概率、置信度和主要证据。</p>
+                    <div class="metric-grid">
+                        <div class="metric-card">
+                            <div class="metric-label">AI风险概率</div>
+                            <div id="ai-probability-card" class="metric-value">-</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">置信度</div>
+                            <div id="ai-confidence-card" class="metric-value">-</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="metadata-tab" class="tab-content">
+                    <h2>元数据</h2>
+                    <p id="metadata-summary" class="muted">展示 EXIF、PNG Chunk 与图像基础信息。</p>
+                    <div id="metadata-cards" class="metric-grid">
+                        <div class="metric-card">
+                            <div class="metric-label">图片格式</div>
+                            <div id="metadata-format-card" class="metric-value">-</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">图片尺寸</div>
+                            <div id="metadata-size-card" class="metric-value">-</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="pixel-tab" class="tab-content">
+                    <h2>像素分析</h2>
+                    <p id="pixel-summary" class="muted">展示颜色多样性、熵值、噪声和块效应。</p>
+                    <div id="pixel-cards" class="metric-grid">
+                        <div class="metric-card">
+                            <div class="metric-label">平均熵值</div>
+                            <div id="pixel-entropy-card" class="metric-value">-</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">颜色多样性</div>
+                            <div id="pixel-diversity-card" class="metric-value">-</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="steg-tab" class="tab-content">
+                    <h2>隐写检测</h2>
+                    <p id="steg-summary" class="muted">展示 LSB 与统计检验结果。</p>
+                    <div id="steg-cards" class="metric-grid">
+                        <div class="metric-card">
+                            <div class="metric-label">隐写置信度</div>
+                            <div id="steg-confidence-card" class="metric-value">-</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">检测结论</div>
+                            <div id="steg-status-card" class="metric-value">-</div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div>
+                <div class="card" style="margin-bottom: 20px;">
+                    <h3>导出</h3>
+                    <div class="action-row">
+                        <button class="action-button" onclick="exportResult('md')">导出 Markdown</button>
+                        <button class="action-button" onclick="exportResult('txt')">导出 TXT</button>
+                        <button class="action-button" onclick="exportResult('json')">导出 JSON</button>
+                    </div>
+                    <div id="export-status" class="status-text">导出前请先完成检测。</div>
+                </div>
+                <div class="card">
+                    <h3>历史记录</h3>
+                    <div id="history-list">
+                        <div>暂无历史记录</div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <footer class="text-center mt-12 text-gray-400 text-sm">
-            <p>AI Image Detection Toolkit - 检测AI生成图片、提取元数据、检测隐写信息</p>
-        </footer>
     </div>
-
     <script>
-        let currentResult = null;
+        var selectedFile = null;
+        var selectedMode = 'all';
+        var analysisHistory = [];
 
-        const uploadArea = document.getElementById('upload-area');
-        const fileInput = document.getElementById('file-input');
-        const progressContainer = document.getElementById('progress-container');
-        const progressBar = document.getElementById('progress-bar');
-        const progressText = document.getElementById('progress-text');
-        const uploadSection = document.getElementById('upload-section');
-        const resultsSection = document.getElementById('results-section');
+        function openTab(tabName) {
+            document.querySelectorAll('.nav-link').forEach(function(tab) {
+                tab.classList.toggle('active', tab.getAttribute('data-tab') === tabName);
+            });
+            document.querySelectorAll('.tab-content').forEach(function(panel) {
+                panel.classList.toggle('active', panel.id === tabName + '-tab');
+            });
+        }
 
-        uploadArea.addEventListener('click', () => fileInput.click());
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.classList.add('dragover');
+        document.querySelectorAll('.nav-link').forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                openTab(event.currentTarget.getAttribute('data-tab'));
+            });
         });
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.classList.remove('dragover');
+
+        document.querySelectorAll('.mode-button').forEach(function(button) {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.mode-button').forEach(function(item) {
+                    item.classList.remove('active');
+                });
+                button.classList.add('active');
+                selectedMode = button.getAttribute('data-mode');
+            });
         });
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadArea.classList.remove('dragover');
-            const files = e.dataTransfer.files;
-            if (files.length > 0) {
-                handleFile(files[0]);
+
+        var uploadArea = document.getElementById('upload-area');
+        var uploadTrigger = document.getElementById('upload-trigger');
+        var fileInput = document.getElementById('file-input');
+        var startDetectButton = document.getElementById('start-detect-button');
+        var selectedFileName = document.getElementById('selected-file-name');
+        var progressSection = document.getElementById('progress-section');
+        var progressBar = document.getElementById('progress-bar');
+        var progressText = document.getElementById('progress-text');
+        var historyList = document.getElementById('history-list');
+        var riskLevel = document.getElementById('risk-level');
+        var riskSummary = document.getElementById('risk-summary');
+        var taskId = document.getElementById('task-id');
+        var riskAiProbability = document.getElementById('risk-ai-probability');
+        var riskConfidence = document.getElementById('risk-confidence');
+        var riskEvidenceList = document.getElementById('risk-evidence-list');
+        var exportStatus = document.getElementById('export-status');
+        var riskExplanationLevel = document.getElementById('risk-explanation-level');
+        var riskExplanationDescription = document.getElementById('risk-explanation-description');
+        var riskExplanationReason = document.getElementById('risk-explanation-reason');
+        var riskExplanationAction = document.getElementById('risk-explanation-action');
+        var riskEvidenceGroups = document.getElementById('risk-evidence-groups');
+        var riskLevelBadge = document.getElementById('risk-level-badge');
+        var riskLevelHelper = document.getElementById('risk-level-helper');
+        var riskProbabilityDescription = document.getElementById('risk-probability-description');
+        var imageClassificationTags = document.getElementById('image-classification-tags');
+
+        uploadArea.addEventListener('click', function() {
+            fileInput.click();
+        });
+
+        uploadTrigger.addEventListener('click', function(event) {
+            event.stopPropagation();
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', function() {
+            if (fileInput.files && fileInput.files.length > 0) {
+                selectedFile = fileInput.files[0];
+                selectedFileName.textContent = '已选择图片：' + selectedFile.name;
+                startDetectButton.disabled = false;
+                showToast('已选择图片：' + selectedFile.name);
             }
         });
-        fileInput.addEventListener('change', (e) => {
-            if (e.target.files.length > 0) {
-                handleFile(e.target.files[0]);
-            }
-        });
 
-        function handleFile(file) {
-            if (!file.type.startsWith('image/')) {
-                alert('请上传图片文件');
+        startDetectButton.addEventListener('click', function() {
+            if (!selectedFile) {
+                showToast('请先选择图片');
                 return;
             }
 
-            uploadSection.classList.add('opacity-50');
-            progressContainer.classList.remove('hidden');
-            
-            let progress = 0;
-            const progressInterval = setInterval(() => {
-                progress += Math.random() * 15;
-                if (progress > 90) progress = 90;
-                progressBar.style.width = `${progress}%`;
-                progressText.textContent = `${Math.round(progress)}%`;
-            }, 200);
+            startDetectButton.disabled = true;
+            progressSection.classList.remove('hidden');
+            progressBar.style.width = '15%';
+            progressText.textContent = '正在检测，请稍候';
 
-            const formData = new FormData();
-            formData.append('file', file);
+            var formData = new FormData();
+            formData.append('file', selectedFile);
 
-            fetch('/api/analyze', {
+            fetch('/api/analyze?mode=' + encodeURIComponent(selectedMode), {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json())
-            .then(data => {
-                clearInterval(progressInterval);
-                progressBar.style.width = '100%';
-                progressText.textContent = '100%';
-                
-                setTimeout(() => {
-                    uploadSection.classList.add('hidden');
-                    resultsSection.classList.remove('hidden');
-                    displayResults(data);
-                    currentResult = data;
-                }, 500);
+            .then(function(response) {
+                progressBar.style.width = '60%';
+                return response.json().then(function(data) {
+                    if (!response.ok) {
+                        throw new Error((data.error || data.message) || '检测失败');
+                    }
+                    return data;
+                });
             })
-            .catch(error => {
-                clearInterval(progressInterval);
-                alert('分析失败: ' + error.message);
-                uploadSection.classList.remove('opacity-50');
-                progressContainer.classList.add('hidden');
-            });
-        }
-
-        function displayResults(data) {
-            if (data.ai_detection) {
-                const ai = data.ai_detection;
-                const aiProb = Math.round(ai.ai_probability * 100);
-                const confidence = Math.round(ai.confidence * 100);
-                
-                document.getElementById('ai-probability').textContent = `${aiProb}%`;
-                document.getElementById('ai-confidence').textContent = `${confidence}%`;
-                document.getElementById('ai-bar').style.width = `${aiProb}%`;
-                document.getElementById('ai-bar').style.background = aiProb > 60 
-                    ? 'linear-gradient(to right, #ef4444, #f97316)' 
-                    : 'linear-gradient(to right, #22c55e, #10b981)';
-                document.getElementById('confidence-bar').style.width = `${confidence}%`;
-                
-                const statusBadge = document.getElementById('ai-status');
-                statusBadge.textContent = ai.is_likely_ai ? '可能是AI生成' : '不太可能是AI生成';
-                statusBadge.className = 'status-badge ' + (ai.is_likely_ai ? 'status-yes' : 'status-no');
-
-                if (ai.metadata_indicators && ai.metadata_indicators.length > 0) {
-                    document.getElementById('ai-indicators').classList.remove('hidden');
-                    const list = document.getElementById('indicators-list');
-                    list.innerHTML = ai.metadata_indicators.map(i => 
-                        `<li class="flex items-start gap-2">
-                            <i class="fas fa-info-circle text-blue-500 mt-0.5"></i>
-                            <span class="text-sm text-gray-600">${i}</span>
-                        </li>`
-                    ).join('');
-                }
-            }
-
-            if (data.metadata) {
-                const meta = data.metadata;
-                document.getElementById('meta-filename').textContent = data.filename;
-                document.getElementById('meta-size').textContent = `${meta.file_size?.toLocaleString()} bytes`;
-                document.getElementById('meta-format').textContent = meta.image_info?.format || 'N/A';
-                document.getElementById('meta-dimensions').textContent = 
-                    `${meta.image_info?.width || 'N/A'} × ${meta.image_info?.height || 'N/A'}`;
-
-                if (meta.png_chunks) {
-                    document.getElementById('png-chunks').classList.remove('hidden');
-                    const list = document.getElementById('chunks-list');
-                    list.innerHTML = Object.entries(meta.png_chunks).map(([type, info]) => 
-                        `<div class="bg-blue-50 rounded-lg px-3 py-2">
-                            <span class="font-mono text-sm text-blue-700">${type}</span>
-                            <span class="text-xs text-gray-500 ml-2">${info.description || 'Unknown'}</span>
-                        </div>`
-                    ).join('');
-                }
-            }
-
-            if (data.pixel_analysis) {
-                const pixel = data.pixel_analysis;
-                document.getElementById('pixel-diversity').textContent = 
-                    pixel.pixel_patterns?.color_diversity?.toFixed(4) || '0';
-                document.getElementById('pixel-entropy').textContent = 
-                    pixel.entropy?.mean_entropy?.toFixed(2) || '0';
-                document.getElementById('pixel-noise').textContent = 
-                    pixel.noise_analysis?.is_high_noise ? '高' : '正常';
-                document.getElementById('pixel-noise').className = 'font-semibold ' + 
-                    (pixel.noise_analysis?.is_high_noise ? 'text-orange-500' : 'text-green-500');
-                document.getElementById('pixel-blockiness').textContent = 
-                    pixel.blockiness?.is_blocky ? '存在' : '无';
-                document.getElementById('pixel-blockiness').className = 'font-semibold ' + 
-                    (pixel.blockiness?.is_blocky ? 'text-orange-500' : 'text-green-500');
-            }
-
-            if (data.steg_detection) {
-                const steg = data.steg_detection;
-                const suspicious = steg.total_suspicious_tests || 0;
-                const confidence = Math.round((steg.overall_confidence || 0) * 100);
-                
-                document.getElementById('steg-suspicious').textContent = `${suspicious}/4`;
-                document.getElementById('steg-confidence').textContent = `${confidence}%`;
-                document.getElementById('steg-bar').style.width = `${(suspicious / 4) * 100}%`;
-                document.getElementById('steg-confidence-bar').style.width = `${confidence}%`;
-                
-                const statusBadge = document.getElementById('steg-status');
-                statusBadge.textContent = steg.is_likely_stego ? '可能包含隐藏数据' : '未检测到隐藏数据';
-                statusBadge.className = 'status-badge ' + (steg.is_likely_stego ? 'status-yes' : 'status-no');
-            }
-        }
-
-        document.querySelectorAll('.nav-tabs .nav-link').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.nav-tabs .nav-link').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                
-                tab.classList.add('active');
-                document.getElementById(tab.dataset.tab + '-tab').classList.add('active');
+            .then(function(data) {
+                progressBar.style.width = '100%';
+                progressText.textContent = '检测完成';
+                renderResult(data.data);
+                pushHistory(data.data);
+                showToast('检测完成');
+            })
+            .catch(function(error) {
+                progressBar.style.width = '0';
+                progressText.textContent = '检测失败，请检查图片或稍后重试';
+                showToast('检测失败，请检查图片或稍后重试');
+            })
+            .finally(function() {
+                startDetectButton.disabled = false;
             });
         });
 
-        document.getElementById('btn-export-md').addEventListener('click', () => exportResult('md'));
-        document.getElementById('btn-export-txt').addEventListener('click', () => exportResult('txt'));
-        document.getElementById('btn-export-json').addEventListener('click', () => exportResult('json'));
+        function renderResult(data) {
+            var ai = data.ai_detection || {};
+            var metadata = data.metadata || {};
+            var imageInfo = metadata.image_info || {};
+            var pixel = data.pixel_analysis || {};
+            var steg = data.steg_detection || {};
+            var risk = data.risk || {};
+            var normalizedLevel = (risk.level || 'unknown').toLowerCase();
+
+            riskLevel.textContent = (risk.level || 'unknown').toUpperCase();
+            riskLevel.className = 'risk-level risk-' + normalizedLevel;
+            riskSummary.textContent = risk.summary || '暂无风险摘要';
+            riskLevelBadge.textContent = risk.explanation && risk.explanation.level_label ? risk.explanation.level_label : '结果待生成';
+            riskLevelBadge.className = 'risk-badge badge-' + normalizedLevel;
+            riskLevelHelper.textContent = buildRiskLevelHelper(normalizedLevel);
+            taskId.textContent = data.task_id || '-';
+            riskAiProbability.textContent = formatPercent(risk.ai_probability);
+            riskConfidence.textContent = formatPercent(risk.confidence);
+            riskEvidenceList.innerHTML = ((risk.evidence_summary && risk.evidence_summary.length > 0) ? risk.evidence_summary : ['暂无风险证据摘要']).map(function(item) {
+                return '<li>' + item + '</li>';
+            }).join('');
+            renderRiskExplanation(risk.explanation || {});
+
+            document.getElementById('ai-summary').textContent = data.ai_detection
+                ? 'AI 风险概率：' + formatPercent(ai.ai_probability) + '，置信度：' + formatPercent(ai.confidence) + '，结论：' + (ai.is_likely_ai ? '较可能为AI生成' : '暂未判定为AI生成')
+                : '当前模式未执行 AI 检测';
+            document.getElementById('ai-probability-card').textContent = formatPercent(ai.ai_probability);
+            document.getElementById('ai-confidence-card').textContent = formatPercent(ai.confidence);
+
+            document.getElementById('metadata-summary').textContent = data.metadata
+                ? '格式：' + (imageInfo.format || '未知') + '，尺寸：' + (imageInfo.width || '-') + ' x ' + (imageInfo.height || '-')
+                : '当前模式未执行元数据检测';
+            document.getElementById('metadata-format-card').textContent = imageInfo.format || '-';
+            document.getElementById('metadata-size-card').textContent = (imageInfo.width || '-') + ' x ' + (imageInfo.height || '-');
+
+            document.getElementById('pixel-summary').textContent = data.pixel_analysis
+                ? '平均熵值：' + formatNumber(pixel.entropy && pixel.entropy.mean_entropy, 2)
+                : '当前模式未执行像素分析';
+            document.getElementById('pixel-entropy-card').textContent = formatNumber(pixel.entropy && pixel.entropy.mean_entropy, 2);
+            document.getElementById('pixel-diversity-card').textContent = formatNumber(pixel.pixel_patterns && pixel.pixel_patterns.color_diversity, 4);
+
+            document.getElementById('steg-summary').textContent = data.steg_detection
+                ? '隐写置信度：' + formatPercent(steg.overall_confidence) + '，结论：' + (steg.is_likely_stego ? '存在隐写风险' : '未发现明显隐写风险')
+                : '当前模式未执行隐写检测';
+            document.getElementById('steg-confidence-card').textContent = formatPercent(steg.overall_confidence);
+            document.getElementById('steg-status-card').textContent = steg.is_likely_stego ? '存在风险' : '未发现';
+        }
+
+        function renderRiskExplanation(explanation) {
+            riskExplanationLevel.textContent = explanation.level_label || '结果说明待生成';
+            riskExplanationDescription.textContent = explanation.level_description || '完成检测后，这里会解释当前风险等级意味着什么。';
+            riskExplanationReason.textContent = explanation.primary_reason || '完成检测后，这里会说明主要判断依据。';
+            riskExplanationAction.textContent = explanation.action || '完成检测后，这里会给出下一步建议。';
+            riskProbabilityDescription.textContent = explanation.probability_description || '该数值是启发式模型评分，不等同于真实后验概率。';
+
+            var tags = explanation.image_classification_tags || [];
+            imageClassificationTags.innerHTML = (tags.length ? tags : ['待进一步判别']).map(function(tag) {
+                return '<span class="info-tag">' + tag + '</span>';
+            }).join('');
+
+            var groups = explanation.evidence_groups || [];
+            if (!groups.length) {
+                riskEvidenceGroups.innerHTML = '完成检测后，这里会按元数据、视觉证据和水印异常分层展示。';
+                return;
+            }
+
+            riskEvidenceGroups.innerHTML = groups.map(function(group) {
+                var items = (group.items || []).map(function(item) {
+                    return '<li>' + item + '</li>';
+                }).join('');
+                return '<div style="margin-bottom: 10px;"><strong>' + group.title + '</strong><ul class="group-list">' + items + '</ul></div>';
+            }).join('');
+        }
+
+        function buildRiskLevelHelper(level) {
+            if (level === 'high') {
+                return '高风险表示检测到较强可疑信号，建议优先复核来源与生成链路。';
+            }
+            if (level === 'medium') {
+                return '中风险表示存在部分可疑线索，但还不能单独作为最终定性依据。';
+            }
+            if (level === 'low') {
+                return '低风险表示当前没有足够强的 AI 生成证据，但仍建议保留来源信息。';
+            }
+            return '结果不足表示当前证据有限，建议补充原图或更多上下文后再次判断。';
+        }
+
+        function pushHistory(data) {
+            analysisHistory.unshift({
+                task_id: data.task_id || '',
+                filename: data.filename || '未知文件',
+                mode: data.mode || selectedMode,
+                time: data.created_at || new Date().toLocaleString('zh-CN'),
+                level: data.risk && data.risk.level ? data.risk.level : 'unknown'
+            });
+            analysisHistory = analysisHistory.slice(0, 5);
+
+            renderHistory();
+        }
+
+        function renderHistory() {
+            historyList.innerHTML = analysisHistory.map(function(item) {
+                return '<div onclick="fetchTaskDetail(\'' + (item.task_id || '') + '\')"><strong>' + item.filename + '</strong><div class="muted">模式：' + item.mode + ' · 风险：' + item.level + '</div><div class="muted">时间：' + item.time + '</div></div>';
+            }).join('');
+        }
+
+        function fetchHistory() {
+            fetch('/api/history?page=1&page_size=5')
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+                    var items = (data.data && data.data.items) || [];
+                    analysisHistory = items.map(function(item) {
+                        return {
+                            task_id: item.task_id || '',
+                            filename: item.filename || '未知文件',
+                            mode: item.mode || 'all',
+                            time: item.created_at || '-',
+                            level: item.risk && item.risk.level ? item.risk.level : 'unknown'
+                        };
+                    });
+                    if (analysisHistory.length === 0) {
+                        historyList.innerHTML = '<div>暂无历史记录</div>';
+                        return;
+                    }
+                    renderHistory();
+                });
+        }
 
         function exportResult(format) {
-            if (!currentResult) return;
+            if (!taskId.textContent || taskId.textContent === '-') {
+                showToast('请先完成一次检测再导出');
+                return;
+            }
+
+            var resultPayload = {
+                task_id: taskId.textContent,
+                filename: selectedFile ? selectedFile.name : 'result',
+                format: format,
+                result: {
+                    task_id: taskId.textContent,
+                    filename: selectedFile ? selectedFile.name : 'result',
+                    mode: selectedMode,
+                    risk: {
+                        level: riskLevel.textContent.toLowerCase(),
+                        ai_probability: parsePercentText(riskAiProbability.textContent),
+                        confidence: parsePercentText(riskConfidence.textContent),
+                        summary: riskSummary.textContent
+                    }
+                }
+            };
 
             fetch('/api/export', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    filename: currentResult.filename?.replace(/\.[^/.]+$/, '') || 'result',
-                    format: format,
-                    result: currentResult
+                body: JSON.stringify(resultPayload)
+            })
+                .then(function(response) { return response.json(); })
+                .then(function(data) {
+                    var payload = data.data || {};
+                    if (!payload.download_url) {
+                        throw new Error(data.error || data.message || '导出失败');
+                    }
+                    exportStatus.textContent = '已生成导出文件：' + payload.filename;
+                    window.location.href = payload.download_url;
+                    showToast('已开始导出 ' + payload.filename);
                 })
-            })
-            .then(response => response.json())
-            .then(data => {
-                const filename = data.path.split('/').pop();
-                window.location.href = `/api/export/download/${filename}`;
-            })
-            .catch(error => alert('导出失败: ' + error.message));
+                .catch(function(error) {
+                    exportStatus.textContent = '导出失败，请稍后重试';
+                    showToast(error.message || '导出失败');
+                });
         }
 
-        document.getElementById('btn-reset').addEventListener('click', () => {
-            resultsSection.classList.add('hidden');
-            uploadSection.classList.remove('hidden');
-            uploadSection.classList.remove('opacity-50');
-            progressContainer.classList.add('hidden');
-            progressBar.style.width = '0%';
-            progressText.textContent = '0%';
-            fileInput.value = '';
-            currentResult = null;
-        });
+        function tabByMode(mode) {
+            if (mode === 'metadata') {
+                return 'metadata';
+            }
+            if (mode === 'pixel') {
+                return 'pixel';
+            }
+            if (mode === 'steg') {
+                return 'steg';
+            }
+            return 'ai';
+        }
+
+        function fetchTaskDetail(taskIdValue) {
+            if (!taskIdValue) {
+                return;
+            }
+
+            fetch('/api/tasks/' + encodeURIComponent(taskIdValue))
+                .then(function(response) { return response.json(); })
+                .then(function(data) {
+                    if (data.data) {
+                        renderResult(data.data);
+                        openTab(tabByMode(data.data.mode));
+                        showToast('已加载任务详情');
+                    }
+                });
+        }
+
+        function showToast(message) {
+            var toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.display = 'block';
+            clearTimeout(showToast.timer);
+            showToast.timer = setTimeout(function() {
+                toast.style.display = 'none';
+            }, 2200);
+        }
+
+        function formatPercent(value) {
+            if (typeof value !== 'number') {
+                return '0.00%';
+            }
+            return (value * 100).toFixed(2) + '%';
+        }
+
+        function formatNumber(value, digits) {
+            if (typeof value !== 'number') {
+                return '0.00';
+            }
+            return value.toFixed(digits);
+        }
+
+        function parsePercentText(value) {
+            if (!value || value === '-') {
+                return 0;
+            }
+            return Number(String(value).replace('%', '')) / 100;
+        }
+
+        fetchHistory();
     </script>
 </body>
 </html>

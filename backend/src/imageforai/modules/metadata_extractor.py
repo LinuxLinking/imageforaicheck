@@ -29,6 +29,21 @@ class MetadataExtractor:
             'hIST': 'Histogram',
             'tIME': 'Last modification time',
         }
+
+    def _make_json_safe(self, value: Any) -> Any:
+        if isinstance(value, dict):
+            return {str(key): self._make_json_safe(item) for key, item in value.items()}
+        if isinstance(value, (list, tuple, set)):
+            return [self._make_json_safe(item) for item in value]
+        if isinstance(value, bytes):
+            return {
+                'type': 'bytes',
+                'length': len(value),
+                'preview_hex': value[:32].hex(),
+            }
+        if isinstance(value, (str, int, float, bool)) or value is None:
+            return value
+        return str(value)
     
     def extract_exif(self, image_path: str) -> Dict[str, Any]:
         exif_data = {}
@@ -95,13 +110,13 @@ class MetadataExtractor:
             with Image.open(image_path) as img:
                 info['format'] = img.format
                 info['mode'] = img.mode
-                info['size'] = img.size
+                info['size'] = list(img.size)
                 info['width'], info['height'] = img.size
                 info['bits_per_sample'] = img.bits
                 info['channels'] = len(img.getbands())
                 
                 if hasattr(img, 'info'):
-                    info['info'] = img.info
+                    info['info'] = self._make_json_safe(img.info)
                     
         except Exception as e:
             info['error'] = str(e)

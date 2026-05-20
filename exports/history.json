@@ -1,0 +1,1463 @@
+[
+  {
+    "task_id": "e5e71efd-a4ea-42d9-ac33-0ce42e0fb19d",
+    "filename": "F00C55CC140A3E27931AAC936EDE6009.jpg",
+    "mode": "all",
+    "created_at": "2026-05-20T07:33:42.412617",
+    "risk": {
+      "level": "medium",
+      "ai_probability": 0.8557582627889463,
+      "confidence": 0.8571428571428571,
+      "summary": "综合风险分 50.72，视觉模型分数 85.58%",
+      "score": 50.72,
+      "evidence_summary": [
+        "视觉模型分数 85.58%",
+        "自然纹理与边缘复杂度较高",
+        "存在轻度隐写异常，但不能直接等同 AI 水印"
+      ],
+      "explanation": {
+        "level_label": "中风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "待进一步判别"
+        ],
+        "level_description": "存在部分可疑信号，但还不足以单独作为定性结论。",
+        "primary_reason": "视觉模型分数 85.58%",
+        "action": "建议补充原图来源、拍摄链路或更多相邻样本再判断。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "未发现明确生成器标识"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 85.58%",
+              "自然纹理与边缘复杂度较高"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "存在轻度隐写异常，但不能直接等同 AI 水印"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.8557582627889463,
+      "confidence": 0.8571428571428571,
+      "features": {
+        "color_entropy": 6.810627216780013,
+        "noise_level": 266.9814299139339,
+        "edge_quality": 1478.5193383919327,
+        "color_abnormality": 202.06297210503428,
+        "texture_score": 407.110107421875,
+        "blockiness": 99.98190338087451,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 0.9053136083900064,
+        "noise_level": 1,
+        "edge_quality": 1,
+        "color_abnormality": 1,
+        "texture_score": 1,
+        "blockiness": 0.9997414768696359,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": true,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\F00C55CC140A3E27931AAC936EDE6009.jpg",
+      "file_size": 888711,
+      "image_info": {
+        "format": "JPEG",
+        "mode": "RGB",
+        "size": [
+          4001,
+          2071
+        ],
+        "width": 4001,
+        "height": 2071,
+        "bits_per_sample": 8,
+        "channels": 3,
+        "info": {
+          "jfif": 257,
+          "jfif_version": [
+            1,
+            1
+          ],
+          "jfif_unit": 0,
+          "jfif_density": [
+            1,
+            1
+          ],
+          "icc_profile": {
+            "type": "bytes",
+            "length": 456,
+            "preview_hex": "000001c800000000043000006d6e74725247422058595a2007e0000100010000"
+          }
+        }
+      },
+      "exif": {}
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 148.43839136787508,
+          "std": 53.651374537946936,
+          "min": 0,
+          "max": 255,
+          "skew": -1.1588002236398478,
+          "kurtosis": 1.2861432165566535
+        },
+        "green": {
+          "mean": 174.4728287990774,
+          "std": 58.60405354287853,
+          "min": 0,
+          "max": 255,
+          "skew": -1.8174591909691074,
+          "kurtosis": 2.4016305309940584
+        },
+        "blue": {
+          "mean": 209.88567464604154,
+          "std": 68.55928178768062,
+          "min": 0,
+          "max": 255,
+          "skew": -2.11411895930788,
+          "kurtosis": 2.899891035062974
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 266.9814299139339,
+        "edge_std": 54.049662685853235,
+        "noise_ratio": 0.3353937870203872,
+        "is_high_noise": true
+      },
+      "entropy": {
+        "red_entropy": 7.283185363046423,
+        "green_entropy": 6.841320532007295,
+        "blue_entropy": 6.307375755286319,
+        "mean_entropy": 6.810627216780013
+      },
+      "blockiness": {
+        "blockiness_score": 99.98226928710938,
+        "is_blocky": false
+      },
+      "pixel_patterns": {
+        "unique_colors": 174900,
+        "total_pixels": 8286071,
+        "color_diversity": 0.02110771196626242,
+        "color_correlation": {
+          "rg": 0.9551556832814474,
+          "rb": 0.8342662856741613,
+          "gb": 0.9547583215911023
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.0072930725291371346,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.99999792338344,
+          "green": 0.9999986348483855,
+          "blue": 0.9999905714517545,
+          "average": 0.9999957098945268
+        },
+        "is_suspicious": true,
+        "confidence": 1.0
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 0.0008483514080436794,
+          "green": 0.0006878410769108889,
+          "blue": 0.0018076721765961645,
+          "average": 0.0011146215538502442
+        },
+        "is_suspicious": true,
+        "confidence": 0.9977707568922995
+      },
+      "size_analysis": {
+        "file_size_bytes": 888711,
+        "expected_raw_size_bytes": 24858213,
+        "compression_ratio": 27.97108733885369,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 0.23301954567432404,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 2,
+      "overall_confidence": 0.5494426892230749,
+      "is_likely_stego": true
+    }
+  },
+  {
+    "task_id": "a2069d04-22fc-48e5-bbf6-74a5ac054580",
+    "filename": "屏幕截图 2026-01-29 231201.png",
+    "mode": "all",
+    "created_at": "2026-05-20T07:33:05.664796",
+    "risk": {
+      "level": "medium",
+      "ai_probability": 0.9,
+      "confidence": 0.8571428571428571,
+      "summary": "综合风险分 53.37，视觉模型分数 90.00%",
+      "score": 53.37,
+      "evidence_summary": [
+        "视觉模型分数 90.00%",
+        "自然纹理与边缘复杂度较高",
+        "存在轻度隐写异常，但不能直接等同 AI 水印"
+      ],
+      "explanation": {
+        "level_label": "中风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "待进一步判别"
+        ],
+        "level_description": "存在部分可疑信号，但还不足以单独作为定性结论。",
+        "primary_reason": "视觉模型分数 90.00%",
+        "action": "建议补充原图来源、拍摄链路或更多相邻样本再判断。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "未发现明确生成器标识"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 90.00%",
+              "自然纹理与边缘复杂度较高"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "存在轻度隐写异常，但不能直接等同 AI 水印"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.9,
+      "confidence": 0.8571428571428571,
+      "features": {
+        "color_entropy": 7.7886104162004814,
+        "noise_level": 1069.3903032588757,
+        "edge_quality": 276.06541098201257,
+        "color_abnormality": 94.15548886179992,
+        "texture_score": 587.3768310546875,
+        "blockiness": 354.0372533357124,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 1,
+        "noise_level": 1,
+        "edge_quality": 1,
+        "color_abnormality": 1,
+        "texture_score": 1,
+        "blockiness": 1,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": true,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2026-01-29 231201.png",
+      "file_size": 2730981,
+      "image_info": {
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          1415,
+          916
+        ],
+        "width": 1415,
+        "height": 916,
+        "error": "'PngImageFile' object has no attribute 'bits'"
+      },
+      "exif": {},
+      "png_chunks": {
+        "IHDR": {
+          "description": "Image header",
+          "length": 13
+        },
+        "sRGB": {
+          "description": "Standard RGB",
+          "length": 1
+        },
+        "gAMA": {
+          "description": "Gamma",
+          "length": 4
+        },
+        "pHYs": {
+          "description": "Physical dimensions",
+          "length": 9
+        },
+        "IDAT": {
+          "description": "Image data",
+          "length": 43977
+        },
+        "IEND": {
+          "description": "Image end",
+          "length": 0
+        }
+      }
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 146.137438085392,
+          "std": 55.28533982533339,
+          "min": 0,
+          "max": 255,
+          "skew": -0.1554064608285421,
+          "kurtosis": -0.41941679473087445
+        },
+        "green": {
+          "mean": 125.48311216380947,
+          "std": 60.468679174390516,
+          "min": 0,
+          "max": 255,
+          "skew": 0.08440107495393223,
+          "kurtosis": -1.03770619257649
+        },
+        "blue": {
+          "mean": 110.87349823321554,
+          "std": 73.31844349615832,
+          "min": 0,
+          "max": 255,
+          "skew": 0.4615399056803186,
+          "kurtosis": -1.1233581220092304
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 1069.3903032588757,
+        "edge_std": 70.49821233657066,
+        "noise_ratio": 0.4484873488159056,
+        "is_high_noise": true
+      },
+      "entropy": {
+        "red_entropy": 7.721726933318942,
+        "green_entropy": 7.820730579791537,
+        "blue_entropy": 7.823373735490966,
+        "mean_entropy": 7.7886104162004814
+      },
+      "blockiness": {
+        "blockiness_score": 354.035400390625,
+        "is_blocky": false
+      },
+      "pixel_patterns": {
+        "unique_colors": 211160,
+        "total_pixels": 1296140,
+        "color_diversity": 0.16291449997685437,
+        "color_correlation": {
+          "rg": 0.9049201156371609,
+          "rb": 0.6955602306634662,
+          "gb": 0.9141950216910343
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.05319403111934662,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.9998256554756008,
+          "green": 0.9999997661413366,
+          "blue": 0.9999750158492327,
+          "average": 0.99993347915539
+        },
+        "is_suspicious": true,
+        "confidence": 1.0
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 0.0077730800685110735,
+          "green": 0.0002846914685141755,
+          "blue": 0.002942583362908313,
+          "average": 0.0036667849666445207
+        },
+        "is_suspicious": true,
+        "confidence": 0.992666430066711
+      },
+      "size_analysis": {
+        "file_size_bytes": 2730981,
+        "expected_raw_size_bytes": 5184560,
+        "compression_ratio": 1.8984240461577726,
+        "is_suspicious": false,
+        "confidence": 0.8101575953842227
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 1.252410888671875,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 2,
+      "overall_confidence": 0.7257060063627334,
+      "is_likely_stego": true
+    }
+  },
+  {
+    "task_id": "d1fad260-7c03-4626-9993-83e8f26402f6",
+    "filename": "屏幕截图 2025-11-26 163503.png",
+    "mode": "all",
+    "created_at": "2026-05-20T07:32:46.307250",
+    "risk": {
+      "level": "low",
+      "ai_probability": 0.51,
+      "confidence": 0.5714285714285714,
+      "summary": "综合风险分 21.31，视觉模型分数 51.00%",
+      "score": 21.31,
+      "evidence_summary": [
+        "视觉模型分数 51.00%"
+      ],
+      "explanation": {
+        "level_label": "低风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "待进一步判别"
+        ],
+        "level_description": "当前未发现足够强的 AI 生成证据，结果更适合作为低风险提示。",
+        "primary_reason": "视觉模型分数 51.00%",
+        "action": "建议保留原图与来源信息，如业务敏感仍可人工抽检。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "未发现明确生成器标识"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 51.00%"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "未发现足以单独定性的水印证据"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.51,
+      "confidence": 0.5714285714285714,
+      "features": {
+        "color_entropy": 1.2929401312337399,
+        "noise_level": 3385.549030458812,
+        "edge_quality": 3049.0676621506786,
+        "color_abnormality": 9.56192248039437,
+        "texture_score": 827.9459838867188,
+        "blockiness": 932.1577232792692,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 0,
+        "noise_level": 1,
+        "edge_quality": 1,
+        "color_abnormality": 0,
+        "texture_score": 1,
+        "blockiness": 1,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": false,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2025-11-26 163503.png",
+      "file_size": 130351,
+      "image_info": {
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          853,
+          644
+        ],
+        "width": 853,
+        "height": 644,
+        "error": "'PngImageFile' object has no attribute 'bits'"
+      },
+      "exif": {},
+      "png_chunks": {
+        "IHDR": {
+          "description": "Image header",
+          "length": 13
+        },
+        "sRGB": {
+          "description": "Standard RGB",
+          "length": 1
+        },
+        "gAMA": {
+          "description": "Gamma",
+          "length": 4
+        },
+        "pHYs": {
+          "description": "Physical dimensions",
+          "length": 9
+        },
+        "IDAT": {
+          "description": "Image data",
+          "length": 64787
+        },
+        "IEND": {
+          "description": "Image end",
+          "length": 0
+        }
+      }
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 238.73597205333022,
+          "std": 56.730947143571164,
+          "min": 0,
+          "max": 255,
+          "skew": -3.535518061974864,
+          "kurtosis": 11.095039494917124
+        },
+        "green": {
+          "mean": 240.231965368848,
+          "std": 50.885854238121134,
+          "min": 0,
+          "max": 255,
+          "skew": -3.46228250686014,
+          "kurtosis": 10.58502138849887
+        },
+        "blue": {
+          "mean": 244.88214777220333,
+          "std": 38.39232917783285,
+          "min": 0,
+          "max": 255,
+          "skew": -4.490938128594265,
+          "kurtosis": 20.615002112759413
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 3385.549030458812,
+        "edge_std": 160.9385445699701,
+        "noise_ratio": 0.2098187201881129,
+        "is_high_noise": true
+      },
+      "entropy": {
+        "red_entropy": 1.2495668422270492,
+        "green_entropy": 1.304912575338863,
+        "blue_entropy": 1.3243409761353069,
+        "mean_entropy": 1.2929401312337399
+      },
+      "blockiness": {
+        "blockiness_score": 932.158935546875,
+        "is_blocky": false
+      },
+      "pixel_patterns": {
+        "unique_colors": 11320,
+        "total_pixels": 549332,
+        "color_diversity": 0.020606846133121682,
+        "color_correlation": {
+          "rg": 0.9862761011194626,
+          "rb": 0.7873860906260961,
+          "gb": 0.8640160456508769
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.013765589334070683,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.4240202111020624,
+          "green": 0.3366834654695985,
+          "blue": 0.39227183371368757,
+          "average": 0.3843251700951161
+        },
+        "is_suspicious": false,
+        "confidence": 0.42275768710462774
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 0.41369335847902544,
+          "green": 0.4376551884834672,
+          "blue": 0.4227898611404397,
+          "average": 0.42471280270097744
+        },
+        "is_suspicious": false,
+        "confidence": 0.1505743945980451
+      },
+      "size_analysis": {
+        "file_size_bytes": 130351,
+        "expected_raw_size_bytes": 2197328,
+        "compression_ratio": 16.857009152212104,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 0.610733151435852,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 0,
+      "overall_confidence": 0.1933330204256682,
+      "is_likely_stego": false
+    }
+  },
+  {
+    "task_id": "553e890c-f38c-4788-ad37-d7dd1ba9bf58",
+    "filename": "屏幕截图 2025-06-08 170839.png",
+    "mode": "all",
+    "created_at": "2026-05-20T07:32:32.337661",
+    "risk": {
+      "level": "low",
+      "ai_probability": 0.5885788970043196,
+      "confidence": 0.5714285714285714,
+      "summary": "综合风险分 26.03，视觉模型分数 58.86%",
+      "score": 26.03,
+      "evidence_summary": [
+        "视觉模型分数 58.86%"
+      ],
+      "explanation": {
+        "level_label": "低风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "待进一步判别"
+        ],
+        "level_description": "当前未发现足够强的 AI 生成证据，结果更适合作为低风险提示。",
+        "primary_reason": "视觉模型分数 58.86%",
+        "action": "建议保留原图与来源信息，如业务敏感仍可人工抽检。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "未发现明确生成器标识"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 58.86%"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "未发现足以单独定性的水印证据"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.5885788970043196,
+      "confidence": 0.5714285714285714,
+      "features": {
+        "color_entropy": 2.35626726846437,
+        "noise_level": 10631.062834268745,
+        "edge_quality": 1961.8993318967994,
+        "color_abnormality": 14.954372534485254,
+        "texture_score": 563.214111328125,
+        "blockiness": 1241.877828533299,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 0,
+        "noise_level": 1,
+        "edge_quality": 1,
+        "color_abnormality": 0.12385931336213134,
+        "texture_score": 1,
+        "blockiness": 1,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": false,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2025-06-08 170839.png",
+      "file_size": 41259,
+      "image_info": {
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          504,
+          621
+        ],
+        "width": 504,
+        "height": 621,
+        "error": "'PngImageFile' object has no attribute 'bits'"
+      },
+      "exif": {},
+      "png_chunks": {
+        "IHDR": {
+          "description": "Image header",
+          "length": 13
+        },
+        "sRGB": {
+          "description": "Standard RGB",
+          "length": 1
+        },
+        "gAMA": {
+          "description": "Gamma",
+          "length": 4
+        },
+        "pHYs": {
+          "description": "Physical dimensions",
+          "length": 9
+        },
+        "IDAT": {
+          "description": "Image data",
+          "length": 41152
+        },
+        "IEND": {
+          "description": "Image end",
+          "length": 0
+        }
+      }
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 238.00783107123686,
+          "std": 41.47605267776814,
+          "min": 0,
+          "max": 255,
+          "skew": -4.509983773428618,
+          "kurtosis": 20.59688063491436
+        },
+        "green": {
+          "mean": 238.36013662040233,
+          "std": 40.93029647671512,
+          "min": 0,
+          "max": 255,
+          "skew": -4.547990637544686,
+          "kurtosis": 21.021215279026947
+        },
+        "blue": {
+          "mean": 238.77572016460906,
+          "std": 40.600998646421054,
+          "min": 0,
+          "max": 255,
+          "skew": -4.634322049694436,
+          "kurtosis": 21.846810936995286
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 10631.062834268745,
+        "edge_std": 190.15625152892224,
+        "noise_ratio": 0.16910561418912876,
+        "is_high_noise": true
+      },
+      "entropy": {
+        "red_entropy": 2.4259376463918048,
+        "green_entropy": 2.424021215446177,
+        "blue_entropy": 2.2188429435551296,
+        "mean_entropy": 2.35626726846437
+      },
+      "blockiness": {
+        "blockiness_score": 1241.880859375,
+        "is_blocky": false
+      },
+      "pixel_patterns": {
+        "unique_colors": 1112,
+        "total_pixels": 312984,
+        "color_diversity": 0.003552897272704036,
+        "color_correlation": {
+          "rg": 0.948631565096249,
+          "rb": 0.8350278454300584,
+          "gb": 0.9457341536641188
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.028579412028193474,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.6944685938890934,
+          "green": 0.7622420179302272,
+          "blue": 0.6910849424629196,
+          "average": 0.7159318514274134
+        },
+        "is_suspicious": false,
+        "confidence": 0.7875250365701548
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 0.3133227257623393,
+          "green": 0.2788609002377118,
+          "blue": 0.3149106663599417,
+          "average": 0.30236476411999763
+        },
+        "is_suspicious": false,
+        "confidence": 0.39527047176000474
+      },
+      "size_analysis": {
+        "file_size_bytes": 41259,
+        "expected_raw_size_bytes": 1251936,
+        "compression_ratio": 30.34334327055915,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 1.2460379600524902,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 0,
+      "overall_confidence": 0.34569887708253993,
+      "is_likely_stego": false
+    }
+  },
+  {
+    "task_id": "95dfe1b3-71dd-4b4a-849c-2c8649b7640b",
+    "filename": "屏幕截图 2026-05-20 102001.png",
+    "mode": "all",
+    "created_at": "2026-05-20T07:32:25.490446",
+    "risk": {
+      "level": "medium",
+      "ai_probability": 0.8154517369543242,
+      "confidence": 0.8571428571428571,
+      "summary": "综合风险分 48.30，视觉模型分数 81.55%",
+      "score": 48.3,
+      "evidence_summary": [
+        "视觉模型分数 81.55%",
+        "自然纹理与边缘复杂度较高",
+        "存在轻度隐写异常，但不能直接等同 AI 水印"
+      ],
+      "explanation": {
+        "level_label": "中风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "待进一步判别"
+        ],
+        "level_description": "存在部分可疑信号，但还不足以单独作为定性结论。",
+        "primary_reason": "视觉模型分数 81.55%",
+        "action": "建议补充原图来源、拍摄链路或更多相邻样本再判断。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "未发现明确生成器标识"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 81.55%",
+              "自然纹理与边缘复杂度较高"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "存在轻度隐写异常，但不能直接等同 AI 水印"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.8154517369543242,
+      "confidence": 0.8571428571428571,
+      "features": {
+        "color_entropy": 7.475475746754074,
+        "noise_level": 191.31492641789407,
+        "edge_quality": 763.0448276422158,
+        "color_abnormality": 29.76981614304802,
+        "texture_score": 442.4925537109375,
+        "blockiness": 167.65796322879427,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 1,
+        "noise_level": 0.9420995094526271,
+        "edge_quality": 1,
+        "color_abnormality": 0.49424540357620045,
+        "texture_score": 1,
+        "blockiness": 1,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": true,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2026-05-20 102001.png",
+      "file_size": 2414423,
+      "image_info": {
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          1435,
+          1077
+        ],
+        "width": 1435,
+        "height": 1077,
+        "error": "'PngImageFile' object has no attribute 'bits'"
+      },
+      "exif": {},
+      "png_chunks": {
+        "IHDR": {
+          "description": "Image header",
+          "length": 13
+        },
+        "sRGB": {
+          "description": "Standard RGB",
+          "length": 1
+        },
+        "gAMA": {
+          "description": "Gamma",
+          "length": 4
+        },
+        "pHYs": {
+          "description": "Physical dimensions",
+          "length": 9
+        },
+        "IDAT": {
+          "description": "Image data",
+          "length": 55099
+        },
+        "IEND": {
+          "description": "Image end",
+          "length": 0
+        }
+      }
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 110.00045875269736,
+          "std": 55.895831122234064,
+          "min": 2,
+          "max": 255,
+          "skew": 0.0644541530548162,
+          "kurtosis": -0.9794966728835992
+        },
+        "green": {
+          "mean": 87.39436750038014,
+          "std": 50.03919104871984,
+          "min": 0,
+          "max": 255,
+          "skew": 0.5351396219269018,
+          "kurtosis": -0.4160648575728563
+        },
+        "blue": {
+          "mean": 76.2940559497119,
+          "std": 46.233209400119414,
+          "min": 0,
+          "max": 251,
+          "skew": 0.8296590021317815,
+          "kurtosis": 0.10572817196907103
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 191.31492641789407,
+        "edge_std": 56.20923353693774,
+        "noise_ratio": 0.5446188200343254,
+        "is_high_noise": true
+      },
+      "entropy": {
+        "red_entropy": 7.662989270367941,
+        "green_entropy": 7.458196697745841,
+        "blue_entropy": 7.305241272148441,
+        "mean_entropy": 7.475475746754074
+      },
+      "blockiness": {
+        "blockiness_score": 167.6555633544922,
+        "is_blocky": false
+      },
+      "pixel_patterns": {
+        "unique_colors": 210155,
+        "total_pixels": 1545495,
+        "color_diversity": 0.1359790876062362,
+        "color_correlation": {
+          "rg": 0.9438401016362719,
+          "rb": 0.9039975784065086,
+          "gb": 0.9778807378025752
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.028056330978870392,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.9999979126719167,
+          "green": 0.9999922584848838,
+          "blue": 0.999995930148979,
+          "average": 0.9999953671019265
+        },
+        "is_suspicious": true,
+        "confidence": 1.0
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 0.000850536559484194,
+          "green": 0.0016379865350583667,
+          "blue": 0.001187645382223823,
+          "average": 0.0012253894922554613
+        },
+        "is_suspicious": true,
+        "confidence": 0.997549221015489
+      },
+      "size_analysis": {
+        "file_size_bytes": 2414423,
+        "expected_raw_size_bytes": 6181980,
+        "compression_ratio": 2.5604378354579955,
+        "is_suspicious": false,
+        "confidence": 0.7439562164542004
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 0.4768217206001282,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 2,
+      "overall_confidence": 0.7103763593674224,
+      "is_likely_stego": true
+    }
+  },
+  {
+    "task_id": "b719e9e3-8b40-4024-97e7-69a6c5607e57",
+    "filename": "屏幕截图 2025-07-25 171635.png",
+    "mode": "all",
+    "created_at": "2026-05-20T07:32:11.109928",
+    "risk": {
+      "level": "medium",
+      "ai_probability": 0.8310363827554035,
+      "confidence": 0.8571428571428571,
+      "summary": "综合风险分 47.93，视觉模型分数 83.10%",
+      "score": 47.93,
+      "evidence_summary": [
+        "视觉模型分数 83.10%",
+        "自然纹理与边缘复杂度较高"
+      ],
+      "explanation": {
+        "level_label": "中风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "待进一步判别"
+        ],
+        "level_description": "存在部分可疑信号，但还不足以单独作为定性结论。",
+        "primary_reason": "视觉模型分数 83.10%",
+        "action": "建议补充原图来源、拍摄链路或更多相邻样本再判断。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "未发现明确生成器标识"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 83.10%",
+              "自然纹理与边缘复杂度较高"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "未发现足以单独定性的水印证据"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.8310363827554035,
+      "confidence": 0.8571428571428571,
+      "features": {
+        "color_entropy": 6.08048510340538,
+        "noise_level": 580.7767979030073,
+        "edge_quality": 813.321526372032,
+        "color_abnormality": 55.666358984430396,
+        "texture_score": 581.4658813476562,
+        "blockiness": 330.6046809274808,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 0.5402425517026899,
+        "noise_level": 1,
+        "edge_quality": 1,
+        "color_abnormality": 1,
+        "texture_score": 1,
+        "blockiness": 1,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": true,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2025-07-25 171635.png",
+      "file_size": 738032,
+      "image_info": {
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          685,
+          892
+        ],
+        "width": 685,
+        "height": 892,
+        "error": "'PngImageFile' object has no attribute 'bits'"
+      },
+      "exif": {},
+      "png_chunks": {
+        "IHDR": {
+          "description": "Image header",
+          "length": 13
+        },
+        "sRGB": {
+          "description": "Standard RGB",
+          "length": 1
+        },
+        "gAMA": {
+          "description": "Gamma",
+          "length": 4
+        },
+        "pHYs": {
+          "description": "Physical dimensions",
+          "length": 9
+        },
+        "IDAT": {
+          "description": "Image data",
+          "length": 17108
+        },
+        "IEND": {
+          "description": "Image end",
+          "length": 0
+        }
+      }
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 71.03158652744591,
+          "std": 66.58323688015776,
+          "min": 0,
+          "max": 254,
+          "skew": 0.3429278369878995,
+          "kurtosis": -1.3809068757322467
+        },
+        "green": {
+          "mean": 58.384470230107034,
+          "std": 56.39777130316192,
+          "min": 0,
+          "max": 241,
+          "skew": 0.5061923228735292,
+          "kurtosis": -1.0199617734267257
+        },
+        "blue": {
+          "mean": 51.60054990016693,
+          "std": 55.325007002398536,
+          "min": 0,
+          "max": 255,
+          "skew": 1.031639254911677,
+          "kurtosis": 0.5477627404078023
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 580.7767979030073,
+        "edge_std": 83.80558077426011,
+        "noise_ratio": 0.9439569172236294,
+        "is_high_noise": true
+      },
+      "entropy": {
+        "red_entropy": 6.144128208782131,
+        "green_entropy": 6.060459465982249,
+        "blue_entropy": 6.036867635451758,
+        "mean_entropy": 6.08048510340538
+      },
+      "blockiness": {
+        "blockiness_score": 330.6031494140625,
+        "is_blocky": false
+      },
+      "pixel_patterns": {
+        "unique_colors": 209514,
+        "total_pixels": 611020,
+        "color_diversity": 0.3428922130208504,
+        "color_correlation": {
+          "rg": 0.9260550548341241,
+          "rb": 0.833686374639783,
+          "gb": 0.9470217972171742
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.05667923390865326,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.9309326699126279,
+          "green": 0.9305111408947022,
+          "blue": 0.9312049696717954,
+          "average": 0.9308829268263752
+        },
+        "is_suspicious": true,
+        "confidence": 1.0
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 0.15346797158849135,
+          "green": 0.1539278583352427,
+          "blue": 0.15317010899806882,
+          "average": 0.15352197964060096
+        },
+        "is_suspicious": false,
+        "confidence": 0.692956040718798
+      },
+      "size_analysis": {
+        "file_size_bytes": 738032,
+        "expected_raw_size_bytes": 2444080,
+        "compression_ratio": 3.311617924426041,
+        "is_suspicious": false,
+        "confidence": 0.6688382075573959
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 0.626197099685669,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 1,
+      "overall_confidence": 0.6154485620690485,
+      "is_likely_stego": false
+    }
+  },
+  {
+    "task_id": "17abb148-113f-474e-8951-714c09c4c21f",
+    "filename": "A casual iPhone ....png",
+    "mode": "all",
+    "created_at": "2026-05-20T07:31:39.180243",
+    "risk": {
+      "level": "medium",
+      "ai_probability": 0.8242539274340425,
+      "confidence": 0.8571428571428571,
+      "summary": "综合风险分 48.83，视觉模型分数 82.43%",
+      "score": 48.83,
+      "evidence_summary": [
+        "视觉模型分数 82.43%",
+        "自然纹理与边缘复杂度较高",
+        "存在轻度隐写异常，但不能直接等同 AI 水印"
+      ],
+      "explanation": {
+        "level_label": "中风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "待进一步判别"
+        ],
+        "level_description": "存在部分可疑信号，但还不足以单独作为定性结论。",
+        "primary_reason": "视觉模型分数 82.43%",
+        "action": "建议补充原图来源、拍摄链路或更多相邻样本再判断。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "未发现明确生成器标识"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 82.43%",
+              "自然纹理与边缘复杂度较高"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "存在轻度隐写异常，但不能直接等同 AI 水印"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.8242539274340425,
+      "confidence": 0.8571428571428571,
+      "features": {
+        "color_entropy": 7.478832227722211,
+        "noise_level": 237.8349192639555,
+        "edge_quality": 751.8758205935964,
+        "color_abnormality": 29.80104731574467,
+        "texture_score": 442.3838195800781,
+        "blockiness": 173.6472087191358,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 1,
+        "noise_level": 1,
+        "edge_quality": 1,
+        "color_abnormality": 0.4950261828936167,
+        "texture_score": 1,
+        "blockiness": 1,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": true,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\A casual iPhone ....png",
+      "file_size": 2269231,
+      "image_info": {
+        "format": "PNG",
+        "mode": "RGB",
+        "size": [
+          1448,
+          1086
+        ],
+        "width": 1448,
+        "height": 1086,
+        "error": "'PngImageFile' object has no attribute 'bits'"
+      },
+      "exif": {},
+      "png_chunks": {
+        "IHDR": {
+          "description": "Image header",
+          "length": 13
+        },
+        "caBX": {
+          "description": "Unknown",
+          "length": 29087
+        },
+        "IDAT": {
+          "description": "Image data",
+          "length": 11443
+        },
+        "IEND": {
+          "description": "Image end",
+          "length": 0
+        }
+      }
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 110.18286987576691,
+          "std": 55.98644389056914,
+          "min": 4,
+          "max": 255,
+          "skew": 0.0645954105689277,
+          "kurtosis": -0.97885074052475
+        },
+        "green": {
+          "mean": 87.55509917788427,
+          "std": 50.128990982365465,
+          "min": 1,
+          "max": 255,
+          "skew": 0.5351105840338984,
+          "kurtosis": -0.41477115082541394
+        },
+        "blue": {
+          "mean": 76.4368456396325,
+          "std": 46.317405324201765,
+          "min": 0,
+          "max": 252,
+          "skew": 0.8280762210488073,
+          "kurtosis": 0.10452887065384253
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 237.8349192639555,
+        "edge_std": 57.48067430352357,
+        "noise_ratio": 0.5445849775662419,
+        "is_high_noise": true
+      },
+      "entropy": {
+        "red_entropy": 7.665588465259186,
+        "green_entropy": 7.4615649298144895,
+        "blue_entropy": 7.309343288092953,
+        "mean_entropy": 7.478832227722211
+      },
+      "blockiness": {
+        "blockiness_score": 173.64483642578125,
+        "is_blocky": false
+      },
+      "pixel_patterns": {
+        "unique_colors": 213132,
+        "total_pixels": 1572528,
+        "color_diversity": 0.13553462959006135,
+        "color_correlation": {
+          "rg": 0.9436941388726133,
+          "rb": 0.9041244000403891,
+          "gb": 0.9779589688512024
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.03044229932129383,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.9999999808826494,
+          "green": 0.9999999834765138,
+          "blue": 0.9999995160733453,
+          "average": 0.9999998268108361
+        },
+        "is_suspicious": true,
+        "confidence": 1.0
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 8.139759673597702e-05,
+          "green": 7.567432821542486e-05,
+          "blue": 0.0004095316585778219,
+          "average": 0.00018886786117640794
+        },
+        "is_suspicious": true,
+        "confidence": 0.9996222642776472
+      },
+      "size_analysis": {
+        "file_size_bytes": 2269231,
+        "expected_raw_size_bytes": 4717584,
+        "compression_ratio": 2.0789351106167686,
+        "is_suspicious": false,
+        "confidence": 0.7921064889383231
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 0.5177972912788391,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 2,
+      "overall_confidence": 0.7229321883039926,
+      "is_likely_stego": true
+    }
+  },
+  {
+    "filename": "history.png",
+    "mode": "all",
+    "risk": {
+      "level": "low"
+    }
+  }
+]

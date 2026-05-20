@@ -15,6 +15,35 @@ class AIDetector:
             'texture_score': 0.15,
             'metadata_score': 0.10,
         }
+
+    def estimate_ai_probability(self, normalized_features: Dict[str, float], context: Dict[str, Any]) -> float:
+        weighted_sum = 0.0
+        for key, weight in self.features_weights.items():
+            weighted_sum += float(normalized_features.get(key, 0.0)) * weight
+
+        document_penalty = 0.0
+        if context.get('is_document_like'):
+            document_penalty += 0.28
+        if float(context.get('color_diversity', 0.0) or 0.0) < 0.001:
+            document_penalty += 0.08
+        if float(context.get('mean_entropy', 0.0) or 0.0) < 2.0:
+            document_penalty += 0.06
+        if float(context.get('avg_correlation', 0.0) or 0.0) > 0.98:
+            document_penalty += 0.05
+
+        camera_penalty = 0.0
+        if context.get('has_camera_markers') and not context.get('has_strong_ai_metadata'):
+            camera_penalty += 0.12
+        if 0.08 <= float(context.get('noise_ratio', 0.0) or 0.0) <= 0.35:
+            camera_penalty += 0.03
+
+        metadata_boost = 0.0
+        if context.get('has_strong_ai_metadata'):
+            metadata_boost += 0.25
+        metadata_boost += float(normalized_features.get('metadata_score', 0.0)) * 0.15
+
+        probability = weighted_sum - document_penalty - camera_penalty + metadata_boost
+        return float(min(max(probability, 0.0), 1.0))
     
     def analyze_edge_quality(self, image_path: str) -> float:
         img = Image.open(image_path).convert('RGB')
@@ -85,7 +114,7 @@ class AIDetector:
         
         return float(entropy_sum / 3)
     
-    def calculate_ai_score(self, image_path: str, metadata_indicators: List[str] = []) -> Dict[str, Any]:
+    def calculate_ai_score(self, image_path: str, metadata_indicators: List[str] = [], context: Dict[str, Any] | None = None) -> Dict[str, Any]:
         features = {}
         
         features['color_entropy'] = self.analyze_entropy(image_path)
@@ -127,12 +156,38 @@ class AIDetector:
         for key, value in features.items():
             min_val, max_val = thresholds[key]
             normalized_features[key] = min(max((value - min_val) / (max_val - min_val), 0), 1)
-        
-        ai_probability = 0.0
-        for key, weight in self.features_weights.items():
-            ai_probability += normalized_features.get(key, 0) * weight
-        
-        ai_probability = min(max(ai_probability, 0), 1)
+
+        color_diversity = 0.0
+        avg_correlation = 0.0
+        try:
+            pixel_values = img_array.reshape(-1, 3)
+            unique_colors = len(np.unique(pixel_values, axis=0))
+            total_pixels = pixel_values.shape[0]
+            color_diversity = unique_colors / total_pixels if total_pixels > 0 else 0.0
+            r = img_array[:, :, 0].flatten()
+            g = img_array[:, :, 1].flatten()
+            b = img_array[:, :, 2].flatten()
+            correlations = [
+                float(np.corrcoef(r, g)[0, 1]),
+                float(np.corrcoef(r, b)[0, 1]),
+                float(np.corrcoef(g, b)[0, 1]),
+            ]
+            avg_correlation = sum(correlations) / len(correlations)
+        except Exception:
+            avg_correlation = 0.0
+
+        derived_context = {
+            'is_document_like': normalized_features.get('edge_quality', 0.0) > 0.9 and normalized_features.get('texture_score', 0.0) > 0.9 and normalized_features.get('blockiness', 0.0) > 0.9 and normalized_features.get('color_entropy', 0.0) == 0.0 and normalized_features.get('color_abnormality', 0.0) == 0.0,
+            'has_camera_markers': False,
+            'has_strong_ai_metadata': bool(metadata_indicators),
+            'color_diversity': color_diversity,
+            'mean_entropy': features['color_entropy'],
+            'avg_correlation': avg_correlation,
+            'noise_ratio': float(np.std(gray) / np.mean(gray)) if float(np.mean(gray)) > 0 else 0.0,
+        }
+        merged_context = derived_context | (context or {})
+
+        ai_probability = self.estimate_ai_probability(normalized_features, merged_context)
         
         confidence = 0.0
         active_features = sum(1 for v in normalized_features.values() if v > 0.3)
@@ -147,9 +202,9 @@ class AIDetector:
             'metadata_indicators': metadata_indicators,
         }
     
-    def detect(self, image_path: str, metadata_indicators: List[str] = []) -> Dict[str, Any]:
+    def detect(self, image_path: str, metadata_indicators: List[str] = [], context: Dict[str, Any] | None = None) -> Dict[str, Any]:
         try:
-            return self.calculate_ai_score(image_path, metadata_indicators)
+            return self.calculate_ai_score(image_path, metadata_indicators, context)
         except Exception as e:
             return {
                 'error': str(e),

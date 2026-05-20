@@ -1,0 +1,5 @@
+class ErrorCode:
+    SUCCESS = 0
+    BAD_REQUEST = 1001
+    INTERNAL_ERROR = 1000
+    NOT_FOUND = 3000
