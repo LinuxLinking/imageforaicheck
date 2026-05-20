@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Type
 from uuid import uuid4
@@ -69,11 +70,14 @@ class AnalysisService:
         ai_detector_factory: Type[AIDetector] = AIDetector,
         pixel_analyzer_factory: Type[PixelAnalyzer] = PixelAnalyzer,
         steg_detector_factory: Type[StegDetector] = StegDetector,
+        ml_model_path: str | None = None,
     ):
         self.metadata_extractor_factory = metadata_extractor_factory
         self.ai_detector_factory = ai_detector_factory
         self.pixel_analyzer_factory = pixel_analyzer_factory
         self.steg_detector_factory = steg_detector_factory
+        self.ml_model_path = ml_model_path
+        self._ml_classifier = None
 
     def analyze(self, image_path: str, mode: str, filename: Optional[str] = None) -> Dict[str, Any]:
         result = self.analyze_domain(image_path, mode, filename)
@@ -196,9 +200,27 @@ class AnalysisService:
     def _run_ai_detection(self, image_path: str, metadata_indicators: List[str], ai_context: Dict[str, Any]) -> Dict[str, Any]:
         detector = self.ai_detector_factory()
         try:
-            return detector.detect(image_path, metadata_indicators, ai_context)
+            result = detector.detect(image_path, metadata_indicators, ai_context)
         except TypeError:
-            return detector.detect(image_path, metadata_indicators)
+            result = detector.detect(image_path, metadata_indicators)
+
+        if self.ml_model_path and os.path.exists(self.ml_model_path):
+            if self._ml_classifier is None:
+                from ..modules.ml_classifier import MLClassifier
+
+                self._ml_classifier = MLClassifier(self.ml_model_path)
+            if self._ml_classifier is not None and self._ml_classifier.is_available():
+                width = int(ai_context.get("width", 0) or 0)
+                height = int(ai_context.get("height", 0) or 0)
+                normalized_features = result.get("normalized_features", {}) or {}
+                ml_probability = float(self._ml_classifier.predict_probability(normalized_features, width, height))
+                result = dict(result)
+                result["ai_probability_raw"] = float(result.get("ai_probability", 0.0) or 0.0)
+                result["ai_probability"] = ml_probability
+                result["ml_applied"] = True
+                result["ml_model_path"] = self.ml_model_path
+                result["is_likely_ai"] = ml_probability > 0.6
+        return result
 
     def _build_ai_context(self, metadata: Dict[str, Any], pixel_analysis: Optional[Dict[str, Any]]) -> Dict[str, Any]:
         image_info = metadata.get("image_info", {})
@@ -241,13 +263,14 @@ class AnalysisService:
         ai_probability = float(ai_detection.get("ai_probability", 0.0))
         confidence = float(ai_detection.get("confidence", 0.0))
 
-        weighted_score = (
-            metadata_signals["score"] * 0.5
-            + visual_signals["score"] * 0.4
-            + watermark_signals["score"] * 0.1
-        )
-        weighted_score += min(max((ai_probability - 0.5) * 20, -8), 8)
-        weighted_score += min(max((confidence - 0.5) * 10, -5), 5)
+        # 大幅提高AI风险概率权重，让AI概率直接成为主要依据
+        ai_weighted = ai_probability * 100.0 * 0.6  # AI概率占60%权重（0-60分）
+        metadata_weighted = metadata_signals["score"] * 0.25  # 元数据占25%
+        visual_weighted = visual_signals["score"] * 0.1  # 视觉信号占10%
+        watermark_weighted = watermark_signals["score"] * 0.05  # 隐写占5%
+        
+        weighted_score = ai_weighted + metadata_weighted + visual_weighted + watermark_weighted
+        weighted_score += min(max((confidence - 0.5) * 8, -3), 3)
 
         if metadata_signals["has_strong_ai_metadata"]:
             weighted_score = max(weighted_score, 82.0)
@@ -259,16 +282,22 @@ class AnalysisService:
             weighted_score = min(weighted_score, 58.0)
 
         has_counter_evidence = visual_signals["is_document_like"] or metadata_signals["has_camera_markers"]
-        if ai_probability >= 0.65 and confidence >= 0.6 and not has_counter_evidence:
-            weighted_score = max(weighted_score, 46.0)
-        elif ai_probability >= 0.8 and confidence >= 0.7 and not has_counter_evidence:
-            weighted_score = max(weighted_score, 55.0)
+        
+        # 调整最小分数，确保AI概率在50%以上时至少能到中等风险（当没有反证时）
+        if ai_probability >= 0.50 and confidence >= 0.5 and not has_counter_evidence:
+            weighted_score = max(weighted_score, 45.0)
+        if ai_probability >= 0.60 and confidence >= 0.55 and not has_counter_evidence:
+            weighted_score = max(weighted_score, 52.0)
+        if ai_probability >= 0.75 and confidence >= 0.65 and not has_counter_evidence:
+            weighted_score = max(weighted_score, 65.0)
+        if ai_probability >= 0.85 and confidence >= 0.7 and not has_counter_evidence:
+            weighted_score = max(weighted_score, 78.0)
 
         score = round(min(max(weighted_score, 0.0), 100.0), 2)
 
         if metadata_signals["has_strong_ai_metadata"]:
             level = "high"
-        elif score >= 75:
+        elif ai_probability >= 0.80 and score >= 70 and confidence >= 0.65 and not visual_signals.get("is_screenshot_like", False):
             level = "high"
         elif score >= 45:
             level = "medium"
@@ -418,6 +447,16 @@ class AnalysisService:
         width = int(metadata.get("image_info", {}).get("width", 0) or 0)
         height = int(metadata.get("image_info", {}).get("height", 0) or 0)
         aspect_ratio = width / height if width and height else 1.0
+        exif = metadata.get("exif", {}) or {}
+        exif_present = isinstance(exif, dict) and len(exif) > 0
+        common_screenshot_widths = {720, 1080, 1125, 1170, 1242, 1284, 1440, 1536}
+        is_screenshot_like = (
+            (not exif_present)
+            and width > 0
+            and height > 0
+            and (max(width, height) / max(min(width, height), 1)) >= 1.55
+            and (width in common_screenshot_widths or height in common_screenshot_widths or max(width, height) <= 5000)
+        )
 
         score = float(ai_detection.get("ai_probability", 0.0)) * 100.0
         evidence = [f"视觉模型分数 {float(ai_detection.get('ai_probability', 0.0)):.2%}"]
@@ -430,6 +469,9 @@ class AnalysisService:
         if is_document_like:
             score = min(score, 18.0)
             evidence.append("图像更像文档/流程图/截图")
+        elif is_screenshot_like:
+            score = min(score, 62.0)
+            evidence.append("图像更像手机截图，降低高风险判定")
 
         if normalized.get("texture_score", 0.0) and normalized.get("edge_quality", 0.0) and entropy > 5.5 and color_diversity > 0.01:
             score += 10.0
@@ -446,6 +488,7 @@ class AnalysisService:
             "score": min(max(score, 0.0), 100.0),
             "evidence": evidence,
             "is_document_like": is_document_like,
+            "is_screenshot_like": is_screenshot_like,
         }
 
     def _analyze_watermark_signals(self, steg_detection: Dict[str, Any]) -> Dict[str, Any]:

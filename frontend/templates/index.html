@@ -5,55 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 图片检测工具</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fb; color: #1f2937; }
-        .page { max-width: 1120px; margin: 0 auto; padding: 24px; }
-        .card { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08); }
-        .layout { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
-        .mode-row, .tab-row, .action-row { display: flex; flex-wrap: wrap; gap: 12px; }
-        .mode-button, .nav-link, .action-button { border: 1px solid #dbe2f0; background: #fff; border-radius: 12px; padding: 10px 16px; cursor: pointer; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; margin: 0; background: #f5f7fb; color: #1f2937; line-height: 1.5; }
+        .page { max-width: 1120px; margin: 0 auto; padding: 16px; }
+        .card { background: #fff; border-radius: 16px; padding: 16px; box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08); }
+        .layout { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+        .mode-row, .tab-row, .action-row { display: flex; flex-wrap: wrap; gap: 10px; }
+        .mode-button, .nav-link, .action-button { border: 1px solid #dbe2f0; background: #fff; border-radius: 12px; padding: 12px 16px; cursor: pointer; font-size: 15px; min-height: 44px; }
         .mode-button.active, .nav-link.active { background: #2563eb; color: #fff; border-color: #2563eb; }
         .tab-content { display: none; margin-top: 16px; }
         .tab-content.active { display: block; }
         .muted { color: #6b7280; }
-        .upload-area { border: 2px dashed #93c5fd; border-radius: 16px; padding: 28px; background: #eff6ff; text-align: center; cursor: pointer; }
+        .upload-area { border: 2px dashed #93c5fd; border-radius: 16px; padding: 24px 16px; background: #eff6ff; text-align: center; cursor: pointer; min-height: 140px; display: flex; flex-direction: column; justify-content: center; }
         .upload-area:hover { border-color: #2563eb; background: #dbeafe; }
-        .primary-button { background: #2563eb; color: #fff; border: none; border-radius: 12px; padding: 12px 18px; cursor: pointer; }
+        .upload-area:active { transform: scale(0.98); }
+        .primary-button { background: #2563eb; color: #fff; border: none; border-radius: 12px; padding: 14px 20px; cursor: pointer; font-size: 16px; font-weight: 600; min-height: 48px; }
         .primary-button:disabled { background: #94a3b8; cursor: not-allowed; }
-        .secondary-box { margin-top: 16px; padding: 14px 16px; border-radius: 12px; background: #f8fafc; border: 1px solid #e2e8f0; }
-        .risk-card { margin: 18px 0; padding: 18px; border-radius: 16px; background: linear-gradient(135deg, #eff6ff, #f5f3ff); border: 1px solid #dbeafe; }
+        .secondary-box { margin-top: 16px; padding: 14px; border-radius: 12px; background: #f8fafc; border: 1px solid #e2e8f0; }
+        .risk-card { margin: 18px 0; padding: 16px; border-radius: 16px; background: linear-gradient(135deg, #eff6ff, #f5f3ff); border: 1px solid #dbeafe; }
         .risk-title { font-size: 14px; color: #64748b; margin-bottom: 8px; }
         .risk-header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-        .risk-level { font-size: 28px; font-weight: bold; margin-bottom: 8px; }
+        .risk-level { font-size: 24px; font-weight: bold; margin-bottom: 8px; }
         .risk-high { color: #b91c1c; }
         .risk-medium { color: #b45309; }
         .risk-low { color: #15803d; }
         .risk-unknown { color: #475569; }
-        .risk-badge { display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: bold; }
+        .risk-badge { display: inline-flex; align-items: center; padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: bold; }
         .badge-high { background: #fee2e2; color: #991b1b; }
         .badge-medium { background: #fef3c7; color: #92400e; }
         .badge-low { background: #dcfce7; color: #166534; }
         .badge-unknown { background: #e2e8f0; color: #334155; }
-        .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-        .info-tag { display: inline-flex; align-items: center; padding: 6px 10px; border-radius: 999px; background: #eef2ff; color: #3730a3; font-size: 12px; font-weight: 600; }
-        .risk-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+        .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+        .info-tag { display: inline-flex; align-items: center; padding: 8px 12px; border-radius: 999px; background: #eef2ff; color: #3730a3; font-size: 13px; font-weight: 600; }
+        .risk-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
         .risk-meta-item { background: white; border-radius: 12px; padding: 12px; border: 1px solid #e2e8f0; }
-        .evidence-list { margin-top: 14px; padding-left: 18px; color: #475569; }
+        .evidence-list { margin-top: 14px; padding-left: 20px; color: #475569; }
         .explain-panel { margin-top: 16px; background: #ffffff; border: 1px solid #dbeafe; border-radius: 14px; padding: 16px; }
         .explain-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px; }
-        .explain-box { background: #f8fafc; border-radius: 12px; padding: 12px; border: 1px solid #e2e8f0; }
-        .explain-box h4 { margin: 0 0 8px 0; font-size: 14px; }
-        .group-list { margin: 8px 0 0 18px; color: #475569; }
+        .explain-box { background: #f8fafc; border-radius: 12px; padding: 14px; border: 1px solid #e2e8f0; }
+        .explain-box h4 { margin: 0 0 8px 0; font-size: 15px; }
+        .group-list { margin: 8px 0 0 20px; color: #475569; }
         .metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 14px; }
-        .metric-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; }
-        .metric-label { font-size: 13px; color: #64748b; margin-bottom: 6px; }
-        .metric-value { font-size: 18px; font-weight: bold; }
-        .status-text { margin-top: 10px; color: #475569; }
-        .progress { margin-top: 16px; height: 10px; border-radius: 999px; background: #e2e8f0; overflow: hidden; }
+        .metric-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; }
+        .metric-label { font-size: 14px; color: #64748b; margin-bottom: 8px; }
+        .metric-value { font-size: 20px; font-weight: bold; }
+        .status-text { margin-top: 12px; color: #475569; }
+        .progress { margin-top: 16px; height: 12px; border-radius: 999px; background: #e2e8f0; overflow: hidden; }
         .progress-bar { height: 100%; width: 0; background: linear-gradient(90deg, #2563eb, #7c3aed); transition: width 0.25s ease; }
         .hidden { display: none; }
-        #toast { position: fixed; top: 24px; right: 24px; background: #111827; color: #fff; border-radius: 12px; padding: 12px 16px; display: none; }
-        #history-list > div { padding: 12px; border-radius: 12px; background: #f8fafc; margin-bottom: 10px; }
-        @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+        #toast { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); background: #111827; color: #fff; border-radius: 12px; padding: 12px 20px; display: none; z-index: 1000; max-width: 90%; }
+        #history-list > div { padding: 14px; border-radius: 12px; background: #f8fafc; margin-bottom: 10px; cursor: pointer; }
+        #history-list > div:active { background: #e2e8f0; }
+        h1 { font-size: 24px; margin: 0 0 8px 0; }
+        h2 { font-size: 20px; margin: 0 0 8px 0; }
+        h3 { font-size: 18px; margin: 0 0 8px 0; }
+        .card-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        
+        /* 移动端响应式设计 */
+        @media (max-width: 768px) {
+            .page { padding: 12px; }
+            .card { padding: 14px; border-radius: 14px; }
+            .layout { grid-template-columns: 1fr; }
+            .risk-meta { grid-template-columns: 1fr; }
+            .explain-grid { grid-template-columns: 1fr; }
+            .metric-grid { grid-template-columns: 1fr; }
+            .mode-row, .tab-row, .action-row { gap: 8px; }
+            .mode-button, .nav-link, .action-button { padding: 10px 14px; font-size: 14px; flex: 1 1 45%; text-align: center; }
+            .primary-button { width: 100%; padding: 14px; font-size: 16px; }
+            .upload-area { padding: 20px 12px; min-height: 120px; }
+            .risk-level { font-size: 22px; }
+            .risk-badge { font-size: 13px; padding: 6px 12px; }
+            .info-tag { font-size: 12px; padding: 6px 10px; }
+            h1 { font-size: 22px; }
+            h2 { font-size: 18px; }
+            h3 { font-size: 17px; }
+            #toast { top: 12px; font-size: 14px; padding: 10px 16px; }
+        }
+        
+        @media (max-width: 480px) {
+            .page { padding: 10px; }
+            .card { padding: 12px; border-radius: 12px; }
+            .risk-card { padding: 14px; }
+            .mode-button, .nav-link, .action-button { flex: 1 1 100%; }
+            .explain-box { padding: 12px; }
+            .metric-card { padding: 14px; }
+        }
+        
+        /* 触摸优化 */
+        @media (hover: none) and (pointer: coarse) {
+            .mode-button:hover, .nav-link:hover, .action-button:hover { background: #fff; }
+            .mode-button:active, .nav-link:active, .action-button:active { transform: scale(0.96); }
+            .upload-area:hover { border-color: #93c5fd; background: #eff6ff; }
+        }
     </style>
 </head>
 <body>
@@ -63,8 +106,8 @@
             <h1>AI 图片检测工具</h1>
             <p class="muted">支持全部检测、AI 检测、元数据、像素分析、隐写检测</p>
             <div id="upload-area" class="upload-area" style="margin: 18px 0;">
-                <h3 style="margin-top: 0;">上传图片</h3>
-                <p class="muted">点击此区域选择图片，支持 PNG、JPG、JPEG</p>
+                <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">📷 上传图片</div>
+                <p class="muted" style="margin: 0 0 16px 0;">点击此区域选择图片，支持 PNG、JPG、JPEG</p>
                 <button id="upload-trigger" class="primary-button" type="button">选择图片</button>
                 <input id="file-input" type="file" accept="image/png,image/jpeg" style="display: none;">
             </div>

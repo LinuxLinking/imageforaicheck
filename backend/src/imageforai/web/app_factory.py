@@ -29,7 +29,8 @@ def create_app(test_config=None):
     os.makedirs(app.config["EXPORT_FOLDER"], exist_ok=True)
 
     if "ANALYSIS_SERVICE" not in app.config:
-        app.config["ANALYSIS_SERVICE"] = AnalysisService()
+        ml_model_path = app.config.get("ML_MODEL_PATH") or os.environ.get("IMAGEFORAI_ML_MODEL_PATH")
+        app.config["ANALYSIS_SERVICE"] = AnalysisService(ml_model_path=ml_model_path)
 
     if "HISTORY_REPOSITORY" not in app.config:
         app.config["HISTORY_REPOSITORY"] = JsonHistoryRepository(app.config["HISTORY_FILE"])

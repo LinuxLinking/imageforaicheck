@@ -16,10 +16,41 @@ class AIDetector:
             'metadata_score': 0.10,
         }
 
+    def _normalize_log(self, value: float, min_log: float, max_log: float) -> float:
+        v = float(value or 0.0)
+        if v < 0:
+            v = 0.0
+        if not math.isfinite(v):
+            return 0.0
+        log_v = float(math.log1p(v))
+        if not math.isfinite(log_v):
+            return 0.0
+        if max_log <= min_log:
+            return 0.0
+        return float(min(max((log_v - min_log) / (max_log - min_log), 0.0), 1.0))
+
+    def _is_screenshot_like(self, width: int, height: int, has_strong_ai_metadata: bool, has_camera_markers: bool) -> bool:
+        if has_strong_ai_metadata or has_camera_markers:
+            return False
+        w = int(width or 0)
+        h = int(height or 0)
+        if w <= 0 or h <= 0:
+            return False
+        aspect = max(w, h) / max(min(w, h), 1)
+        if aspect < 1.55:
+            return False
+        common_widths = {720, 1080, 1125, 1170, 1242, 1284, 1440, 1536}
+        if w in common_widths or h in common_widths:
+            return True
+        return max(w, h) <= 5000
+
     def estimate_ai_probability(self, normalized_features: Dict[str, float], context: Dict[str, Any]) -> float:
         weighted_sum = 0.0
         for key, weight in self.features_weights.items():
-            weighted_sum += float(normalized_features.get(key, 0.0)) * weight
+            value = float(normalized_features.get(key, 0.0) or 0.0)
+            if not math.isfinite(value):
+                value = 0.0
+            weighted_sum += value * weight
 
         document_penalty = 0.0
         if context.get('is_document_like'):
@@ -37,12 +68,18 @@ class AIDetector:
         if 0.08 <= float(context.get('noise_ratio', 0.0) or 0.0) <= 0.35:
             camera_penalty += 0.03
 
+        screenshot_penalty = 0.0
+        if context.get("is_screenshot_like") and not context.get("has_strong_ai_metadata"):
+            screenshot_penalty += 0.18
+
         metadata_boost = 0.0
         if context.get('has_strong_ai_metadata'):
             metadata_boost += 0.25
         metadata_boost += float(normalized_features.get('metadata_score', 0.0)) * 0.15
 
-        probability = weighted_sum - document_penalty - camera_penalty + metadata_boost
+        probability = weighted_sum - document_penalty - camera_penalty - screenshot_penalty + metadata_boost
+        if not math.isfinite(probability):
+            probability = 0.0
         return float(min(max(probability, 0.0), 1.0))
     
     def analyze_edge_quality(self, image_path: str) -> float:
@@ -64,7 +101,9 @@ class AIDetector:
         img = Image.open(image_path).convert('RGB')
         img_array = np.array(img)
         
-        r, g, b = img_array[:, :, 0], img_array[:, :, 1], img_array[:, :, 2]
+        r = img_array[:, :, 0].astype(np.int16)
+        g = img_array[:, :, 1].astype(np.int16)
+        b = img_array[:, :, 2].astype(np.int16)
         
         rg_diff = np.abs(r - g)
         rb_diff = np.abs(r - b)
@@ -134,8 +173,8 @@ class AIDetector:
             for j in range(0, width - block_size, block_size):
                 block = gray[i:i+block_size, j:j+block_size]
                 block_vars.append(np.var(block))
-        
-        features['blockiness'] = float(np.mean(block_vars))
+
+        features['blockiness'] = float(np.mean(block_vars)) if block_vars else 0.0
         
         if metadata_indicators:
             features['metadata_score'] = 1.0
@@ -143,19 +182,13 @@ class AIDetector:
             features['metadata_score'] = 0.0
         
         normalized_features = {}
-        thresholds = {
-            'color_entropy': (5.0, 7.0),
-            'noise_level': (50.0, 200.0),
-            'blockiness': (30.0, 100.0),
-            'edge_quality': (10.0, 50.0),
-            'color_abnormality': (10.0, 50.0),
-            'texture_score': (10.0, 50.0),
-            'metadata_score': (0.0, 1.0),
-        }
-        
-        for key, value in features.items():
-            min_val, max_val = thresholds[key]
-            normalized_features[key] = min(max((value - min_val) / (max_val - min_val), 0), 1)
+        normalized_features["color_entropy"] = float(min(max((float(features["color_entropy"]) - 2.0) / 6.0, 0.0), 1.0))
+        normalized_features["noise_level"] = self._normalize_log(features["noise_level"], min_log=2.0, max_log=7.6)
+        normalized_features["blockiness"] = self._normalize_log(features["blockiness"], min_log=3.2, max_log=7.6)
+        normalized_features["edge_quality"] = self._normalize_log(features["edge_quality"], min_log=4.0, max_log=8.6)
+        normalized_features["color_abnormality"] = self._normalize_log(features["color_abnormality"], min_log=2.4, max_log=5.6)
+        normalized_features["texture_score"] = self._normalize_log(features["texture_score"], min_log=4.8, max_log=7.0)
+        normalized_features["metadata_score"] = 1.0 if metadata_indicators else 0.0
 
         color_diversity = 0.0
         avg_correlation = 0.0
@@ -167,12 +200,14 @@ class AIDetector:
             r = img_array[:, :, 0].flatten()
             g = img_array[:, :, 1].flatten()
             b = img_array[:, :, 2].flatten()
-            correlations = [
-                float(np.corrcoef(r, g)[0, 1]),
-                float(np.corrcoef(r, b)[0, 1]),
-                float(np.corrcoef(g, b)[0, 1]),
-            ]
-            avg_correlation = sum(correlations) / len(correlations)
+            correlations = []
+            for a, bch in [(r, g), (r, b), (g, b)]:
+                if float(np.std(a)) < 1e-8 or float(np.std(bch)) < 1e-8:
+                    continue
+                corr = float(np.corrcoef(a, bch)[0, 1])
+                if not np.isnan(corr) and not np.isinf(corr):
+                    correlations.append(corr)
+            avg_correlation = sum(correlations) / len(correlations) if correlations else 0.0
         except Exception:
             avg_correlation = 0.0
 
@@ -184,10 +219,21 @@ class AIDetector:
             'mean_entropy': features['color_entropy'],
             'avg_correlation': avg_correlation,
             'noise_ratio': float(np.std(gray) / np.mean(gray)) if float(np.mean(gray)) > 0 else 0.0,
+            'is_screenshot_like': False,
         }
         merged_context = derived_context | (context or {})
+        merged_context["is_screenshot_like"] = self._is_screenshot_like(
+            int(merged_context.get("width", width) or 0),
+            int(merged_context.get("height", height) or 0),
+            bool(merged_context.get("has_strong_ai_metadata")),
+            bool(merged_context.get("has_camera_markers")),
+        )
 
         ai_probability = self.estimate_ai_probability(normalized_features, merged_context)
+        if merged_context.get("has_camera_markers") and not merged_context.get("has_strong_ai_metadata"):
+            ai_probability = float(min(ai_probability, 0.65))
+        if not math.isfinite(ai_probability):
+            ai_probability = 0.0
         
         confidence = 0.0
         active_features = sum(1 for v in normalized_features.values() if v > 0.3)
@@ -198,7 +244,7 @@ class AIDetector:
             'confidence': float(confidence),
             'features': features,
             'normalized_features': normalized_features,
-            'is_likely_ai': ai_probability > 0.6,
+            'is_likely_ai': ai_probability > 0.7,
             'metadata_indicators': metadata_indicators,
         }
     

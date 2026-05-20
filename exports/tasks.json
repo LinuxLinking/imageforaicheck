@@ -4,19 +4,19 @@
     "filename": "query.png",
     "mode": "all"
   },
-  "17abb148-113f-474e-8951-714c09c4c21f": {
-    "task_id": "17abb148-113f-474e-8951-714c09c4c21f",
-    "filename": "A casual iPhone ....png",
+  "d6d6af10-ec31-4b0d-9cbd-cc5e91d828c2": {
+    "task_id": "d6d6af10-ec31-4b0d-9cbd-cc5e91d828c2",
+    "filename": "屏幕截图 2026-05-20 102026.png",
     "mode": "all",
-    "created_at": "2026-05-20T07:31:39.180243",
+    "created_at": "2026-05-20T16:18:11.846882",
     "risk": {
       "level": "medium",
-      "ai_probability": 0.8242539274340425,
-      "confidence": 0.8571428571428571,
-      "summary": "综合风险分 48.83，视觉模型分数 82.43%",
-      "score": 48.83,
+      "ai_probability": 0.5002646183105055,
+      "confidence": 0.7142857142857143,
+      "summary": "综合风险分 45.00，视觉模型分数 50.03%",
+      "score": 45.0,
       "evidence_summary": [
-        "视觉模型分数 82.43%",
+        "视觉模型分数 50.03%",
         "自然纹理与边缘复杂度较高",
         "存在轻度隐写异常，但不能直接等同 AI 水印"
       ],
@@ -28,7 +28,7 @@
           "待进一步判别"
         ],
         "level_description": "存在部分可疑信号，但还不足以单独作为定性结论。",
-        "primary_reason": "视觉模型分数 82.43%",
+        "primary_reason": "视觉模型分数 50.03%",
         "action": "建议补充原图来源、拍摄链路或更多相邻样本再判断。",
         "evidence_groups": [
           {
@@ -40,7 +40,7 @@
           {
             "title": "视觉证据",
             "items": [
-              "视觉模型分数 82.43%",
+              "视觉模型分数 50.03%",
               "自然纹理与边缘复杂度较高"
             ]
           },
@@ -54,243 +54,41 @@
       }
     },
     "ai_detection": {
-      "ai_probability": 0.8242539274340425,
-      "confidence": 0.8571428571428571,
+      "ai_probability": 0.5002646183105055,
+      "confidence": 0.7142857142857143,
       "features": {
-        "color_entropy": 7.478832227722211,
-        "noise_level": 237.8349192639555,
-        "edge_quality": 751.8758205935964,
-        "color_abnormality": 29.80104731574467,
-        "texture_score": 442.3838195800781,
-        "blockiness": 173.6472087191358,
+        "color_entropy": 7.476608645434452,
+        "noise_level": 192.48734039888006,
+        "edge_quality": 762.0274261490067,
+        "color_abnormality": 22.61184908187153,
+        "texture_score": 442.81463623046875,
+        "blockiness": 168.33481929400224,
         "metadata_score": 0.0
       },
       "normalized_features": {
-        "color_entropy": 1,
-        "noise_level": 1,
-        "edge_quality": 1,
-        "color_abnormality": 0.4950261828936167,
-        "texture_score": 1,
-        "blockiness": 1,
+        "color_entropy": 0.9127681075724087,
+        "noise_level": 0.5830735867918537,
+        "blockiness": 0.43906316687048874,
+        "edge_quality": 0.5733247773451879,
+        "color_abnormality": 0.2380464580537574,
+        "texture_score": 0.5888213587696739,
         "metadata_score": 0.0
       },
-      "is_likely_ai": true,
+      "is_likely_ai": false,
       "metadata_indicators": []
     },
     "metadata": {
-      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\A casual iPhone ....png",
-      "file_size": 2269231,
-      "image_info": {
-        "format": "PNG",
-        "mode": "RGB",
-        "size": [
-          1448,
-          1086
-        ],
-        "width": 1448,
-        "height": 1086,
-        "error": "'PngImageFile' object has no attribute 'bits'"
-      },
-      "exif": {},
-      "png_chunks": {
-        "IHDR": {
-          "description": "Image header",
-          "length": 13
-        },
-        "caBX": {
-          "description": "Unknown",
-          "length": 29087
-        },
-        "IDAT": {
-          "description": "Image data",
-          "length": 11443
-        },
-        "IEND": {
-          "description": "Image end",
-          "length": 0
-        }
-      }
-    },
-    "pixel_analysis": {
-      "color_distribution": {
-        "red": {
-          "mean": 110.18286987576691,
-          "std": 55.98644389056914,
-          "min": 4,
-          "max": 255,
-          "skew": 0.0645954105689277,
-          "kurtosis": -0.97885074052475
-        },
-        "green": {
-          "mean": 87.55509917788427,
-          "std": 50.128990982365465,
-          "min": 1,
-          "max": 255,
-          "skew": 0.5351105840338984,
-          "kurtosis": -0.41477115082541394
-        },
-        "blue": {
-          "mean": 76.4368456396325,
-          "std": 46.317405324201765,
-          "min": 0,
-          "max": 252,
-          "skew": 0.8280762210488073,
-          "kurtosis": 0.10452887065384253
-        }
-      },
-      "noise_analysis": {
-        "laplacian_variance": 237.8349192639555,
-        "edge_std": 57.48067430352357,
-        "noise_ratio": 0.5445849775662419,
-        "is_high_noise": true
-      },
-      "entropy": {
-        "red_entropy": 7.665588465259186,
-        "green_entropy": 7.4615649298144895,
-        "blue_entropy": 7.309343288092953,
-        "mean_entropy": 7.478832227722211
-      },
-      "blockiness": {
-        "blockiness_score": 173.64483642578125,
-        "is_blocky": false
-      },
-      "pixel_patterns": {
-        "unique_colors": 213132,
-        "total_pixels": 1572528,
-        "color_diversity": 0.13553462959006135,
-        "color_correlation": {
-          "rg": 0.9436941388726133,
-          "rb": 0.9041244000403891,
-          "gb": 0.9779589688512024
-        }
-      },
-      "compression_artifacts": {
-        "high_low_freq_ratio": -0.03044229932129383,
-        "has_compression_artifacts": true
-      }
-    },
-    "steg_detection": {
-      "lsb_analysis": {
-        "lsb_entropies": {
-          "red": 0.9999999808826494,
-          "green": 0.9999999834765138,
-          "blue": 0.9999995160733453,
-          "average": 0.9999998268108361
-        },
-        "is_suspicious": true,
-        "confidence": 1.0
-      },
-      "parity_analysis": {
-        "parity_deviations": {
-          "red": 8.139759673597702e-05,
-          "green": 7.567432821542486e-05,
-          "blue": 0.0004095316585778219,
-          "average": 0.00018886786117640794
-        },
-        "is_suspicious": true,
-        "confidence": 0.9996222642776472
-      },
-      "size_analysis": {
-        "file_size_bytes": 2269231,
-        "expected_raw_size_bytes": 4717584,
-        "compression_ratio": 2.0789351106167686,
-        "is_suspicious": false,
-        "confidence": 0.7921064889383231
-      },
-      "dct_analysis": {
-        "avg_high_freq_energy": 0.5177972912788391,
-        "is_suspicious": false,
-        "confidence": 0.1
-      },
-      "total_suspicious_tests": 2,
-      "overall_confidence": 0.7229321883039926,
-      "is_likely_stego": true
-    }
-  },
-  "b719e9e3-8b40-4024-97e7-69a6c5607e57": {
-    "task_id": "b719e9e3-8b40-4024-97e7-69a6c5607e57",
-    "filename": "屏幕截图 2025-07-25 171635.png",
-    "mode": "all",
-    "created_at": "2026-05-20T07:32:11.109928",
-    "risk": {
-      "level": "medium",
-      "ai_probability": 0.8310363827554035,
-      "confidence": 0.8571428571428571,
-      "summary": "综合风险分 47.93，视觉模型分数 83.10%",
-      "score": 47.93,
-      "evidence_summary": [
-        "视觉模型分数 83.10%",
-        "自然纹理与边缘复杂度较高"
-      ],
-      "explanation": {
-        "level_label": "中风险",
-        "probability_label": "AI风险概率",
-        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
-        "image_classification_tags": [
-          "待进一步判别"
-        ],
-        "level_description": "存在部分可疑信号，但还不足以单独作为定性结论。",
-        "primary_reason": "视觉模型分数 83.10%",
-        "action": "建议补充原图来源、拍摄链路或更多相邻样本再判断。",
-        "evidence_groups": [
-          {
-            "title": "元数据证据",
-            "items": [
-              "未发现明确生成器标识"
-            ]
-          },
-          {
-            "title": "视觉证据",
-            "items": [
-              "视觉模型分数 83.10%",
-              "自然纹理与边缘复杂度较高"
-            ]
-          },
-          {
-            "title": "水印与隐写",
-            "items": [
-              "未发现足以单独定性的水印证据"
-            ]
-          }
-        ]
-      }
-    },
-    "ai_detection": {
-      "ai_probability": 0.8310363827554035,
-      "confidence": 0.8571428571428571,
-      "features": {
-        "color_entropy": 6.08048510340538,
-        "noise_level": 580.7767979030073,
-        "edge_quality": 813.321526372032,
-        "color_abnormality": 55.666358984430396,
-        "texture_score": 581.4658813476562,
-        "blockiness": 330.6046809274808,
-        "metadata_score": 0.0
-      },
-      "normalized_features": {
-        "color_entropy": 0.5402425517026899,
-        "noise_level": 1,
-        "edge_quality": 1,
-        "color_abnormality": 1,
-        "texture_score": 1,
-        "blockiness": 1,
-        "metadata_score": 0.0
-      },
-      "is_likely_ai": true,
-      "metadata_indicators": []
-    },
-    "metadata": {
-      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2025-07-25 171635.png",
-      "file_size": 738032,
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2026-05-20 102026.png",
+      "file_size": 2416114,
       "image_info": {
         "format": "PNG",
         "mode": "RGBA",
         "size": [
-          685,
-          892
+          1433,
+          1079
         ],
-        "width": 685,
-        "height": 892,
+        "width": 1433,
+        "height": 1079,
         "error": "'PngImageFile' object has no attribute 'bits'"
       },
       "exif": {},
@@ -313,7 +111,7 @@
         },
         "IDAT": {
           "description": "Image data",
-          "length": 17108
+          "length": 56790
         },
         "IEND": {
           "description": "Image end",
@@ -324,323 +122,113 @@
     "pixel_analysis": {
       "color_distribution": {
         "red": {
-          "mean": 71.03158652744591,
-          "std": 66.58323688015776,
-          "min": 0,
-          "max": 254,
-          "skew": 0.3429278369878995,
-          "kurtosis": -1.3809068757322467
-        },
-        "green": {
-          "mean": 58.384470230107034,
-          "std": 56.39777130316192,
-          "min": 0,
-          "max": 241,
-          "skew": 0.5061923228735292,
-          "kurtosis": -1.0199617734267257
-        },
-        "blue": {
-          "mean": 51.60054990016693,
-          "std": 55.325007002398536,
-          "min": 0,
-          "max": 255,
-          "skew": 1.031639254911677,
-          "kurtosis": 0.5477627404078023
-        }
-      },
-      "noise_analysis": {
-        "laplacian_variance": 580.7767979030073,
-        "edge_std": 83.80558077426011,
-        "noise_ratio": 0.9439569172236294,
-        "is_high_noise": true
-      },
-      "entropy": {
-        "red_entropy": 6.144128208782131,
-        "green_entropy": 6.060459465982249,
-        "blue_entropy": 6.036867635451758,
-        "mean_entropy": 6.08048510340538
-      },
-      "blockiness": {
-        "blockiness_score": 330.6031494140625,
-        "is_blocky": false
-      },
-      "pixel_patterns": {
-        "unique_colors": 209514,
-        "total_pixels": 611020,
-        "color_diversity": 0.3428922130208504,
-        "color_correlation": {
-          "rg": 0.9260550548341241,
-          "rb": 0.833686374639783,
-          "gb": 0.9470217972171742
-        }
-      },
-      "compression_artifacts": {
-        "high_low_freq_ratio": -0.05667923390865326,
-        "has_compression_artifacts": true
-      }
-    },
-    "steg_detection": {
-      "lsb_analysis": {
-        "lsb_entropies": {
-          "red": 0.9309326699126279,
-          "green": 0.9305111408947022,
-          "blue": 0.9312049696717954,
-          "average": 0.9308829268263752
-        },
-        "is_suspicious": true,
-        "confidence": 1.0
-      },
-      "parity_analysis": {
-        "parity_deviations": {
-          "red": 0.15346797158849135,
-          "green": 0.1539278583352427,
-          "blue": 0.15317010899806882,
-          "average": 0.15352197964060096
-        },
-        "is_suspicious": false,
-        "confidence": 0.692956040718798
-      },
-      "size_analysis": {
-        "file_size_bytes": 738032,
-        "expected_raw_size_bytes": 2444080,
-        "compression_ratio": 3.311617924426041,
-        "is_suspicious": false,
-        "confidence": 0.6688382075573959
-      },
-      "dct_analysis": {
-        "avg_high_freq_energy": 0.626197099685669,
-        "is_suspicious": false,
-        "confidence": 0.1
-      },
-      "total_suspicious_tests": 1,
-      "overall_confidence": 0.6154485620690485,
-      "is_likely_stego": false
-    }
-  },
-  "95dfe1b3-71dd-4b4a-849c-2c8649b7640b": {
-    "task_id": "95dfe1b3-71dd-4b4a-849c-2c8649b7640b",
-    "filename": "屏幕截图 2026-05-20 102001.png",
-    "mode": "all",
-    "created_at": "2026-05-20T07:32:25.490446",
-    "risk": {
-      "level": "medium",
-      "ai_probability": 0.8154517369543242,
-      "confidence": 0.8571428571428571,
-      "summary": "综合风险分 48.30，视觉模型分数 81.55%",
-      "score": 48.3,
-      "evidence_summary": [
-        "视觉模型分数 81.55%",
-        "自然纹理与边缘复杂度较高",
-        "存在轻度隐写异常，但不能直接等同 AI 水印"
-      ],
-      "explanation": {
-        "level_label": "中风险",
-        "probability_label": "AI风险概率",
-        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
-        "image_classification_tags": [
-          "待进一步判别"
-        ],
-        "level_description": "存在部分可疑信号，但还不足以单独作为定性结论。",
-        "primary_reason": "视觉模型分数 81.55%",
-        "action": "建议补充原图来源、拍摄链路或更多相邻样本再判断。",
-        "evidence_groups": [
-          {
-            "title": "元数据证据",
-            "items": [
-              "未发现明确生成器标识"
-            ]
-          },
-          {
-            "title": "视觉证据",
-            "items": [
-              "视觉模型分数 81.55%",
-              "自然纹理与边缘复杂度较高"
-            ]
-          },
-          {
-            "title": "水印与隐写",
-            "items": [
-              "存在轻度隐写异常，但不能直接等同 AI 水印"
-            ]
-          }
-        ]
-      }
-    },
-    "ai_detection": {
-      "ai_probability": 0.8154517369543242,
-      "confidence": 0.8571428571428571,
-      "features": {
-        "color_entropy": 7.475475746754074,
-        "noise_level": 191.31492641789407,
-        "edge_quality": 763.0448276422158,
-        "color_abnormality": 29.76981614304802,
-        "texture_score": 442.4925537109375,
-        "blockiness": 167.65796322879427,
-        "metadata_score": 0.0
-      },
-      "normalized_features": {
-        "color_entropy": 1,
-        "noise_level": 0.9420995094526271,
-        "edge_quality": 1,
-        "color_abnormality": 0.49424540357620045,
-        "texture_score": 1,
-        "blockiness": 1,
-        "metadata_score": 0.0
-      },
-      "is_likely_ai": true,
-      "metadata_indicators": []
-    },
-    "metadata": {
-      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2026-05-20 102001.png",
-      "file_size": 2414423,
-      "image_info": {
-        "format": "PNG",
-        "mode": "RGBA",
-        "size": [
-          1435,
-          1077
-        ],
-        "width": 1435,
-        "height": 1077,
-        "error": "'PngImageFile' object has no attribute 'bits'"
-      },
-      "exif": {},
-      "png_chunks": {
-        "IHDR": {
-          "description": "Image header",
-          "length": 13
-        },
-        "sRGB": {
-          "description": "Standard RGB",
-          "length": 1
-        },
-        "gAMA": {
-          "description": "Gamma",
-          "length": 4
-        },
-        "pHYs": {
-          "description": "Physical dimensions",
-          "length": 9
-        },
-        "IDAT": {
-          "description": "Image data",
-          "length": 55099
-        },
-        "IEND": {
-          "description": "Image end",
-          "length": 0
-        }
-      }
-    },
-    "pixel_analysis": {
-      "color_distribution": {
-        "red": {
-          "mean": 110.00045875269736,
-          "std": 55.895831122234064,
+          "mean": 110.11500530006656,
+          "std": 55.92090874488738,
           "min": 2,
           "max": 255,
-          "skew": 0.0644541530548162,
-          "kurtosis": -0.9794966728835992
+          "skew": 0.06297711949519741,
+          "kurtosis": -0.979116827585679
         },
         "green": {
-          "mean": 87.39436750038014,
-          "std": 50.03919104871984,
+          "mean": 87.4693414271181,
+          "std": 50.06251191607127,
           "min": 0,
           "max": 255,
-          "skew": 0.5351396219269018,
-          "kurtosis": -0.4160648575728563
+          "skew": 0.5343932838564679,
+          "kurtosis": -0.41577304315749153
         },
         "blue": {
-          "mean": 76.2940559497119,
-          "std": 46.233209400119414,
+          "mean": 76.3603152747336,
+          "std": 46.25837568373814,
           "min": 0,
           "max": 251,
-          "skew": 0.8296590021317815,
-          "kurtosis": 0.10572817196907103
+          "skew": 0.8281639506705978,
+          "kurtosis": 0.10288687980355116
         }
       },
       "noise_analysis": {
-        "laplacian_variance": 191.31492641789407,
-        "edge_std": 56.20923353693774,
-        "noise_ratio": 0.5446188200343254,
+        "laplacian_variance": 192.48734039888006,
+        "edge_std": 56.28394743901754,
+        "noise_ratio": 0.544342574555983,
         "is_high_noise": true
       },
       "entropy": {
-        "red_entropy": 7.662989270367941,
-        "green_entropy": 7.458196697745841,
-        "blue_entropy": 7.305241272148441,
-        "mean_entropy": 7.475475746754074
+        "red_entropy": 7.664135372953512,
+        "green_entropy": 7.459316580093173,
+        "blue_entropy": 7.306373983256669,
+        "mean_entropy": 7.476608645434452
       },
       "blockiness": {
-        "blockiness_score": 167.6555633544922,
+        "blockiness_score": 168.33242797851562,
         "is_blocky": false
       },
       "pixel_patterns": {
-        "unique_colors": 210155,
-        "total_pixels": 1545495,
-        "color_diversity": 0.1359790876062362,
+        "unique_colors": 210695,
+        "total_pixels": 1546207,
+        "color_diversity": 0.13626571345233854,
         "color_correlation": {
-          "rg": 0.9438401016362719,
-          "rb": 0.9039975784065086,
-          "gb": 0.9778807378025752
+          "rg": 0.9435786755781532,
+          "rb": 0.9039134189372833,
+          "gb": 0.9779092862059925
         }
       },
       "compression_artifacts": {
-        "high_low_freq_ratio": -0.028056330978870392,
+        "high_low_freq_ratio": -0.028011515736579895,
         "has_compression_artifacts": true
       }
     },
     "steg_detection": {
       "lsb_analysis": {
         "lsb_entropies": {
-          "red": 0.9999979126719167,
-          "green": 0.9999922584848838,
-          "blue": 0.999995930148979,
-          "average": 0.9999953671019265
+          "red": 0.9999978085728795,
+          "green": 0.9999923144198892,
+          "blue": 0.999996004475618,
+          "average": 0.9999953758227956
         },
         "is_suspicious": true,
         "confidence": 1.0
       },
       "parity_analysis": {
         "parity_deviations": {
-          "red": 0.000850536559484194,
-          "green": 0.0016379865350583667,
-          "blue": 0.001187645382223823,
-          "average": 0.0012253894922554613
+          "red": 0.0008714874528442662,
+          "green": 0.0016320583207811157,
+          "blue": 0.0011767505903155229,
+          "average": 0.0012267654546469682
         },
         "is_suspicious": true,
-        "confidence": 0.997549221015489
+        "confidence": 0.9975464690907061
       },
       "size_analysis": {
-        "file_size_bytes": 2414423,
-        "expected_raw_size_bytes": 6181980,
-        "compression_ratio": 2.5604378354579955,
+        "file_size_bytes": 2416114,
+        "expected_raw_size_bytes": 6184828,
+        "compression_ratio": 2.5598245778137954,
         "is_suspicious": false,
-        "confidence": 0.7439562164542004
+        "confidence": 0.7440175422186205
       },
       "dct_analysis": {
-        "avg_high_freq_energy": 0.4768217206001282,
+        "avg_high_freq_energy": 0.4759913682937622,
         "is_suspicious": false,
         "confidence": 0.1
       },
       "total_suspicious_tests": 2,
-      "overall_confidence": 0.7103763593674224,
+      "overall_confidence": 0.7103910028273317,
       "is_likely_stego": true
     }
   },
-  "553e890c-f38c-4788-ad37-d7dd1ba9bf58": {
-    "task_id": "553e890c-f38c-4788-ad37-d7dd1ba9bf58",
-    "filename": "屏幕截图 2025-06-08 170839.png",
+  "5bdd6aa0-b23d-4c06-a9a0-c8562b7b5f84": {
+    "task_id": "5bdd6aa0-b23d-4c06-a9a0-c8562b7b5f84",
+    "filename": "20260410-084550-21ac49.jpg",
     "mode": "all",
-    "created_at": "2026-05-20T07:32:32.337661",
+    "created_at": "2026-05-20T16:18:27.497402",
     "risk": {
       "level": "low",
-      "ai_probability": 0.5885788970043196,
-      "confidence": 0.5714285714285714,
-      "summary": "综合风险分 26.03，视觉模型分数 58.86%",
-      "score": 26.03,
+      "ai_probability": 0.1753161222298038,
+      "confidence": 0.7142857142857143,
+      "summary": "综合风险分 13.99，视觉模型分数 17.53%",
+      "score": 13.99,
       "evidence_summary": [
-        "视觉模型分数 58.86%"
+        "视觉模型分数 17.53%",
+        "图像更像手机截图，降低高风险判定"
       ],
       "explanation": {
         "level_label": "低风险",
@@ -650,7 +238,7 @@
           "待进一步判别"
         ],
         "level_description": "当前未发现足够强的 AI 生成证据，结果更适合作为低风险提示。",
-        "primary_reason": "视觉模型分数 58.86%",
+        "primary_reason": "视觉模型分数 17.53%",
         "action": "建议保留原图与来源信息，如业务敏感仍可人工抽检。",
         "evidence_groups": [
           {
@@ -662,7 +250,8 @@
           {
             "title": "视觉证据",
             "items": [
-              "视觉模型分数 58.86%"
+              "视觉模型分数 17.53%",
+              "图像更像手机截图，降低高风险判定"
             ]
           },
           {
@@ -675,671 +264,41 @@
       }
     },
     "ai_detection": {
-      "ai_probability": 0.5885788970043196,
-      "confidence": 0.5714285714285714,
+      "ai_probability": 0.1753161222298038,
+      "confidence": 0.7142857142857143,
       "features": {
-        "color_entropy": 2.35626726846437,
-        "noise_level": 10631.062834268745,
-        "edge_quality": 1961.8993318967994,
-        "color_abnormality": 14.954372534485254,
-        "texture_score": 563.214111328125,
-        "blockiness": 1241.877828533299,
+        "color_entropy": 3.874547879084002,
+        "noise_level": 583.3469839891042,
+        "edge_quality": 747.6253734378216,
+        "color_abnormality": 5.472457561728395,
+        "texture_score": 488.75384521484375,
+        "blockiness": 145.7068106345723,
         "metadata_score": 0.0
       },
       "normalized_features": {
-        "color_entropy": 0,
-        "noise_level": 1,
-        "edge_quality": 1,
-        "color_abnormality": 0.12385931336213134,
-        "texture_score": 1,
-        "blockiness": 1,
+        "color_entropy": 0.3124246465140003,
+        "noise_level": 0.7804455280458711,
+        "blockiness": 0.406462752196555,
+        "edge_quality": 0.5691823237861136,
+        "color_abnormality": 0.0,
+        "texture_score": 0.6335922309894857,
         "metadata_score": 0.0
       },
       "is_likely_ai": false,
       "metadata_indicators": []
     },
     "metadata": {
-      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2025-06-08 170839.png",
-      "file_size": 41259,
-      "image_info": {
-        "format": "PNG",
-        "mode": "RGBA",
-        "size": [
-          504,
-          621
-        ],
-        "width": 504,
-        "height": 621,
-        "error": "'PngImageFile' object has no attribute 'bits'"
-      },
-      "exif": {},
-      "png_chunks": {
-        "IHDR": {
-          "description": "Image header",
-          "length": 13
-        },
-        "sRGB": {
-          "description": "Standard RGB",
-          "length": 1
-        },
-        "gAMA": {
-          "description": "Gamma",
-          "length": 4
-        },
-        "pHYs": {
-          "description": "Physical dimensions",
-          "length": 9
-        },
-        "IDAT": {
-          "description": "Image data",
-          "length": 41152
-        },
-        "IEND": {
-          "description": "Image end",
-          "length": 0
-        }
-      }
-    },
-    "pixel_analysis": {
-      "color_distribution": {
-        "red": {
-          "mean": 238.00783107123686,
-          "std": 41.47605267776814,
-          "min": 0,
-          "max": 255,
-          "skew": -4.509983773428618,
-          "kurtosis": 20.59688063491436
-        },
-        "green": {
-          "mean": 238.36013662040233,
-          "std": 40.93029647671512,
-          "min": 0,
-          "max": 255,
-          "skew": -4.547990637544686,
-          "kurtosis": 21.021215279026947
-        },
-        "blue": {
-          "mean": 238.77572016460906,
-          "std": 40.600998646421054,
-          "min": 0,
-          "max": 255,
-          "skew": -4.634322049694436,
-          "kurtosis": 21.846810936995286
-        }
-      },
-      "noise_analysis": {
-        "laplacian_variance": 10631.062834268745,
-        "edge_std": 190.15625152892224,
-        "noise_ratio": 0.16910561418912876,
-        "is_high_noise": true
-      },
-      "entropy": {
-        "red_entropy": 2.4259376463918048,
-        "green_entropy": 2.424021215446177,
-        "blue_entropy": 2.2188429435551296,
-        "mean_entropy": 2.35626726846437
-      },
-      "blockiness": {
-        "blockiness_score": 1241.880859375,
-        "is_blocky": false
-      },
-      "pixel_patterns": {
-        "unique_colors": 1112,
-        "total_pixels": 312984,
-        "color_diversity": 0.003552897272704036,
-        "color_correlation": {
-          "rg": 0.948631565096249,
-          "rb": 0.8350278454300584,
-          "gb": 0.9457341536641188
-        }
-      },
-      "compression_artifacts": {
-        "high_low_freq_ratio": -0.028579412028193474,
-        "has_compression_artifacts": true
-      }
-    },
-    "steg_detection": {
-      "lsb_analysis": {
-        "lsb_entropies": {
-          "red": 0.6944685938890934,
-          "green": 0.7622420179302272,
-          "blue": 0.6910849424629196,
-          "average": 0.7159318514274134
-        },
-        "is_suspicious": false,
-        "confidence": 0.7875250365701548
-      },
-      "parity_analysis": {
-        "parity_deviations": {
-          "red": 0.3133227257623393,
-          "green": 0.2788609002377118,
-          "blue": 0.3149106663599417,
-          "average": 0.30236476411999763
-        },
-        "is_suspicious": false,
-        "confidence": 0.39527047176000474
-      },
-      "size_analysis": {
-        "file_size_bytes": 41259,
-        "expected_raw_size_bytes": 1251936,
-        "compression_ratio": 30.34334327055915,
-        "is_suspicious": false,
-        "confidence": 0.1
-      },
-      "dct_analysis": {
-        "avg_high_freq_energy": 1.2460379600524902,
-        "is_suspicious": false,
-        "confidence": 0.1
-      },
-      "total_suspicious_tests": 0,
-      "overall_confidence": 0.34569887708253993,
-      "is_likely_stego": false
-    }
-  },
-  "d1fad260-7c03-4626-9993-83e8f26402f6": {
-    "task_id": "d1fad260-7c03-4626-9993-83e8f26402f6",
-    "filename": "屏幕截图 2025-11-26 163503.png",
-    "mode": "all",
-    "created_at": "2026-05-20T07:32:46.307250",
-    "risk": {
-      "level": "low",
-      "ai_probability": 0.51,
-      "confidence": 0.5714285714285714,
-      "summary": "综合风险分 21.31，视觉模型分数 51.00%",
-      "score": 21.31,
-      "evidence_summary": [
-        "视觉模型分数 51.00%"
-      ],
-      "explanation": {
-        "level_label": "低风险",
-        "probability_label": "AI风险概率",
-        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
-        "image_classification_tags": [
-          "待进一步判别"
-        ],
-        "level_description": "当前未发现足够强的 AI 生成证据，结果更适合作为低风险提示。",
-        "primary_reason": "视觉模型分数 51.00%",
-        "action": "建议保留原图与来源信息，如业务敏感仍可人工抽检。",
-        "evidence_groups": [
-          {
-            "title": "元数据证据",
-            "items": [
-              "未发现明确生成器标识"
-            ]
-          },
-          {
-            "title": "视觉证据",
-            "items": [
-              "视觉模型分数 51.00%"
-            ]
-          },
-          {
-            "title": "水印与隐写",
-            "items": [
-              "未发现足以单独定性的水印证据"
-            ]
-          }
-        ]
-      }
-    },
-    "ai_detection": {
-      "ai_probability": 0.51,
-      "confidence": 0.5714285714285714,
-      "features": {
-        "color_entropy": 1.2929401312337399,
-        "noise_level": 3385.549030458812,
-        "edge_quality": 3049.0676621506786,
-        "color_abnormality": 9.56192248039437,
-        "texture_score": 827.9459838867188,
-        "blockiness": 932.1577232792692,
-        "metadata_score": 0.0
-      },
-      "normalized_features": {
-        "color_entropy": 0,
-        "noise_level": 1,
-        "edge_quality": 1,
-        "color_abnormality": 0,
-        "texture_score": 1,
-        "blockiness": 1,
-        "metadata_score": 0.0
-      },
-      "is_likely_ai": false,
-      "metadata_indicators": []
-    },
-    "metadata": {
-      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2025-11-26 163503.png",
-      "file_size": 130351,
-      "image_info": {
-        "format": "PNG",
-        "mode": "RGBA",
-        "size": [
-          853,
-          644
-        ],
-        "width": 853,
-        "height": 644,
-        "error": "'PngImageFile' object has no attribute 'bits'"
-      },
-      "exif": {},
-      "png_chunks": {
-        "IHDR": {
-          "description": "Image header",
-          "length": 13
-        },
-        "sRGB": {
-          "description": "Standard RGB",
-          "length": 1
-        },
-        "gAMA": {
-          "description": "Gamma",
-          "length": 4
-        },
-        "pHYs": {
-          "description": "Physical dimensions",
-          "length": 9
-        },
-        "IDAT": {
-          "description": "Image data",
-          "length": 64787
-        },
-        "IEND": {
-          "description": "Image end",
-          "length": 0
-        }
-      }
-    },
-    "pixel_analysis": {
-      "color_distribution": {
-        "red": {
-          "mean": 238.73597205333022,
-          "std": 56.730947143571164,
-          "min": 0,
-          "max": 255,
-          "skew": -3.535518061974864,
-          "kurtosis": 11.095039494917124
-        },
-        "green": {
-          "mean": 240.231965368848,
-          "std": 50.885854238121134,
-          "min": 0,
-          "max": 255,
-          "skew": -3.46228250686014,
-          "kurtosis": 10.58502138849887
-        },
-        "blue": {
-          "mean": 244.88214777220333,
-          "std": 38.39232917783285,
-          "min": 0,
-          "max": 255,
-          "skew": -4.490938128594265,
-          "kurtosis": 20.615002112759413
-        }
-      },
-      "noise_analysis": {
-        "laplacian_variance": 3385.549030458812,
-        "edge_std": 160.9385445699701,
-        "noise_ratio": 0.2098187201881129,
-        "is_high_noise": true
-      },
-      "entropy": {
-        "red_entropy": 1.2495668422270492,
-        "green_entropy": 1.304912575338863,
-        "blue_entropy": 1.3243409761353069,
-        "mean_entropy": 1.2929401312337399
-      },
-      "blockiness": {
-        "blockiness_score": 932.158935546875,
-        "is_blocky": false
-      },
-      "pixel_patterns": {
-        "unique_colors": 11320,
-        "total_pixels": 549332,
-        "color_diversity": 0.020606846133121682,
-        "color_correlation": {
-          "rg": 0.9862761011194626,
-          "rb": 0.7873860906260961,
-          "gb": 0.8640160456508769
-        }
-      },
-      "compression_artifacts": {
-        "high_low_freq_ratio": -0.013765589334070683,
-        "has_compression_artifacts": true
-      }
-    },
-    "steg_detection": {
-      "lsb_analysis": {
-        "lsb_entropies": {
-          "red": 0.4240202111020624,
-          "green": 0.3366834654695985,
-          "blue": 0.39227183371368757,
-          "average": 0.3843251700951161
-        },
-        "is_suspicious": false,
-        "confidence": 0.42275768710462774
-      },
-      "parity_analysis": {
-        "parity_deviations": {
-          "red": 0.41369335847902544,
-          "green": 0.4376551884834672,
-          "blue": 0.4227898611404397,
-          "average": 0.42471280270097744
-        },
-        "is_suspicious": false,
-        "confidence": 0.1505743945980451
-      },
-      "size_analysis": {
-        "file_size_bytes": 130351,
-        "expected_raw_size_bytes": 2197328,
-        "compression_ratio": 16.857009152212104,
-        "is_suspicious": false,
-        "confidence": 0.1
-      },
-      "dct_analysis": {
-        "avg_high_freq_energy": 0.610733151435852,
-        "is_suspicious": false,
-        "confidence": 0.1
-      },
-      "total_suspicious_tests": 0,
-      "overall_confidence": 0.1933330204256682,
-      "is_likely_stego": false
-    }
-  },
-  "a2069d04-22fc-48e5-bbf6-74a5ac054580": {
-    "task_id": "a2069d04-22fc-48e5-bbf6-74a5ac054580",
-    "filename": "屏幕截图 2026-01-29 231201.png",
-    "mode": "all",
-    "created_at": "2026-05-20T07:33:05.664796",
-    "risk": {
-      "level": "medium",
-      "ai_probability": 0.9,
-      "confidence": 0.8571428571428571,
-      "summary": "综合风险分 53.37，视觉模型分数 90.00%",
-      "score": 53.37,
-      "evidence_summary": [
-        "视觉模型分数 90.00%",
-        "自然纹理与边缘复杂度较高",
-        "存在轻度隐写异常，但不能直接等同 AI 水印"
-      ],
-      "explanation": {
-        "level_label": "中风险",
-        "probability_label": "AI风险概率",
-        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
-        "image_classification_tags": [
-          "待进一步判别"
-        ],
-        "level_description": "存在部分可疑信号，但还不足以单独作为定性结论。",
-        "primary_reason": "视觉模型分数 90.00%",
-        "action": "建议补充原图来源、拍摄链路或更多相邻样本再判断。",
-        "evidence_groups": [
-          {
-            "title": "元数据证据",
-            "items": [
-              "未发现明确生成器标识"
-            ]
-          },
-          {
-            "title": "视觉证据",
-            "items": [
-              "视觉模型分数 90.00%",
-              "自然纹理与边缘复杂度较高"
-            ]
-          },
-          {
-            "title": "水印与隐写",
-            "items": [
-              "存在轻度隐写异常，但不能直接等同 AI 水印"
-            ]
-          }
-        ]
-      }
-    },
-    "ai_detection": {
-      "ai_probability": 0.9,
-      "confidence": 0.8571428571428571,
-      "features": {
-        "color_entropy": 7.7886104162004814,
-        "noise_level": 1069.3903032588757,
-        "edge_quality": 276.06541098201257,
-        "color_abnormality": 94.15548886179992,
-        "texture_score": 587.3768310546875,
-        "blockiness": 354.0372533357124,
-        "metadata_score": 0.0
-      },
-      "normalized_features": {
-        "color_entropy": 1,
-        "noise_level": 1,
-        "edge_quality": 1,
-        "color_abnormality": 1,
-        "texture_score": 1,
-        "blockiness": 1,
-        "metadata_score": 0.0
-      },
-      "is_likely_ai": true,
-      "metadata_indicators": []
-    },
-    "metadata": {
-      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2026-01-29 231201.png",
-      "file_size": 2730981,
-      "image_info": {
-        "format": "PNG",
-        "mode": "RGBA",
-        "size": [
-          1415,
-          916
-        ],
-        "width": 1415,
-        "height": 916,
-        "error": "'PngImageFile' object has no attribute 'bits'"
-      },
-      "exif": {},
-      "png_chunks": {
-        "IHDR": {
-          "description": "Image header",
-          "length": 13
-        },
-        "sRGB": {
-          "description": "Standard RGB",
-          "length": 1
-        },
-        "gAMA": {
-          "description": "Gamma",
-          "length": 4
-        },
-        "pHYs": {
-          "description": "Physical dimensions",
-          "length": 9
-        },
-        "IDAT": {
-          "description": "Image data",
-          "length": 43977
-        },
-        "IEND": {
-          "description": "Image end",
-          "length": 0
-        }
-      }
-    },
-    "pixel_analysis": {
-      "color_distribution": {
-        "red": {
-          "mean": 146.137438085392,
-          "std": 55.28533982533339,
-          "min": 0,
-          "max": 255,
-          "skew": -0.1554064608285421,
-          "kurtosis": -0.41941679473087445
-        },
-        "green": {
-          "mean": 125.48311216380947,
-          "std": 60.468679174390516,
-          "min": 0,
-          "max": 255,
-          "skew": 0.08440107495393223,
-          "kurtosis": -1.03770619257649
-        },
-        "blue": {
-          "mean": 110.87349823321554,
-          "std": 73.31844349615832,
-          "min": 0,
-          "max": 255,
-          "skew": 0.4615399056803186,
-          "kurtosis": -1.1233581220092304
-        }
-      },
-      "noise_analysis": {
-        "laplacian_variance": 1069.3903032588757,
-        "edge_std": 70.49821233657066,
-        "noise_ratio": 0.4484873488159056,
-        "is_high_noise": true
-      },
-      "entropy": {
-        "red_entropy": 7.721726933318942,
-        "green_entropy": 7.820730579791537,
-        "blue_entropy": 7.823373735490966,
-        "mean_entropy": 7.7886104162004814
-      },
-      "blockiness": {
-        "blockiness_score": 354.035400390625,
-        "is_blocky": false
-      },
-      "pixel_patterns": {
-        "unique_colors": 211160,
-        "total_pixels": 1296140,
-        "color_diversity": 0.16291449997685437,
-        "color_correlation": {
-          "rg": 0.9049201156371609,
-          "rb": 0.6955602306634662,
-          "gb": 0.9141950216910343
-        }
-      },
-      "compression_artifacts": {
-        "high_low_freq_ratio": -0.05319403111934662,
-        "has_compression_artifacts": true
-      }
-    },
-    "steg_detection": {
-      "lsb_analysis": {
-        "lsb_entropies": {
-          "red": 0.9998256554756008,
-          "green": 0.9999997661413366,
-          "blue": 0.9999750158492327,
-          "average": 0.99993347915539
-        },
-        "is_suspicious": true,
-        "confidence": 1.0
-      },
-      "parity_analysis": {
-        "parity_deviations": {
-          "red": 0.0077730800685110735,
-          "green": 0.0002846914685141755,
-          "blue": 0.002942583362908313,
-          "average": 0.0036667849666445207
-        },
-        "is_suspicious": true,
-        "confidence": 0.992666430066711
-      },
-      "size_analysis": {
-        "file_size_bytes": 2730981,
-        "expected_raw_size_bytes": 5184560,
-        "compression_ratio": 1.8984240461577726,
-        "is_suspicious": false,
-        "confidence": 0.8101575953842227
-      },
-      "dct_analysis": {
-        "avg_high_freq_energy": 1.252410888671875,
-        "is_suspicious": false,
-        "confidence": 0.1
-      },
-      "total_suspicious_tests": 2,
-      "overall_confidence": 0.7257060063627334,
-      "is_likely_stego": true
-    }
-  },
-  "e5e71efd-a4ea-42d9-ac33-0ce42e0fb19d": {
-    "task_id": "e5e71efd-a4ea-42d9-ac33-0ce42e0fb19d",
-    "filename": "F00C55CC140A3E27931AAC936EDE6009.jpg",
-    "mode": "all",
-    "created_at": "2026-05-20T07:33:42.412617",
-    "risk": {
-      "level": "medium",
-      "ai_probability": 0.8557582627889463,
-      "confidence": 0.8571428571428571,
-      "summary": "综合风险分 50.72，视觉模型分数 85.58%",
-      "score": 50.72,
-      "evidence_summary": [
-        "视觉模型分数 85.58%",
-        "自然纹理与边缘复杂度较高",
-        "存在轻度隐写异常，但不能直接等同 AI 水印"
-      ],
-      "explanation": {
-        "level_label": "中风险",
-        "probability_label": "AI风险概率",
-        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
-        "image_classification_tags": [
-          "待进一步判别"
-        ],
-        "level_description": "存在部分可疑信号，但还不足以单独作为定性结论。",
-        "primary_reason": "视觉模型分数 85.58%",
-        "action": "建议补充原图来源、拍摄链路或更多相邻样本再判断。",
-        "evidence_groups": [
-          {
-            "title": "元数据证据",
-            "items": [
-              "未发现明确生成器标识"
-            ]
-          },
-          {
-            "title": "视觉证据",
-            "items": [
-              "视觉模型分数 85.58%",
-              "自然纹理与边缘复杂度较高"
-            ]
-          },
-          {
-            "title": "水印与隐写",
-            "items": [
-              "存在轻度隐写异常，但不能直接等同 AI 水印"
-            ]
-          }
-        ]
-      }
-    },
-    "ai_detection": {
-      "ai_probability": 0.8557582627889463,
-      "confidence": 0.8571428571428571,
-      "features": {
-        "color_entropy": 6.810627216780013,
-        "noise_level": 266.9814299139339,
-        "edge_quality": 1478.5193383919327,
-        "color_abnormality": 202.06297210503428,
-        "texture_score": 407.110107421875,
-        "blockiness": 99.98190338087451,
-        "metadata_score": 0.0
-      },
-      "normalized_features": {
-        "color_entropy": 0.9053136083900064,
-        "noise_level": 1,
-        "edge_quality": 1,
-        "color_abnormality": 1,
-        "texture_score": 1,
-        "blockiness": 0.9997414768696359,
-        "metadata_score": 0.0
-      },
-      "is_likely_ai": true,
-      "metadata_indicators": []
-    },
-    "metadata": {
-      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\F00C55CC140A3E27931AAC936EDE6009.jpg",
-      "file_size": 888711,
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\20260410-084550-21ac49.jpg",
+      "file_size": 382156,
       "image_info": {
         "format": "JPEG",
         "mode": "RGB",
         "size": [
-          4001,
-          2071
+          1080,
+          1920
         ],
-        "width": 4001,
-        "height": 2071,
+        "width": 1080,
+        "height": 1920,
         "bits_per_sample": 8,
         "channels": 3,
         "info": {
@@ -1352,12 +311,7 @@
           "jfif_density": [
             1,
             1
-          ],
-          "icc_profile": {
-            "type": "bytes",
-            "length": 456,
-            "preview_hex": "000001c800000000043000006d6e74725247422058595a2007e0000100010000"
-          }
+          ]
         }
       },
       "exif": {}
@@ -1365,96 +319,1723 @@
     "pixel_analysis": {
       "color_distribution": {
         "red": {
-          "mean": 148.43839136787508,
-          "std": 53.651374537946936,
+          "mean": 42.84395495756173,
+          "std": 75.0011035500261,
           "min": 0,
           "max": 255,
-          "skew": -1.1588002236398478,
-          "kurtosis": 1.2861432165566535
+          "skew": 1.5550566286608087,
+          "kurtosis": 0.8729454468653786
         },
         "green": {
-          "mean": 174.4728287990774,
-          "std": 58.60405354287853,
+          "mean": 46.188002025462964,
+          "std": 78.11334258120269,
           "min": 0,
           "max": 255,
-          "skew": -1.8174591909691074,
-          "kurtosis": 2.4016305309940584
+          "skew": 1.4291485752992745,
+          "kurtosis": 0.43377207602233314
         },
         "blue": {
-          "mean": 209.88567464604154,
-          "std": 68.55928178768062,
+          "mean": 51.01193045910494,
+          "std": 83.75482451627092,
           "min": 0,
           "max": 255,
-          "skew": -2.11411895930788,
-          "kurtosis": 2.899891035062974
+          "skew": 1.3116035069684608,
+          "kurtosis": 0.02596850292863717
         }
       },
       "noise_analysis": {
-        "laplacian_variance": 266.9814299139339,
-        "edge_std": 54.049662685853235,
-        "noise_ratio": 0.3353937870203872,
+        "laplacian_variance": 583.3469839891042,
+        "edge_std": 59.15564134648134,
+        "noise_ratio": 1.6994940994241567,
         "is_high_noise": true
       },
       "entropy": {
-        "red_entropy": 7.283185363046423,
-        "green_entropy": 6.841320532007295,
-        "blue_entropy": 6.307375755286319,
-        "mean_entropy": 6.810627216780013
+        "red_entropy": 3.820505409015613,
+        "green_entropy": 3.87026425677363,
+        "blue_entropy": 3.932873971462762,
+        "mean_entropy": 3.874547879084002
       },
       "blockiness": {
-        "blockiness_score": 99.98226928710938,
+        "blockiness_score": 145.69532775878906,
         "is_blocky": false
       },
       "pixel_patterns": {
-        "unique_colors": 174900,
-        "total_pixels": 8286071,
-        "color_diversity": 0.02110771196626242,
+        "unique_colors": 45847,
+        "total_pixels": 2073600,
+        "color_diversity": 0.02210985725308642,
         "color_correlation": {
-          "rg": 0.9551556832814474,
-          "rb": 0.8342662856741613,
-          "gb": 0.9547583215911023
+          "rg": 0.9966334000292902,
+          "rb": 0.9863628341650125,
+          "gb": 0.9962134130962376
         }
       },
       "compression_artifacts": {
-        "high_low_freq_ratio": -0.0072930725291371346,
+        "high_low_freq_ratio": -0.06175287812948227,
         "has_compression_artifacts": true
       }
     },
     "steg_detection": {
       "lsb_analysis": {
         "lsb_entropies": {
-          "red": 0.99999792338344,
-          "green": 0.9999986348483855,
-          "blue": 0.9999905714517545,
-          "average": 0.9999957098945268
+          "red": 0.7382913678277577,
+          "green": 0.7392562254403926,
+          "blue": 0.73429927955015,
+          "average": 0.7372822909394334
+        },
+        "is_suspicious": false,
+        "confidence": 0.8110105200333768
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 0.2916632908950617,
+          "green": 0.2911617476851852,
+          "blue": 0.2937263695987654,
+          "average": 0.2921838027263374
+        },
+        "is_suspicious": false,
+        "confidence": 0.41563239454732515
+      },
+      "size_analysis": {
+        "file_size_bytes": 382156,
+        "expected_raw_size_bytes": 6220800,
+        "compression_ratio": 16.278169124650667,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 0.5190416574478149,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 0,
+      "overall_confidence": 0.3566607286451755,
+      "is_likely_stego": false
+    }
+  },
+  "7de30b27-04cf-47d5-8d3a-fb420391afd0": {
+    "task_id": "7de30b27-04cf-47d5-8d3a-fb420391afd0",
+    "filename": "屏幕截图 2025-09-14 191744.png",
+    "mode": "all",
+    "created_at": "2026-05-20T16:18:52.721004",
+    "risk": {
+      "level": "low",
+      "ai_probability": 0.44441414168397214,
+      "confidence": 0.8571428571428571,
+      "summary": "综合风险分 35.87，视觉模型分数 44.44%",
+      "score": 35.87,
+      "evidence_summary": [
+        "视觉模型分数 44.44%",
+        "图像更像手机截图，降低高风险判定",
+        "自然纹理与边缘复杂度较高",
+        "存在轻度隐写异常，但不能直接等同 AI 水印"
+      ],
+      "explanation": {
+        "level_label": "低风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "待进一步判别"
+        ],
+        "level_description": "当前未发现足够强的 AI 生成证据，结果更适合作为低风险提示。",
+        "primary_reason": "视觉模型分数 44.44%",
+        "action": "建议保留原图与来源信息，如业务敏感仍可人工抽检。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "未发现明确生成器标识"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 44.44%",
+              "图像更像手机截图，降低高风险判定",
+              "自然纹理与边缘复杂度较高"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "存在轻度隐写异常，但不能直接等同 AI 水印"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.44441414168397214,
+      "confidence": 0.8571428571428571,
+      "features": {
+        "color_entropy": 7.428419781198609,
+        "noise_level": 1199.3056490058623,
+        "edge_quality": 838.5875887764073,
+        "color_abnormality": 37.36615537881999,
+        "texture_score": 593.4656982421875,
+        "blockiness": 415.33056795490324,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 0.9047366301997681,
+        "noise_level": 0.90898776979438,
+        "blockiness": 0.6435180861848633,
+        "edge_quality": 0.5941110446808355,
+        "color_abnormality": 0.3897424064422624,
+        "texture_score": 0.7216650072577047,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": false,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2025-09-14 191744.png",
+      "file_size": 1258588,
+      "image_info": {
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          645,
+          1079
+        ],
+        "width": 645,
+        "height": 1079,
+        "error": "'PngImageFile' object has no attribute 'bits'"
+      },
+      "exif": {},
+      "png_chunks": {
+        "IHDR": {
+          "description": "Image header",
+          "length": 13
+        },
+        "sRGB": {
+          "description": "Standard RGB",
+          "length": 1
+        },
+        "gAMA": {
+          "description": "Gamma",
+          "length": 4
+        },
+        "pHYs": {
+          "description": "Physical dimensions",
+          "length": 9
+        },
+        "IDAT": {
+          "description": "Image data",
+          "length": 13376
+        },
+        "IEND": {
+          "description": "Image end",
+          "length": 0
+        }
+      }
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 102.91296276339706,
+          "std": 41.84430041855833,
+          "min": 0,
+          "max": 255,
+          "skew": 0.1370762695620399,
+          "kurtosis": -0.3784351466995379
+        },
+        "green": {
+          "mean": 120.35831914419754,
+          "std": 43.64241162308259,
+          "min": 0,
+          "max": 255,
+          "skew": -0.14575654779970462,
+          "kurtosis": -0.6455258084349236
+        },
+        "blue": {
+          "mean": 147.86203418324462,
+          "std": 57.41962238673822,
+          "min": 0,
+          "max": 255,
+          "skew": -0.2587684787203326,
+          "kurtosis": -0.8281754032806354
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 1199.3056490058623,
+        "edge_std": 97.42168152155689,
+        "noise_ratio": 0.35651029506784254,
+        "is_high_noise": true
+      },
+      "entropy": {
+        "red_entropy": 7.390867049643985,
+        "green_entropy": 7.3761093691080895,
+        "blue_entropy": 7.518282924843751,
+        "mean_entropy": 7.428419781198609
+      },
+      "blockiness": {
+        "blockiness_score": 415.3291931152344,
+        "is_blocky": false
+      },
+      "pixel_patterns": {
+        "unique_colors": 220345,
+        "total_pixels": 695955,
+        "color_diversity": 0.31660811403036115,
+        "color_correlation": {
+          "rg": 0.8043754079371772,
+          "rb": 0.6258739990736949,
+          "gb": 0.907089003561058
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.04291921854019165,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.9999946179590424,
+          "green": 0.9999936983911792,
+          "blue": 0.9999971760930092,
+          "average": 0.9999951641477436
         },
         "is_suspicious": true,
         "confidence": 1.0
       },
       "parity_analysis": {
         "parity_deviations": {
-          "red": 0.0008483514080436794,
-          "green": 0.0006878410769108889,
-          "blue": 0.0018076721765961645,
-          "average": 0.0011146215538502442
+          "red": 0.0013657492222916567,
+          "green": 0.001477825434115676,
+          "blue": 0.0009892881005237886,
+          "average": 0.0012776209189770404
         },
         "is_suspicious": true,
-        "confidence": 0.9977707568922995
+        "confidence": 0.9974447581620459
       },
       "size_analysis": {
-        "file_size_bytes": 888711,
-        "expected_raw_size_bytes": 24858213,
-        "compression_ratio": 27.97108733885369,
+        "file_size_bytes": 1258588,
+        "expected_raw_size_bytes": 2783820,
+        "compression_ratio": 2.2118596395325554,
         "is_suspicious": false,
-        "confidence": 0.1
+        "confidence": 0.7788140360467445
       },
       "dct_analysis": {
-        "avg_high_freq_energy": 0.23301954567432404,
+        "avg_high_freq_energy": 0.924157440662384,
         "is_suspicious": false,
         "confidence": 0.1
       },
       "total_suspicious_tests": 2,
-      "overall_confidence": 0.5494426892230749,
+      "overall_confidence": 0.7190646985521976,
+      "is_likely_stego": true
+    }
+  },
+  "c160531d-cd4f-4caf-914c-1d259f062eed": {
+    "task_id": "c160531d-cd4f-4caf-914c-1d259f062eed",
+    "filename": "屏幕截图 2025-06-01 152840.png",
+    "mode": "all",
+    "created_at": "2026-05-20T16:19:07.571191",
+    "risk": {
+      "level": "low",
+      "ai_probability": 0.12927286374613234,
+      "confidence": 0.5714285714285714,
+      "summary": "综合风险分 11.52，视觉模型分数 12.93%",
+      "score": 11.52,
+      "evidence_summary": [
+        "视觉模型分数 12.93%",
+        "图像更像手机截图，降低高风险判定",
+        "自然纹理与边缘复杂度较高",
+        "存在轻度隐写异常，但不能直接等同 AI 水印"
+      ],
+      "explanation": {
+        "level_label": "低风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "待进一步判别"
+        ],
+        "level_description": "当前未发现足够强的 AI 生成证据，结果更适合作为低风险提示。",
+        "primary_reason": "视觉模型分数 12.93%",
+        "action": "建议保留原图与来源信息，如业务敏感仍可人工抽检。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "未发现明确生成器标识"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 12.93%",
+              "图像更像手机截图，降低高风险判定",
+              "自然纹理与边缘复杂度较高"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "存在轻度隐写异常，但不能直接等同 AI 水印"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.12927286374613234,
+      "confidence": 0.5714285714285714,
+      "features": {
+        "color_entropy": 7.103668172598373,
+        "noise_level": 5.766667460229517,
+        "edge_quality": 1387.5823214599939,
+        "color_abnormality": 33.722089705678044,
+        "texture_score": 350.2501525878906,
+        "blockiness": 23.146809092856195,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 0.8506113620997288,
+        "noise_level": 0.0,
+        "blockiness": 0.0,
+        "edge_quality": 0.7034866506611386,
+        "color_abnormality": 0.3585550235489006,
+        "texture_score": 0.4824993886644475,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": false,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2025-06-01 152840.png",
+      "file_size": 1515545,
+      "image_info": {
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          1919,
+          1079
+        ],
+        "width": 1919,
+        "height": 1079,
+        "error": "'PngImageFile' object has no attribute 'bits'"
+      },
+      "exif": {},
+      "png_chunks": {
+        "IHDR": {
+          "description": "Image header",
+          "length": 13
+        },
+        "sRGB": {
+          "description": "Standard RGB",
+          "length": 1
+        },
+        "gAMA": {
+          "description": "Gamma",
+          "length": 4
+        },
+        "pHYs": {
+          "description": "Physical dimensions",
+          "length": 9
+        },
+        "IDAT": {
+          "description": "Image data",
+          "length": 8189
+        },
+        "IEND": {
+          "description": "Image end",
+          "length": 0
+        }
+      }
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 120.01211580599063,
+          "std": 77.9743949403977,
+          "min": 6,
+          "max": 246,
+          "skew": 0.06722122012556153,
+          "kurtosis": -1.6985981357421702
+        },
+        "green": {
+          "mean": 90.40652399955376,
+          "std": 73.14907236533074,
+          "min": 1,
+          "max": 248,
+          "skew": 0.1955949678654819,
+          "kurtosis": -1.6662649813577801
+        },
+        "blue": {
+          "mean": 69.44413047226385,
+          "std": 58.55938258256133,
+          "min": 1,
+          "max": 242,
+          "skew": 0.2586592694853262,
+          "kurtosis": -1.585064895067718
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 5.766667460229517,
+        "edge_std": 17.019426772199317,
+        "noise_ratio": 0.7507584445668117,
+        "is_high_noise": false
+      },
+      "entropy": {
+        "red_entropy": 7.423258106119404,
+        "green_entropy": 7.1234652188605025,
+        "blue_entropy": 6.764281192815213,
+        "mean_entropy": 7.103668172598373
+      },
+      "blockiness": {
+        "blockiness_score": 23.14588165283203,
+        "is_blocky": true
+      },
+      "pixel_patterns": {
+        "unique_colors": 98333,
+        "total_pixels": 2070601,
+        "color_diversity": 0.04749007655265307,
+        "color_correlation": {
+          "rg": 0.9917126750992085,
+          "rb": 0.9760692647976674,
+          "gb": 0.9909554915167357
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.00410433579236269,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.9999872622910895,
+          "green": 0.9999972006358534,
+          "blue": 0.999999955028974,
+          "average": 0.9999948059853057
+        },
+        "is_suspicious": true,
+        "confidence": 1.0
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 0.002101080797314414,
+          "green": 0.000984979723278434,
+          "blue": 0.00012484298037140906,
+          "average": 0.0010703011669880858
+        },
+        "is_suspicious": true,
+        "confidence": 0.9978593976660238
+      },
+      "size_analysis": {
+        "file_size_bytes": 1515545,
+        "expected_raw_size_bytes": 8282404,
+        "compression_ratio": 5.464967387969344,
+        "is_suspicious": false,
+        "confidence": 0.4535032612030656
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 0.07462309300899506,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 2,
+      "overall_confidence": 0.6378406647172724,
+      "is_likely_stego": true
+    }
+  },
+  "15e1588d-0e68-4a9e-96b5-44082f98fee9": {
+    "task_id": "15e1588d-0e68-4a9e-96b5-44082f98fee9",
+    "filename": "屏幕截图 2025-08-19 160154.png",
+    "mode": "all",
+    "created_at": "2026-05-20T16:19:19.905067",
+    "risk": {
+      "level": "medium",
+      "ai_probability": 0.6265944861577813,
+      "confidence": 0.8571428571428571,
+      "summary": "综合风险分 52.00，视觉模型分数 62.66%",
+      "score": 52.0,
+      "evidence_summary": [
+        "视觉模型分数 62.66%",
+        "自然纹理与边缘复杂度较高"
+      ],
+      "explanation": {
+        "level_label": "中风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "待进一步判别"
+        ],
+        "level_description": "存在部分可疑信号，但还不足以单独作为定性结论。",
+        "primary_reason": "视觉模型分数 62.66%",
+        "action": "建议补充原图来源、拍摄链路或更多相邻样本再判断。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "未发现明确生成器标识"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 62.66%",
+              "自然纹理与边缘复杂度较高"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "未发现足以单独定性的水印证据"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.6265944861577813,
+      "confidence": 0.8571428571428571,
+      "features": {
+        "color_entropy": 7.014855474255441,
+        "noise_level": 1060.7317611234191,
+        "edge_quality": 898.9047258148995,
+        "color_abnormality": 32.05196547391201,
+        "texture_score": 881.8497314453125,
+        "blockiness": 830.1113750239186,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 0.8358092457092402,
+        "noise_level": 0.8870815340926089,
+        "blockiness": 0.800628138903273,
+        "edge_quality": 0.6091932385902298,
+        "color_abnormality": 0.3431503231997928,
+        "texture_score": 0.9014340938900647,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": false,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2025-08-19 160154.png",
+      "file_size": 1168300,
+      "image_info": {
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          906,
+          797
+        ],
+        "width": 906,
+        "height": 797,
+        "error": "'PngImageFile' object has no attribute 'bits'"
+      },
+      "exif": {},
+      "png_chunks": {
+        "IHDR": {
+          "description": "Image header",
+          "length": 13
+        },
+        "sRGB": {
+          "description": "Standard RGB",
+          "length": 1
+        },
+        "gAMA": {
+          "description": "Gamma",
+          "length": 4
+        },
+        "pHYs": {
+          "description": "Physical dimensions",
+          "length": 9
+        },
+        "IDAT": {
+          "description": "Image data",
+          "length": 54160
+        },
+        "IEND": {
+          "description": "Image end",
+          "length": 0
+        }
+      }
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 195.0319755927997,
+          "std": 64.31735659519478,
+          "min": 0,
+          "max": 255,
+          "skew": -1.0609815001014966,
+          "kurtosis": -0.05581043813923081
+        },
+        "green": {
+          "mean": 176.7764658307505,
+          "std": 63.16689136300542,
+          "min": 1,
+          "max": 255,
+          "skew": -0.4852709102924876,
+          "kurtosis": -0.9945883961382518
+        },
+        "blue": {
+          "mean": 155.7984716417249,
+          "std": 78.8817468549583,
+          "min": 0,
+          "max": 255,
+          "skew": -0.38917117931733464,
+          "kurtosis": -1.2635945692942598
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 1060.7317611234191,
+        "edge_std": 128.43643321523618,
+        "noise_ratio": 0.34693177369242195,
+        "is_high_noise": true
+      },
+      "entropy": {
+        "red_entropy": 6.830248960862612,
+        "green_entropy": 7.044351229203878,
+        "blue_entropy": 7.169966232699835,
+        "mean_entropy": 7.014855474255441
+      },
+      "blockiness": {
+        "blockiness_score": 830.1099243164062,
+        "is_blocky": false
+      },
+      "pixel_patterns": {
+        "unique_colors": 193902,
+        "total_pixels": 722082,
+        "color_diversity": 0.2685318287950676,
+        "color_correlation": {
+          "rg": 0.8644981943902547,
+          "rb": 0.639013621984349,
+          "gb": 0.9207986918655433
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.030507853254675865,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.997812696469961,
+          "green": 0.9890368275156204,
+          "blue": 0.9998364062986391,
+          "average": 0.9955619767614069
+        },
+        "is_suspicious": true,
+        "confidence": 1.0
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 0.0275259596555516,
+          "green": 0.06156226024191158,
+          "blue": 0.007529615750011764,
+          "average": 0.03220594521582498
+        },
+        "is_suspicious": false,
+        "confidence": 0.93558810956835
+      },
+      "size_analysis": {
+        "file_size_bytes": 1168300,
+        "expected_raw_size_bytes": 2888328,
+        "compression_ratio": 2.472248566292904,
+        "is_suspicious": false,
+        "confidence": 0.7527751433707096
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 0.9944465756416321,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 1,
+      "overall_confidence": 0.697090813234765,
+      "is_likely_stego": false
+    }
+  },
+  "34ae37b2-2740-4ab1-8658-c46f62af14f2": {
+    "task_id": "34ae37b2-2740-4ab1-8658-c46f62af14f2",
+    "filename": "20260505-082712-d9407f_edit_1638453608019.jpg",
+    "mode": "all",
+    "created_at": "2026-05-20T16:19:32.451455",
+    "risk": {
+      "level": "medium",
+      "ai_probability": 0.621206634916192,
+      "confidence": 0.8571428571428571,
+      "summary": "综合风险分 52.00，视觉模型分数 62.12%",
+      "score": 52.0,
+      "evidence_summary": [
+        "视觉模型分数 62.12%",
+        "自然纹理与边缘复杂度较高",
+        "存在轻度隐写异常，但不能直接等同 AI 水印"
+      ],
+      "explanation": {
+        "level_label": "中风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "待进一步判别"
+        ],
+        "level_description": "存在部分可疑信号，但还不足以单独作为定性结论。",
+        "primary_reason": "视觉模型分数 62.12%",
+        "action": "建议补充原图来源、拍摄链路或更多相邻样本再判断。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "未发现明确生成器标识"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 62.12%",
+              "自然纹理与边缘复杂度较高"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "存在轻度隐写异常，但不能直接等同 AI 水印"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.621206634916192,
+      "confidence": 0.8571428571428571,
+      "features": {
+        "color_entropy": 6.5138001943033155,
+        "noise_level": 328.92642337344097,
+        "edge_quality": 1944.0977305588067,
+        "color_abnormality": 97.61095435649008,
+        "texture_score": 584.8145141601562,
+        "blockiness": 256.37034515454656,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 0.7523000323838859,
+        "noise_level": 0.6783695839512404,
+        "blockiness": 0.5342081998488959,
+        "edge_quality": 0.7767538047530743,
+        "color_abnormality": 0.6847444857461756,
+        "texture_score": 0.7150014594246745,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": false,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\20260505-082712-d9407f_edit_1638453608019.jpg",
+      "file_size": 404504,
+      "image_info": {
+        "format": "JPEG",
+        "mode": "RGB",
+        "size": [
+          1440,
+          1078
+        ],
+        "width": 1440,
+        "height": 1078,
+        "bits_per_sample": 8,
+        "channels": 3,
+        "info": {
+          "exif": {
+            "type": "bytes",
+            "length": 154,
+            "preview_hex": "4578696600004d4d002a0000000800050100000400000001000005a001010004"
+          },
+          "jfif": 257,
+          "jfif_version": [
+            1,
+            1
+          ],
+          "jfif_unit": 0,
+          "jfif_density": [
+            1,
+            1
+          ],
+          "icc_profile": {
+            "type": "bytes",
+            "length": 560,
+            "preview_hex": "0000023000000000021000006d6e74725247422058595a200000000000000000"
+          },
+          "dpi": [
+            72,
+            72
+          ]
+        }
+      },
+      "exif": {
+        "Image ImageWidth": "1440",
+        "Image ImageLength": "1078",
+        "Image ExifOffset": "94",
+        "Image Orientation": "Horizontal (normal)",
+        "Image DateTime": "2026:05:05 08:27:12",
+        "EXIF ExifImageWidth": "1440",
+        "EXIF ExifImageLength": "1078",
+        "EXIF MakerNote": "[]",
+        "EXIF LightSource": "Unknown"
+      }
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 76.85356369820656,
+          "std": 80.04465054672102,
+          "min": 0,
+          "max": 255,
+          "skew": 0.9425670820937562,
+          "kurtosis": -0.6573867420606541
+        },
+        "green": {
+          "mean": 147.10559807256234,
+          "std": 60.749714835569705,
+          "min": 0,
+          "max": 255,
+          "skew": -0.15775076971127086,
+          "kurtosis": -0.903182180577248
+        },
+        "blue": {
+          "mean": 216.7382073283859,
+          "std": 49.18805918524482,
+          "min": 0,
+          "max": 255,
+          "skew": -1.7172733445824924,
+          "kurtosis": 2.686698764424304
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 328.92642337344097,
+        "edge_std": 81.7444803847467,
+        "noise_ratio": 0.44130997783280623,
+        "is_high_noise": true
+      },
+      "entropy": {
+        "red_entropy": 6.746121822843083,
+        "green_entropy": 7.258516659400901,
+        "blue_entropy": 5.536762100665963,
+        "mean_entropy": 6.5138001943033155
+      },
+      "blockiness": {
+        "blockiness_score": 256.3671569824219,
+        "is_blocky": false
+      },
+      "pixel_patterns": {
+        "unique_colors": 136027,
+        "total_pixels": 1552320,
+        "color_diversity": 0.08762819521748093,
+        "color_correlation": {
+          "rg": 0.7542442374056547,
+          "rb": 0.15916869179911322,
+          "gb": 0.7377994453454862
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.0108331935480237,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.9999999999808414,
+          "green": 0.9999894377610771,
+          "blue": 0.9998678811719995,
+          "average": 0.9999524396379726
+        },
+        "is_suspicious": true,
+        "confidence": 1.0
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 2.576788291075438e-06,
+          "green": 0.001913265306122458,
+          "blue": 0.006766646052360326,
+          "average": 0.0028941627155912864
+        },
+        "is_suspicious": true,
+        "confidence": 0.9942116745688174
+      },
+      "size_analysis": {
+        "file_size_bytes": 404504,
+        "expected_raw_size_bytes": 4656960,
+        "compression_ratio": 11.512766252002452,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 0.26913273334503174,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 2,
+      "overall_confidence": 0.5485529186422043,
+      "is_likely_stego": true
+    }
+  },
+  "5b38c32b-0f4c-4017-8299-7fe52fdf0b12": {
+    "task_id": "5b38c32b-0f4c-4017-8299-7fe52fdf0b12",
+    "filename": "屏幕截图 2025-07-19 082727.png",
+    "mode": "all",
+    "created_at": "2026-05-20T16:19:42.681155",
+    "risk": {
+      "level": "low",
+      "ai_probability": 0.3297789238306086,
+      "confidence": 0.5714285714285714,
+      "summary": "综合风险分 22.86，视觉模型分数 32.98%",
+      "score": 22.86,
+      "evidence_summary": [
+        "视觉模型分数 32.98%",
+        "画面噪声与色彩相关性更接近相机照片"
+      ],
+      "explanation": {
+        "level_label": "低风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "待进一步判别"
+        ],
+        "level_description": "当前未发现足够强的 AI 生成证据，结果更适合作为低风险提示。",
+        "primary_reason": "视觉模型分数 32.98%",
+        "action": "建议保留原图与来源信息，如业务敏感仍可人工抽检。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "未发现明确生成器标识"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 32.98%",
+              "画面噪声与色彩相关性更接近相机照片"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "未发现足以单独定性的水印证据"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.3297789238306086,
+      "confidence": 0.5714285714285714,
+      "features": {
+        "color_entropy": 0.7532211704070674,
+        "noise_level": 2727.6981951871658,
+        "edge_quality": 2741.6757062059405,
+        "color_abnormality": 0.3107633427702632,
+        "texture_score": 458.9366760253906,
+        "blockiness": 477.954549469073,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 0.0,
+        "noise_level": 1.0,
+        "blockiness": 0.6753649333234242,
+        "edge_quality": 0.8514541865203367,
+        "color_abnormality": 0.0,
+        "texture_score": 0.6050403723602966,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": false,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\屏幕截图 2025-07-19 082727.png",
+      "file_size": 24355,
+      "image_info": {
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          352,
+          289
+        ],
+        "width": 352,
+        "height": 289,
+        "error": "'PngImageFile' object has no attribute 'bits'"
+      },
+      "exif": {},
+      "png_chunks": {
+        "IHDR": {
+          "description": "Image header",
+          "length": 13
+        },
+        "sRGB": {
+          "description": "Standard RGB",
+          "length": 1
+        },
+        "gAMA": {
+          "description": "Gamma",
+          "length": 4
+        },
+        "pHYs": {
+          "description": "Physical dimensions",
+          "length": 9
+        },
+        "IDAT": {
+          "description": "Image data",
+          "length": 24248
+        },
+        "IEND": {
+          "description": "Image end",
+          "length": 0
+        }
+      }
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 250.8007038376848,
+          "std": 24.659977619650974,
+          "min": 0,
+          "max": 255,
+          "skew": -6.94857894876965,
+          "kurtosis": 51.90848228937916
+        },
+        "green": {
+          "mean": 250.77881212645485,
+          "std": 24.782259165267277,
+          "min": 0,
+          "max": 255,
+          "skew": -6.940035656858199,
+          "kurtosis": 51.71279240404036
+        },
+        "blue": {
+          "mean": 250.81348301352628,
+          "std": 24.68444548133675,
+          "min": 0,
+          "max": 255,
+          "skew": -7.011069626458928,
+          "kurtosis": 52.85936181903529
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 2727.6981951871658,
+        "edge_std": 124.65612034445004,
+        "noise_ratio": 0.09837698031719366,
+        "is_high_noise": true
+      },
+      "entropy": {
+        "red_entropy": 0.7522412610661933,
+        "green_entropy": 0.7539131098445178,
+        "blue_entropy": 0.753509140310491,
+        "mean_entropy": 0.7532211704070674
+      },
+      "blockiness": {
+        "blockiness_score": 477.9541320800781,
+        "is_blocky": false
+      },
+      "pixel_patterns": {
+        "unique_colors": 1242,
+        "total_pixels": 101728,
+        "color_diversity": 0.012209027996225228,
+        "color_correlation": {
+          "rg": 0.9932027316852416,
+          "rb": 0.9756715051721541,
+          "gb": 0.9916701465950479
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.019924549385905266,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.21772499186062355,
+          "green": 0.2191843279282652,
+          "blue": 0.21772499186062355,
+          "average": 0.21821143721650413
+        },
+        "is_suspicious": false,
+        "confidence": 0.24003258093815455
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 0.4652406417112299,
+          "green": 0.46493590751808744,
+          "blue": 0.4652406417112299,
+          "average": 0.4651390636468491
+        },
+        "is_suspicious": false,
+        "confidence": 0.06972187270630181
+      },
+      "size_analysis": {
+        "file_size_bytes": 24355,
+        "expected_raw_size_bytes": 406912,
+        "compression_ratio": 16.70753438718949,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 0.9317746758460999,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 0,
+      "overall_confidence": 0.1274386134111141,
+      "is_likely_stego": false
+    }
+  },
+  "c98b7a77-adb2-4c1b-ae47-5701f1141bf4": {
+    "task_id": "c98b7a77-adb2-4c1b-ae47-5701f1141bf4",
+    "filename": "P1000317.JPG",
+    "mode": "all",
+    "created_at": "2026-05-20T16:21:15.785293",
+    "risk": {
+      "level": "low",
+      "ai_probability": 0.16906031202591604,
+      "confidence": 0.2857142857142857,
+      "summary": "综合风险分 11.02，视觉模型分数 16.91%",
+      "score": 11.02,
+      "evidence_summary": [
+        "存在相机/拍摄链路元数据",
+        "视觉模型分数 16.91%",
+        "存在轻度隐写异常，但不能直接等同 AI 水印"
+      ],
+      "explanation": {
+        "level_label": "低风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "相机链路"
+        ],
+        "level_description": "当前未发现足够强的 AI 生成证据，结果更适合作为低风险提示。",
+        "primary_reason": "存在相机或拍摄链路元数据，因此未将视觉异常直接上调为高风险。",
+        "action": "建议保留原图与来源信息，如业务敏感仍可人工抽检。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "存在相机/拍摄链路元数据"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 16.91%"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "存在轻度隐写异常，但不能直接等同 AI 水印"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.16906031202591604,
+      "confidence": 0.2857142857142857,
+      "features": {
+        "color_entropy": 6.517271564894142,
+        "noise_level": 9.934944604045825,
+        "edge_quality": 923.0322939179893,
+        "color_abnormality": 23.05855483392214,
+        "texture_score": 207.4639892578125,
+        "blockiness": 7.8841386505910975,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 0.7528785941490237,
+        "noise_level": 0.06999349789018196,
+        "blockiness": 0.0,
+        "edge_quality": 0.6149450045997037,
+        "color_abnormality": 0.243903326141261,
+        "texture_score": 0.2453483240592703,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": false,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\P1000317.JPG",
+      "file_size": 3592192,
+      "image_info": {
+        "format": "MPO",
+        "mode": "RGB",
+        "size": [
+          4592,
+          3448
+        ],
+        "width": 4592,
+        "height": 3448,
+        "bits_per_sample": 8,
+        "channels": 3,
+        "info": {
+          "exif": {
+            "type": "bytes",
+            "length": 50586,
+            "preview_hex": "45786966000049492a00080000000d000f0102000a000000aa00000010010200"
+          },
+          "mp": {
+            "type": "bytes",
+            "length": 90,
+            "preview_hex": "49492a0008000000030000b00700040000003031303001b00400010000000200"
+          },
+          "dpi": [
+            "180.0",
+            "180.0"
+          ]
+        }
+      },
+      "exif": {
+        "Image Make": "Panasonic",
+        "Image Model": "DMC-GX7MK2",
+        "Image Orientation": "Horizontal (normal)",
+        "Image XResolution": "180",
+        "Image YResolution": "180",
+        "Image ResolutionUnit": "Pixels/Inch",
+        "Image Software": "Ver.1.1  ",
+        "Image DateTime": "2024:10:03 16:09:43",
+        "Image YCbCrPositioning": "Co-sited",
+        "Image ExifOffset": "638",
+        "Image PrintIM": "[80, 114, 105, 110, 116, 73, 77, 0, 48, 50, 53, 48, 0, 0, 14, 0, 1, 0, 22, 0, ... ]",
+        "Image Tag 0xC6D2": "[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... ]",
+        "Image Tag 0xC6D3": "[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... ]",
+        "Thumbnail Compression": "JPEG (old-style)",
+        "Thumbnail Orientation": "Horizontal (normal)",
+        "Thumbnail XResolution": "180",
+        "Thumbnail YResolution": "180",
+        "Thumbnail ResolutionUnit": "Pixels/Inch",
+        "Thumbnail JPEGInterchangeFormat": "30196",
+        "Thumbnail JPEGInterchangeFormatLength": "4366",
+        "Thumbnail YCbCrPositioning": "Co-sited",
+        "EXIF ExposureTime": "1/250",
+        "EXIF FNumber": "5",
+        "EXIF ExposureProgram": "Program Normal",
+        "EXIF ISOSpeedRatings": "200",
+        "EXIF SensitivityType": "Standard Output Sensitivity",
+        "EXIF ExifVersion": "0230",
+        "EXIF DateTimeOriginal": "2024:10:03 16:09:43",
+        "EXIF DateTimeDigitized": "2024:10:03 16:09:43",
+        "EXIF ComponentsConfiguration": "YCbCr",
+        "EXIF CompressedBitsPerPixel": "2",
+        "EXIF ExposureBiasValue": "0",
+        "EXIF MaxApertureValue": "4",
+        "EXIF MeteringMode": "CenterWeightedAverage",
+        "EXIF LightSource": "Unknown",
+        "EXIF Flash": "Flash did not fire, compulsory flash mode",
+        "EXIF FocalLength": "40",
+        "EXIF MakerNote": "[80, 97, 110, 97, 115, 111, 110, 105, 99, 0, 0, 0, 157, 0, 1, 0, 3, 0, 1, 0, ... ]",
+        "EXIF SubSecTime": "379",
+        "EXIF SubSecTimeOriginal": "379",
+        "EXIF SubSecTimeDigitized": "379",
+        "EXIF FlashPixVersion": "0100",
+        "EXIF ColorSpace": "sRGB",
+        "EXIF ExifImageWidth": "4592",
+        "EXIF ExifImageLength": "3448",
+        "Interoperability InteroperabilityIndex": "R98",
+        "Interoperability InteroperabilityVersion": "[48, 49, 48, 48]",
+        "EXIF InteroperabilityOffset": "29316",
+        "EXIF SensingMethod": "One-chip color area",
+        "EXIF FileSource": "Digital Camera",
+        "EXIF SceneType": "Directly Photographed",
+        "EXIF CustomRendered": "Normal",
+        "EXIF ExposureMode": "Auto Exposure",
+        "EXIF WhiteBalance": "Auto",
+        "EXIF DigitalZoomRatio": "0",
+        "EXIF FocalLengthIn35mmFilm": "80",
+        "EXIF SceneCaptureType": "Standard",
+        "EXIF GainControl": "Low gain up",
+        "EXIF Contrast": "Normal",
+        "EXIF Saturation": "Normal",
+        "EXIF Sharpness": "Normal",
+        "JPEGThumbnail": "b'\\xff\\xd8\\xff\\xdb\\x00\\x84\\x00\\x04\\x04\\x04\\x04\\x04\\x04\\x04\\x04\\x04\\x04\\x04\\x08\\x08\\x04\\x0b\\x08\\x08\\x08\\x08\\x08\\x0f\\x08\\x0b\\x0b\\x0b\\x08\\x0f\\x13\\x13\\x13\\x0f\\x13\\x13\\x13\\x17\\x17\\x1a\\x1e\\x17\\x17\\x17\\x1a\\x13\\x17\"\\x1a\\x1a\\x1a\\x1e\\x1e\"\"\\x13\"&\\x1a&&&\"\"\\x1e\"\"\\x01\\x08\\x04\\x08\\x08\\x08\\x08\\x08\\x0f\\x0f\\x08\\x17\"\\x17\\x13\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\\xff\\xc0\\x00\\x11\\x08\\x00x\\x00\\xa0\\x03\\x01!\\x00\\x02\\x11\\x01\\x03\\x11\\x01\\xff\\xc4\\x01\\xa2\\x00\\x00\\x01\\x05\\x01\\x01\\x01\\x01\\x01\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x02\\x03\\x04\\x05\\x06\\x07\\x08\\t\\n\\x0b\\x10\\x00\\x02\\x01\\x03\\x03\\x02\\x04\\x03\\x05\\x05\\x04\\x04\\x00\\x00\\x01}\\x01\\x02\\x03\\x00\\x04\\x11\\x05\\x12!1A\\x06\\x13Qa\\x07\"q\\x142\\x81\\x91\\xa1\\x08#B\\xb1\\xc1\\x15R\\xd1\\xf0$3br\\x82\\t\\n\\x16\\x17\\x18\\x19\\x1a%&\\'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\\x83\\x84\\x85\\x86\\x87\\x88\\x89\\x8a\\x92\\x93\\x94\\x95\\x96\\x97\\x98\\x99\\x9a\\xa2\\xa3\\xa4\\xa5\\xa6\\xa7\\xa8\\xa9\\xaa\\xb2\\xb3\\xb4\\xb5\\xb6\\xb7\\xb8\\xb9\\xba\\xc2\\xc3\\xc4\\xc5\\xc6\\xc7\\xc8\\xc9\\xca\\xd2\\xd3\\xd4\\xd5\\xd6\\xd7\\xd8\\xd9\\xda\\xe1\\xe2\\xe3\\xe4\\xe5\\xe6\\xe7\\xe8\\xe9\\xea\\xf1\\xf2\\xf3\\xf4\\xf5\\xf6\\xf7\\xf8\\xf9\\xfa\\x01\\x00\\x03\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x02\\x03\\x04\\x05\\x06\\x07\\x08\\t\\n\\x0b\\x11\\x00\\x02\\x01\\x02\\x04\\x04\\x03\\x04\\x07\\x05\\x04\\x04\\x00\\x01\\x02w\\x00\\x01\\x02\\x03\\x11\\x04\\x05!1\\x06\\x12AQ\\x07aq\\x13\"2\\x81\\x08\\x14B\\x91\\xa1\\xb1\\xc1\\t#3R\\xf0\\x15br\\xd1\\n\\x16$4\\xe1%\\xf1\\x17\\x18\\x19\\x1a&\\'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\\x82\\x83\\x84\\x85\\x86\\x87\\x88\\x89\\x8a\\x92\\x93\\x94\\x95\\x96\\x97\\x98\\x99\\x9a\\xa2\\xa3\\xa4\\xa5\\xa6\\xa7\\xa8\\xa9\\xaa\\xb2\\xb3\\xb4\\xb5\\xb6\\xb7\\xb8\\xb9\\xba\\xc2\\xc3\\xc4\\xc5\\xc6\\xc7\\xc8\\xc9\\xca\\xd2\\xd3\\xd4\\xd5\\xd6\\xd7\\xd8\\xd9\\xda\\xe2\\xe3\\xe4\\xe5\\xe6\\xe7\\xe8\\xe9\\xea\\xf2\\xf3\\xf4\\xf5\\xf6\\xf7\\xf8\\xf9\\xfa\\xff\\xda\\x00\\x0c\\x03\\x01\\x00\\x02\\x11\\x03\\x11\\x00?\\x00\\xf1m\\xc7uJ\\x18w\\xaf\"\\x9b\\xd4H\\x9d$\\x14\\x8e\\xc3\\x9ar\\xdc\\x19\\tn\\xbc\\xd3\\xed\\xaf\\xa4\\xb5r\\xcb\\xde\\xa2Z\\xdc)\\xbbI2\\xc5\\xce\\xa7%\\xc6\\x0b\\x9a\\xa2\\xf3g954\\x96\\xac\\xe8\\xc7O\\x9a(\\xad\\xbb-\\x9a\\xb1\\x1c\\xbf0>\\x95\\xb5%\\xa9\\xc8kZ\\xcd\\x96$\\xd2_:\\xec&\\xb7\\xa5\\xa4X\\xa5\\xab9\\xb6\\x9f\\x1f\\x8dW?9\\xcdg\\x11\\xb7\\xa9ap\\x8b\\x9a\\x8c&T\\xb1\\xea\\xdc\\xd3\\xa7\\xabB\\x93*\\xc9\\x91\\x91\\x9e\\xb5\\x03\\x0c\\x80kBz\\x91\\xb8\\x04sY\\xf2\\xc4I\\xe3\\xbd\\x0ci\\x9dw\\x99\\xcejP\\xdb\\xbb\\xd7&\\xd24La\\x95\\x94\\xf5\\xa5\\xf3\\x8f\\xad\\\\\\xc1\\x8b\\xbf\\x8e\\xb5\\x0b1&\\x94P!\\x0b\\x91Q\\xf9\\x9e\\xa6\\xa2\\xd6\\xb8\\xea1w\\xe7\\xa5H\\xad\\x8es[QFl\\xb5\\x1d\\xc6\\xce\\xfdi\\x977%\\xd4\\x8c\\x9a\\xd1\\xbb!u0\\x99\\xd9\\x9c\\x8a\\xb0\\x1dc\\x00\\xbfzI\\r+\\x8fw\\x05F\\x0f\\xde\\xa9wq\\xf5\\xa5K\\xed\\t\\x94\\xe6\\xfb\\xddj,\\xf5$\\xd6\\x8c\\x92&;\\xa9\\xcb\\x18\\xeahCf\\x99j\\x95$\\xc5r\\xcbsF6S\\xd0\\xfa\\xd37U\\xcbT\\x81\\x8d3c\"\\x95%\\r\\xd4\\xd2{0A+\\x00:\\xd5#!\\xcfZ\\x98j\\x12we\\xa8\\x8f\\xafz\\x99\\x8fj\\xde\\x9a\\xd0\\x99\\t\\xbb\\xb14\\xd9\\x1b\\x83C\\xd5\\x12\\xcc\\xf5?95$\\xe3t`S]\\x0b\\xa7\\xba%Q\\x9d\\xa3\\xfb\\xbc~59\\xe0S\\xa7\\xb3\"\\xa3\\xd5\\x94\\xe4\\xf9\\x89\\xaa\\xce\\xc4qND\\xa2H\\xc05>\\xf5\\x1c\\n\"6N\\xc4\\x93J\\xaa\\xdd\\xcdsZ\\xe8\\xd4{\\xe7\\x1c\\xd5b\\xfdj\\xa2#\\xd0<\\r\\xe1K?\\x11\\xc7\\xa9M\\xa8\\x89\\xc4q\\x14H\\xda3\\x86\\x0f\\xc9>\\xa3\\x8e:\\xd6\\xde\\xb9\\xf0\\x9bS\\xb1\\xb3\\x9bT\\xd0\\xe6\\x92\\xee(\\x01g\\x88\\x8cJ\\x17\\xd4c\\xef~\\x18>\\xd5\\xd0\\xa9FTS\\xea8\\xdd\\xb3\\xc7\\'\\x90\\xe7\\x15_\\x7f\\xbds\\xd1BE\\xd8\\x9f8\\xaf\\\\\\xf0/\\xc3+\\xef\\x17A.\\xa3y<\\x96\\xd6\\xa9\\xc26\\xd3\\xbaV\\xef\\xb7=\\x87\\xaf\\xaf\\x15\\xbd%v\\x11\\\\\\xcc\\xc8\\xf1\\xef\\x80\\xaf|\\x174\\x12\\xf9\\xe6{k\\xb2BM\\x8d\\xa4?\\xf7O\\xbf\\xa5y\\xdbI\\x9c\\xd18\\xd9\\x93UY\\x90)\\xcb\\x1ei\\xed\\xbc\\x95\\xf4\\x1c\\x9a\\x8d\\x93\\x1d\\'f\\x89\\x91\\x8fJ\\x95\\xdb\\xe55P\\xd9\\x19\\xcbr\\x99lu\\xcf5\\x03\\x02[4\\xe6\\x08v\\xed\\x88y\\xe4\\xd4q\\x17l\\xe6\\xa9\\x0c\\xdbE\\xf9\\xb9\\xa9\\xd9A\\x07\\xd6\\xb9\\xe2\\xb4f\\x91e9N\\xde\\rRs\\x8e}h\\x8e\\xe0{\\xdf\\xc2\\xd9#m\\x02\\xe1T\\xf3\\xe7\\xc9\\xbb\\xeb\\xb5q_Hh\\xb1\\x81c\\x18\\xfe\\xf75\\xd9\\x1f\\xe1D\\xbc7\\xc4\\xcf\\x95\\xfe5\\xf854]F/\\x10i\\xd0\\x85\\xb7\\xd5\\x98\\xac\\xca\\xbd\\x12\\xeb\\xaf\\xe4\\xc3\\x9f\\xa85\\xe0\\xec\\xf5\\x8bV\\x93\\n\\x8a\\xd2gO\\xe1m5\\xf5\\xcdoI\\xd2\\x94\\x9f\\xf8\\x98K\\x14D\\x8e\\xcaO\\'\\xf0\\x19\\xaf\\xd0\\xcf\"\\x0b;X\\xad\\xad\\xa3D\\x8e\\xddB\"\\xafEP0\\x00\\xaa\\xa5\\xd4x}\\xe4y\\x8f\\xc5_\\xb2\\xcf\\xe0\\xddYgPv\\xa6\\xf4\\'\\xa8\\x902\\xe3\\xf5\\xaf\\x8c6\\x9e\\xb4U\\'\\x17\\xba!\\xc1\\x0cM,\\xf2\\x94\\x11\\xa6\\x0f\\xcf\\xc9\\xfaVOc8j\\xd1v!\\x9eM+u5Q\\xdc\\x9e\\xa5IG\\xcaZ\\xab\\xef\\xefU-\\xc6\\xc7\\x81\\x9c\\x16\\xefO$\\x00y\\xa0E\\xa1t7\\x83\\x9e\\xb5fII\\x01\\xd4\\xd65\\x1d\\xa4[\\xd0\\x8c\\xe2T\\xcek>`@5\\x10vcg\\xa4\\xfc*\\xd5\\xfc\\xab\\xfb\\xed&V\\xff\\x00\\x8f\\xc0%\\x8f\\xfd\\xf5\\xea?\\x10\\x7fJ\\xfa\\xe3\\xc3\\xb7M%\\x98R\\x7f\\xd5\\x12?\\n\\xed\\x83\\xbd/B\\xe8|d\\x1e4\\xf0\\xfc\\x1e\\'\\xd05\\r*]\\xa3\\xedHv1\\xfe\\tG(\\xdf\\x81\\xfd8\\xaf\\xcf\\x9b\\xeb;\\x9b\\x1b\\xbb\\x9b+\\xb8\\xd9%\\xb4w\\x8eE=C\\xa9\\xc1\\x15\\x12\\xe8V!l{7\\xc0}0_x\\xd29\\xdd3\\xfd\\x95\\x0c\\xd7\\x00\\x9fS\\x84\\x1f\\xfa\\x1d}\\x8fz\\xe4Fy\\xe7\\xa58l\\xc7Cf|\\xe9\\xf1\\xabY1i\\xf6zLm\\xcd\\xf9\\xdc\\xe3\\xfe\\x99\\xa9\\xcf\\xf3\\xc5|\\xe6\\x08\\x03&\\x95W\\xaa1\\xc5?x\\x88\\x15w\\xe7\\xa0\\xe4\\xfd*\\xd5\\x8e\\x97\\xa9\\xeb\\xf7km\\xa5\\xe9\\xf73\\xb9\\xea#\\x04\\x85\\x1e\\xe7\\xa0\\x1fZ\\xc2W\\xb8\\xf0\\xa9s\\x1d\\x1e\\xb1\\xe1=s\\xc3\\xb0C6\\xa7o\\x12\\xac\\xc7h(\\xc8\\xd8\\x7fC\\x8a\\xe4\\x9c\\xb6\\xee\\xb5\\xad\\x9az\\x914\\xe2\\xd8\\xc9\\x1b#\\x93M\\x8e I&\\xa8Hl\\xcc#\\\\\\x93\\xd2\\xb2\\x9e\\xe8\\x92@cH:\\x93\\xbe\\xf49$\\xd5\\xb8.\\x0b.\\xd65\\x8dut\\\\\\xb5$f\\x923\\x95$\\x83V\\xadQ\\xef\\xe6\\x8a\\xd2\\x14-%\\xcb**\\xfa\\xb1\\xe0Vv\\xbe\\xa0\\x8fS\\xbc\\xf8O\\xe2\\x7f\\x0b\\xc3c\\xe2m6\\xf6\\xd2\\xe5\\xedJ\\xcc\\xd0\\xc6\\x1d[\\x1dH\\x19\\xeb\\x91\\xd4q\\xc5{\\xef\\x81\\xf5x5\\x1bh\\xee rR\\xf5C\\xa8=A\\xee\\x0f\\xb8\\xe8}\\xeb\\xb6\\t\\xc5I\\\\\\xd2\\n\\xd3\\x89\\xe8j\\xc1\\xd5\\x90\\xf7\\xaf\\x94\\xbe7xQl\\xb5;o\\x12\\xdbF\\x04z\\x9f\\xee\\xae1\\xd0\\\\(\\xf9O\\xfc\\x08\\x0f\\xcc{\\xd4\\xc9\\xe8\\xcd+\\xab\\xa6X\\xfd\\x9f\\x9d\\x13\\xc4\\xfa\\xbaw{F#\\xa7gO\\xf1\\xaf\\xa75)\\x80\\xe8{\\x8a\\x9a\\x0e\\xe8\\x9c?\\xc2\\xcf\\x90>-_\\xad\\xd7\\x8b$\\xb7\\r\\xc5\\x8cQ\\xc7\\x8f\\xf6\\xb9\\'\\xf9\\x8a\\xf3\\xcb{k\\x8b\\xd9\\xa1\\xb5\\xb4\\x82Yd\\x9c\\x85H\\xd0\\x16fo@\\x05:\\x9b\\x98\\xd5\\xd6r=\\xcf\\xc2\\xff\\x00\\x05\\xcaF\\xb7\\x9e-\\xb8\\xd8d\\xc1\\x16q\\x11\\x9cz;\\x0e\\x9fE\\xfc\\xeb\\xd4\\xa6:n\\x8bh\\xd6\\x9ad\\x16\\x96\\xb6\\xf6\\xcaY\\xf6\\x05UT\\x1dI?\\xd4\\xf3O\\x0f\\x0fz\\xe6\\xb0\\x8f$|\\xcf\\x98|c\\xe2\\x86\\xf1\\x06\\xa0^\"\\xc2\\xda\\xd7+\\n\\x9e\\xa4wc\\xee\\x7f\\x95p\\x8f(\\xc9\\xe6\\x94\\xe5\\xcd&\\xcc\\'\\xabd&]\\xcd\\xd6\\xa4{\\xa5E8\\xc54\\x06\\x15\\xc5\\xe1\\x95\\x88\\xcdG\\x18\\xc9&\\x87\\xd4F\\xb4WI&Cw\\xa1\\xd7i\\xdc\\x86\\xa2KSF[\\xb6\\xb8V\\xf9d\\xae\\xc3\\xc2\\x12A\\x0f\\x8a4i\\x1c)\\r&\\xde}X\\x10?\\x9dc\\x0fv\\xa2\\x17s\\xec\\xf8\\xa6I\\xed\\xcd\\xbb\\xe0\\x87\\x18\\xfc+\\x81\\xb5\\x8dt\\re\\xde,,7o\\x97\\x03\\xa2\\xca{\\xfd\\x1b\\xbf\\xfb\\\\\\xf7&\\xbbc\\xf6\\x8d\\xaam\\x16ztw\"EWS\\xd6\\xb9\\xef\\x1a\\xe8k\\xe2\\x8f\\x0c\\xea\\xbaX\\x03\\xcc\\x99\\x0b\\xc2Oi\\xd7\\x94\\xfdG>\\xd5\\x97sY+\\xa3\\xe6_\\x82\\xd7\\xadg\\xe3\\xabx_r\\x9b\\x88\\xaeae<\\x1c\\x81\\xbb\\x07\\xfe\\xf9\\xaf\\xaa\\xb5\\x1b\\xa0\\x1c\\x13\\xd0\\x12\\x7f*\\x88h\\xecg\\x86^\\xec\\x8f\\x8c\\xfcB\\x97:\\xef\\x8ao^\\xce7\\x95\\xf59\\xbc\\xb8\\x95y,s\\xb5q\\xf5\\xc0\\xaf\\xa7|\\x11\\xe0\\xcb/\\x05\\xd8&V9u\\x0b\\x85\\xff\\x00H\\xb8\\xeb\\xb3?\\xc0\\x87\\xb0\\x1d\\xfdO\\xb6\\x05h\\x95\\xdb2\\xa2\\xaf93[W\\xd5b\\xb4\\x8eWy\\x15D@\\xb3\\xbbc\\n\\x07Z\\xf9_\\xc6>=\\xb9\\xf1\\x0c\\x8fab\\xd2Gf\\x8d\\x93\\xd44\\xcc;\\xb7\\xb7\\xa0\\xab\\xac\\xf9i\\xbf1\\xe2%\\xefX\\xe0\\xe4\\x90\\x91\\x8c\\xd5L3d\\xf3X\\xd1\\xd8\\xc4\\x8d\\xf2\\xa7&\\xb3.ds\\x90\\rh\\x86\\x8c\\xb1\\xb87~kB6*\\x06h\\x98\\xd9\"\\x9c\\x1c\\xd5\\xc8$\\x92F\\xd82sQ\"\\xda\\xb9nHd\\x8b\\x05\\xd4\\x8c\\xf45\"\\xbc\\xa9\\xb6H\\xd9\\xd5\\x90\\x82\\x18d\\x10GJ\\xcavz\\x934\\xd3>\\xbd\\xf0\\x0f\\x88\\xc6\\xbb\\xa0X\\xca\\xf3fxG\\x95&z\\xf9\\xab\\xd7\\xf3\\xea=\\x8dm\\xea\\x8b\\x1c\\xb7\\x0b\\xe6(\\xc4\\xdc0=\\ru\\xd2w\\xb34\\xbd\\xe0j\\xdb\\xbc\\xfas$\\x13\\xb9d\\x93\\xfd\\\\\\x9e\\xa3\\xd0\\xfb\\x8a\\xdc\\x86\\xee\"\\xfeO\\x9a\\x85\\xb0\\x1bny\\xdaz\\x1f\\xd2\\xb0\\xa9$\\xba\\x9b\\xd3M\\xa3\\xe7\\xcb\\xff\\x00\\r\\xbe\\x83\\xf1J\\xc7]\\xd3\\xado>\\xcbut<\\xe91\\xfb\\xa8\\xe5\\x95@+\\x9fr\\xd9\\xfcq^\\x9b\\xe3\\r[\\xfb?D\\xd5\\xef\\x91\\xbekx\\xa4(\\x7f\\xdb</\\xeb\\x8a\\xce\\x85E;\\xbf6\\xbe\\xe7a8r9|\\x9f\\xdey\\xf7\\xc1\\xfd\\x0cCi\\'\\x89\\xefP\\x17\\x93tV\\x9b\\xbf\\x85G\\x0e\\xe3\\xdc\\xf4\\x1f\\x8dz\\x95\\xee\\xa4\\x109\\xf3\\x02\\xaa\\x02I\\'\\x00\\x01\\xd4\\x9a\\xe9\\xa0\\xaec\\x1fv\\x08\\xf9\\x97\\xc7\\xfe9:\\xd4\\xad\\xa3\\xe9r\\xb7\\xd9\\x90\\xfe\\xf6^\\x86f\\x1e\\x9f\\xec\\x8f\\xd6\\xbc\\xe0&\\xd0\\x1a\\xa3\\x17.f\\xcc\\x1e\\xad\\x88\\xe3\\x82}j\\xfd\\xac\\x01\\xa2\\x0c{\\xd2\\xc3k`\\xe8R\\xbdP\\xae\\x10\\x0eZ\\xb4\\xac4\\x01:\\x19e\\\\\\xe6\\xb7\\xa5\\x1ei\\x12\\xdd\\x91\\x97\\xab\\xe9\\tl\\xa5\\x95q\\x8a\\xe7\\x88\\xf9ibc\\xcb\"\\xa9\\xbb\\x8d\\xdf]6\\x83h\\xcfr\\x92I\\x9c\\x1a\\xc6\\xa6\\x89\\x9b\\xd2\\xd6H\\xf4k\\xdd6\\xd6[\\\\ax\\x1cW\\x03q\\x19\\xb7\\x93`\\\\\\xf5\\xaej7|\\xc7N>\\n\\xc9\\x9e\\x91\\xf0\\xd7R\\x86\\xd6\\xe3Q\\xb7\\xdd\\xb2K\\x9f)\\x82\\xf2\\x01U\\xce\\x7f\\x11\\x9a\\xf6\\xcd[T\\x82\\xd9m\\xfe\\xd9q\\ny\\x84\\x04w;A>\\x99\\xf5\\xae\\xfc5\\xbd\\x94|\\x8e4\\xda\\xe6GGmx\\xb76\\x89\\x14\\xd8e`?\\x03\\xeb\\\\\\xce\\xa3<\\xf6\\x92Dn\\x8b\\x83\\x01&\\x0b\\xc8s\\xc0=\\x9d}=z\\xd7\\x9b\\x9f6\\xa9\\xcfM:\\xf7\\xf5^ks\\xbf.\\xb3q\\xd7_\\xebrX\\xaf?\\xb5\\x1dZ\\xeb\\xca\\xdb.\\xc2\\xd8 \\x81p\\x84\\x14a\\xf9\\x0f\\xca\\xb8o\\x15\\xa4\\xf7\\xfa~\\xab`\\x8d\\'\\x9b\\xaaMm\\x00\\xdc[\\x19\\xf3\\x10\\x0e=\\xbf\\x95y\\xb8:\\xf3\\xa8\\xe8]\\xef.\\x9e\\x96\\xfc]\\xdf\\xcc\\xd7\\x16\\xa3\\x18\\xd6\\xb7E\\xfa\\xff\\x00\\x91\\xdd\\xcf\\x7f\\xa6xsF\\x86/9#\\xb7\\xd3#H\\xc3\\x1f@0>\\xa4\\xff\\x00:\\xf9\\xf7\\xc5\\xfe4\\xbd\\xd7\\xe3\\x92\\x0b6\\x92+`yO\\xe2\\x93\\xfd\\xefoj\\xf7\\xf0\\xf5\\x13\\xa7t\\xf7<\\xdcN\\x8d#\\xcb\\xe4|:\\xb5]\\x12nJ\\x99\\xad\\x0c\\x97Q\\x19\\xfe\\\\V\\xa5\\xac\\xb9\\n\\x80\\xd5a\\xf4%\\xec\\xcb\\x11Z}\\xa2\\xebq\\xfe\\x1a\\xee\\xed\\xd6;k|\\x9ct\\xae\\xdc\\x1a\\xf7\\x99\\x9dG\\xa1\\xe7\\xfe#\\xbcY\\x0b\"\\xe3\\x9a\\xe4\\xa2\\x80\\xbf^\\xf5\\x865\\xde\\xa1tt\\x88\\xf9\\xa4\\xb7C\\xf2\\x95\\xfc*\\xfd\\xae\\xaf$ \\x08\\x94\\x9a\\xc6J\\xe8\\xdd]3\\xa3\\xb0\\xd4\\xee\\xae\\xb7n\\'\\x03\\xb5%\\xc8S6\\x1c\\x8c\\x9ek\\x07\\xa4\\xacu\\xc1\\xb9S\\xbb\\x12\\x19$\\xb2\\xb9\\x8a\\xee\\xd9\\xb0\\xd1\\x1c\\x8a\\xfa\\x13D\\xd4\\xf4\\xdf\\x15\\xe9B\\x0b\\xa8`r\\x00\\x12\\xc1 \\r\\x83\\xeb\\xcfj\\xe9\\xcb\\xa5~h\\xb3\\x97\\x17\\x1eY]\\x16\\xa2\\xd0\\xd3M$iR\\xdd[\\x81\\xce\\xc4,\\xd1\\xff\\x00\\xdf\\' ~\\x18\\xaa\\x17\\xefzY\\xe5\\x9a{\\x80\\xc3\\x18\\xc1;0:\\xe5}\\xff\\x00\\x1a\\xe7\\xcf\\xa8^\\x9b\\xb3f\\xb9mKKb\\x85\\x95\\xf3\\x19|\\xa8`b\\xf3s\\xb60Nq]\\x9e\\x93\\xe1[\\xfdKQI\\xb5`c\\x86&\\x12\\x0c\\xe3sc\\xa7\\xd2\\xbe{,\\xa1^\\xadh\\xda\\x1a\\'\\xf2\\xdf\\xfc\\x8e\\xacL\\x94\\xb9\\xb59?\\x8a\\xbe\\x1c\\x176_j\\xb2\\xb8uM+,cc\\x85>\\xa7\\xeb_6\\xc76\\xd6`y\\x07\\xad}?\\xb3T\\xe3\\x04\\xb6\\xb1\\xe7Ww\\xa9\"\\x8d\\xf4~Y\\x05NA\\xe6\\x9b\\x1c\\xb9^\\xb4\\x9e\\xc4=\\xc9\\t$qV\\xad\\xa6(\\xf4S%\\xecu\\x1at\\xca\\ts\\xd4\\xd6\\x9d\\xe4\\xd34\\'a5\\xd7\\x85\\x96\\x8c\\x86\\xb58Il\\xaen.\\x0b>MZk\\t-\\xc0b\\xb9\\xacj\\xa6\\xe6\\xca\\x93Z\\x12\\xea\\x1e\\x11\\xbf\\xb4c\\xf2\\xabb\\xb2Z\\xd6kp|\\xd8\\x98c\\xbds\\xa9\\xdc\\xe9\\xd9\\x9b\\x96\\x17v\\xb6\\xf6\\xfb\\x88\\xe4\\xf7\\xf7\\xa8\\xee\\xae-\\xe7;\\xc3\\x1c\\x9e\\xf4\\xb7l\\xd2\\x9b\\xbcZ+\\x92\\xea\\xa1\\xa3\\x90\\xb7\\xa8\\xab\\xf6z\\xd5\\xed\\x83\\xa4\\xd0\\x19\\x91\\xd3\\xa3&A\\xa7I\\xebteQ\\xeev\\xb6\\xdf\\x12|K\"\\x08\\xfc\\xebv\\xc7\\xf12.k7P\\xf1_\\x8b.Io\\xedfP?\\x85R\\x10?\\x95oZ\\xac\\x9d\\xae\\x8c^\\x8fFjxk\\xe2F\\xaf\\xa3N\\x0e\\xa1i\\x14\\xa9\\x9c\\xb3 \\n\\xe7\\xd4\\x8fz\\xf4\\xb8~7\\xe9\\xb2H!\\x8fF\\xb9\\x1b\\xf8/#\\xa2\\xe3\\xf0\\xe6\\xb1ucF\\r8}\\xc6\\xf0r\\xbd\\xcf+\\xf1O\\xc4\\xbdWW\\xbb\\x9a\\xda;X#\\xb7BA\\x8c\\xe1\\xf7\\x91\\xdc\\x92?.+\\x86\\x1a\\xa5\\xa5\\xfbL>\\xc7\\x14R\\xa8 \\x85\\xe07\\xff\\x00_\\xe9\\xd6\\xaasUyd\\xbbhU\\x04\\x9a\\x9cl\\xaeP\\x92\\xdd\\xe7\\xb7bQ\\x81L\\xd6<D\\x8c\\x83\\xda\\x92i\\xa6\\x8c*\\xa6\\xadth+\\x8csSB\\xbb\\xdf\"\\x9cv \\xdf\\xb4\\xca\\x11\\xc5t\\xd1\\xedx\\x89b+|.\\xe2\\xacUA\\x07\\x98G\\x1c\\xd3u\\x03\\x1a\\xc6@\\xc5m\\x1b>c2\\xfc\\x9e,\\x86\\xff\\x00\\x93\\x01\\xcbUI\\x92\\xda\\xf1\\x0e\\xec\\r\\xdd\\x8dy\\x95\\xa2\\xdb\\xd0\\xec\\x931\\'\\xd3\\xad\\x98y=\\xaa\\xb2i\\xf6\\xb6\\x81\\xb0\\xca@\\xe9\\x9ekL*\\xd6\\xa5\\xc9\\xbbE&\\xbd\\xb6\\x82Id<\\x0e*\\xc2j\\x16\\xd2\\xaf\\xaej\\xe1e\\xccE\\x9c\\xae\\x1fiD9UjF\\xd4\\x8bq\\xcf\\x1e\\xb4\\xe4\\xee$\\xac\\xc6\\xcd~<\\xa2\\x0095\\x9e\\x92\\xb0\\xdaI\\xe9\\xd6\\xb2\\xaf\\x15$\\xd1T\\xe4\\xe3#Z\\xe9m\\xef\\xad\\xa1kr\\x04\\xd1\\x0c\\x1f\\xf6\\x87\\xf8\\xd7+(\\x9e9Y\\x8e\\xe4e\\xea\\x0ej0OK=\\xd1\\xd5Z\\xd1\\x94%\\xd1\\x9d.\\x95z\\xb2C$w\\x92\\x05`\\x06\\xd1\\x82A\\x1fZ\\x86\\xfbM\\x08\\x0c\\xe1q\\xbb\\x91\\xe8j\\xe4\\xad&\\xcb\\xc6S\\xe7\\x8cZ0\\xf0K\\xe0\\x1e\\xb5\\xbbm\\x0e\\xd0\\x18\\x9a\\xb5\\xb28\\x1a.\\xac\\xa1rI\\xab\\xc9~\\xbbB\\x86\\xeb]\\x14tASTY\\x8bk6sU\\xee\\xc19\\xc9\\xaan\\xd1fos\\x91\\xb9\\xba\\x96\\xdd\\xdcF>\\xe9#\\xda\\xa8\\x9dn\\xf38.Eq\\xe1W2\\x8bgMU\\xefOR\\xf2\\xdfLmL\\x85\\x89>\\xf5Qu\\x97\\xfb\\xb2\\xa1\\xfa\\xd5A]\\xd4\\x14z\\x92\\t\\xa1\\xban\\x08\\xc7z\\x91-\\xd12\\xc8\\xc4P\\xb4\\xb9)\\xb4\\xcb\\xb1\\xb3(\\xcfZI6\\xb8\\xc8\\x184D\\'\\xb9\\x00;\\x89\\xdd\\x9f\\x96\\x90\\xcd\\x1888\\xac\\xaa\\xa9^\\xe8j\\xcd\\x12\\xc52<\\xab\\xb4\\xe0\\x8a\\xbbz\\xa9t\\x14L6\\xc9\\xd9\\xbb\\x11YMJ2\\x8c\\x90N\\xa3qQ\\xecs\\xb2y\\xf6\\x92a\\x8b\\x8fJ\\xeat\\xab\\xf8%\\xb7x/]\\xdd\\x0f;\\x18\\xf2\\x0f\\xb5k\\x8a\\x93t\\x9bGN]S\\xa3fn\\xa7\\x14V\\xec\\xb2\\xc0\\x1bnz\\x9e\\xd5n\\xc2e\\x997U`\\xa5\\xcf\\x04s\\xe2U\\xa4\\xc8u\\t|\\x9cs\\xf7\\xab\\'\\xce\\x90\\x1d\\xcaMt7\\xa1\\x9a4mug\\x8f\\x893V\\xe4\\xd5U\\xc63\\xd6\\x9bwB\\x929\\xf9\\xae\\x8a\\xbb\\xb3\\xaeA\\'5\\x1b\\xad\\xb5\\xca\\xe5H\\xcdsSMF&\\xb3\\xba\\x93\\'H\\x8a[2\\xf5\\xac\\xa9a\\x90\\r\\xc5N*\\xe8\\xc9sLQw#\\xb7b\\xa6A\\x93\\xc8\\xa8\\xbe\\xd92\\x1c\\x07j\\xd5+\\xb6;j\\xcd\\x1bmJT\\xear\\x0f\\xadl\\xad\\xeaI\\x17NZ\\xb1\\xaa\\x9ab\\x9b\\'\\n\\x9bAF\\xe7\\xb85N\\xf2\\x01\"\\xee\\x1c\\x1aq\\xd8\\x93\\x1b\\xcd\\x92\\x17\\x04\\x92\\x08\\xef[\\xb6\\xba\\x8a\\xce\\xbeU\\xc6>\\xb4\\xaaF\\xe8SD\\xb3<l\\x04Ra\\x94\\xf4n\\xe2\\xa8\\x18^\\xde]\\xd9\\xca\\x9e\\x84zVTtn/\\xa8\\xe0\\xec]{\\xa60\\x18H\\x0c\\x92u5\\x12\\xac\\xb6\\x067\\xceR~\\x87\\xd0\\xd3\\xa0\\xb9&\\xd7sy{\\xf4\\xef\\xd8\\xb3:\\x1b\\xa0\\t\\xa8\\xe2\\xb5\\xda\\x08~\\xd5\\xd2\\xb5g<\\x8a7\\x9eZg\\x15B&\\xf3=r*\\x98Gc\\xff\\xd9'"
+      }
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 70.13177392388255,
+          "std": 48.152887805906815,
+          "min": 14,
+          "max": 255,
+          "skew": 1.8198886347977854,
+          "kurtosis": 2.1274310903457003
+        },
+        "green": {
+          "mean": 81.27790892260929,
+          "std": 40.67696058734742,
+          "min": 19,
+          "max": 255,
+          "skew": 1.744897667626903,
+          "kurtosis": 2.0968327889052825
+        },
+        "blue": {
+          "mean": 49.705284952848494,
+          "std": 46.993306869578696,
+          "min": 0,
+          "max": 255,
+          "skew": 1.888264563018122,
+          "kurtosis": 2.250925609598662
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 9.934944604045825,
+        "edge_std": 11.446607913620978,
+        "noise_ratio": 0.5801592516576272,
+        "is_high_noise": false
+      },
+      "entropy": {
+        "red_entropy": 6.609914121689528,
+        "green_entropy": 6.53158846091496,
+        "blue_entropy": 6.410312112077937,
+        "mean_entropy": 6.517271564894142
+      },
+      "blockiness": {
+        "blockiness_score": 7.8826494216918945,
+        "is_blocky": true
+      },
+      "pixel_patterns": {
+        "unique_colors": 144698,
+        "total_pixels": 15833216,
+        "color_diversity": 0.009138888776607354,
+        "color_correlation": {
+          "rg": 0.976065284899915,
+          "rb": 0.9103158395183746,
+          "gb": 0.9489108427278851
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.007121444679796696,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.9999991615572832,
+          "green": 0.9999998757199577,
+          "blue": 0.9999786698191857,
+          "average": 0.9999925690321422
+        },
+        "is_suspicious": true,
+        "confidence": 1.0
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 0.0005390566262722385,
+          "green": 0.0002075383800739239,
+          "blue": 0.0027189043590385986,
+          "average": 0.0011551664551282537
+        },
+        "is_suspicious": true,
+        "confidence": 0.9976896670897435
+      },
+      "size_analysis": {
+        "file_size_bytes": 3592192,
+        "expected_raw_size_bytes": 47499648,
+        "compression_ratio": 13.223025940706956,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 0.09932199865579605,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 2,
+      "overall_confidence": 0.5494224167724359,
+      "is_likely_stego": true
+    }
+  },
+  "13eda919-2ccf-486b-8e52-26b649552125": {
+    "task_id": "13eda919-2ccf-486b-8e52-26b649552125",
+    "filename": "57A9579D0B4122CA5AAD677E11B4DAB7.jpg",
+    "mode": "all",
+    "created_at": "2026-05-20T16:22:39.240228",
+    "risk": {
+      "level": "low",
+      "ai_probability": 0.5174674154400164,
+      "confidence": 0.7142857142857143,
+      "summary": "综合风险分 39.84，视觉模型分数 51.75%",
+      "score": 39.84,
+      "evidence_summary": [
+        "存在相机/拍摄链路元数据",
+        "视觉模型分数 51.75%",
+        "自然纹理与边缘复杂度较高",
+        "存在轻度隐写异常，但不能直接等同 AI 水印"
+      ],
+      "explanation": {
+        "level_label": "低风险",
+        "probability_label": "AI风险概率",
+        "probability_description": "该数值是启发式模型评分，不等同于真实后验概率，应结合元数据、视觉证据和来源信息一起理解。",
+        "image_classification_tags": [
+          "相机链路"
+        ],
+        "level_description": "当前未发现足够强的 AI 生成证据，结果更适合作为低风险提示。",
+        "primary_reason": "存在相机或拍摄链路元数据，因此未将视觉异常直接上调为高风险。",
+        "action": "建议保留原图与来源信息，如业务敏感仍可人工抽检。",
+        "evidence_groups": [
+          {
+            "title": "元数据证据",
+            "items": [
+              "存在相机/拍摄链路元数据"
+            ]
+          },
+          {
+            "title": "视觉证据",
+            "items": [
+              "视觉模型分数 51.75%",
+              "自然纹理与边缘复杂度较高"
+            ]
+          },
+          {
+            "title": "水印与隐写",
+            "items": [
+              "存在轻度隐写异常，但不能直接等同 AI 水印"
+            ]
+          }
+        ]
+      }
+    },
+    "ai_detection": {
+      "ai_probability": 0.5174674154400164,
+      "confidence": 0.7142857142857143,
+      "features": {
+        "color_entropy": 7.701427782630511,
+        "noise_level": 1392.3845932995664,
+        "edge_quality": 593.0303521829844,
+        "color_abnormality": 13.81979897154335,
+        "texture_score": 934.7240600585938,
+        "blockiness": 922.8147252187616,
+        "metadata_score": 0.0
+      },
+      "normalized_features": {
+        "color_entropy": 0.9502379637717518,
+        "noise_level": 0.9356233974327549,
+        "blockiness": 0.8246617131144521,
+        "edge_quality": 0.5188979165235524,
+        "color_abnormality": 0.09248876721960995,
+        "texture_score": 0.9278730115379877,
+        "metadata_score": 0.0
+      },
+      "is_likely_ai": false,
+      "metadata_indicators": []
+    },
+    "metadata": {
+      "file_path": "D:\\ProgramData\\imageforAI\\basemenufoecheck\\uploads\\57A9579D0B4122CA5AAD677E11B4DAB7.jpg",
+      "file_size": 5367068,
+      "image_info": {
+        "format": "JPEG",
+        "mode": "RGB",
+        "size": [
+          3024,
+          4032
+        ],
+        "width": 3024,
+        "height": 4032,
+        "bits_per_sample": 8,
+        "channels": 3,
+        "info": {
+          "jfif": 257,
+          "jfif_version": [
+            1,
+            1
+          ],
+          "jfif_unit": 0,
+          "jfif_density": [
+            72,
+            72
+          ],
+          "exif": {
+            "type": "bytes",
+            "length": 14538,
+            "preview_hex": "4578696600004d4d002a00000008000a010f0002000000060000008601100002"
+          },
+          "photoshop": {
+            "1028": {
+              "type": "bytes",
+              "length": 46,
+              "preview_hex": "1c015a00031b25471c0200000200021c0274001a436f7079726967687420c2a9"
+            },
+            "1061": {
+              "type": "bytes",
+              "length": 16,
+              "preview_hex": "3a06208dbd7bd29c4493023217d286e6"
+            }
+          },
+          "dpi": [
+            "72.0",
+            "72.0"
+          ]
+        }
+      },
+      "exif": {
+        "Image Make": "Apple",
+        "Image Model": "Default Phone",
+        "Image Orientation": "Horizontal (normal)",
+        "Image XResolution": "72",
+        "Image YResolution": "72",
+        "Image ResolutionUnit": "Pixels/Inch",
+        "Image Software": "FotorGear 1.0.0",
+        "Image YCbCrPositioning": "Centered",
+        "Image Copyright": "Copyright © 2024 Linking ",
+        "Image ExifOffset": "214",
+        "Thumbnail Compression": "JPEG (old-style)",
+        "Thumbnail XResolution": "72",
+        "Thumbnail YResolution": "72",
+        "Thumbnail ResolutionUnit": "Pixels/Inch",
+        "Thumbnail JPEGInterchangeFormat": "2104",
+        "Thumbnail JPEGInterchangeFormatLength": "12426",
+        "EXIF ExposureTime": "1/152",
+        "EXIF FNumber": "9/5",
+        "EXIF ISOSpeedRatings": "22",
+        "EXIF ExifVersion": "0221",
+        "EXIF ComponentsConfiguration": "YCbCr",
+        "EXIF ShutterSpeedValue": "1/152",
+        "EXIF ExposureBiasValue": "0",
+        "EXIF Flash": "Flash did not fire",
+        "EXIF FocalLength": "399/100",
+        "EXIF MakerNote": "[65, 112, 112, 108, 101, 32, 105, 79, 83, 0, 0, 1, 77, 77, 0, 39, 0, 1, 0, 9, ... ]",
+        "EXIF FlashPixVersion": "0100",
+        "EXIF ColorSpace": "sRGB",
+        "EXIF ExifImageWidth": "3024",
+        "EXIF ExifImageLength": "4032",
+        "EXIF WhiteBalance": "65535",
+        "EXIF FocalLengthIn35mmFilm": "35",
+        "EXIF SceneCaptureType": "Standard",
+        "EXIF LensSpecification": "[4183519/1048501, 4183519/1048501, 9/5, 9/5]",
+        "EXIF LensMake": "Apple",
+        "EXIF LensModel": "iPhone SE (2nd generation) back camera 3.99mm f/1.8",
+        "MakerNote MakerNoteVersion": "15",
+        "MakerNote Tag 0x0002": "[34, 0, 46, 0, 80, 0, 30, 0, 23, 0, 74, 0, 80, 0, 80, 0, 74, 0, 119, 0, ... ]",
+        "MakerNote Tag 0x0003": "[6, 7, 8, 85, 102, 108, 97, 103, 115, 85, 118, 97, 108, 117, 101, 85, 101, 112, 111, 99, ... ]",
+        "MakerNote AEStable": "No",
+        "MakerNote AETarget": "171",
+        "MakerNote AEAverage": "181",
+        "MakerNote AFStable": "Yes",
+        "MakerNote Tag 0x0008": "[-986710015/286719999, 31572/317, 32/1895]",
+        "MakerNote Tag 0x000C": "[32768/17, 536888899/1177759795]",
+        "MakerNote Tag 0x000D": "55",
+        "MakerNote Tag 0x000E": "4",
+        "MakerNote Tag 0x0010": "1",
+        "MakerNote ImageCaptureType": "Photo",
+        "MakerNote Tag 0x0019": "0",
+        "MakerNote Tag 0x001F": "0",
+        "MakerNote Tag 0x0020": "4609-8310-E011E698B900",
+        "MakerNote Tag 0x0021": "31588352/0",
+        "MakerNote Tag 0x0023": "[8519685, 783089664]",
+        "MakerNote Tag 0x0026": "3",
+        "MakerNote Tag 0x0027": "860106054/960574253",
+        "MakerNote Tag 0x0028": "1",
+        "MakerNote Tag 0x002B": "42BF-89F7-8EEE35884211",
+        "MakerNote Tag 0x002D": "5198",
+        "MakerNote CameraType": "Back Normal",
+        "MakerNote Tag 0x002F": "88",
+        "MakerNote Tag 0x0036": "15146",
+        "MakerNote Tag 0x0037": "4",
+        "MakerNote Tag 0x003B": "0",
+        "MakerNote Tag 0x003C": "4",
+        "MakerNote Tag 0x0041": "0",
+        "MakerNote Tag 0x004A": "2",
+        "MakerNote Tag 0x004D": "808505857/33752145",
+        "MakerNote Tag 0x004E": "[49, 81, 50, 16, 0, 162, 5, 10, 210, 6, 7, 8, 9, 83, 50, 46, 49, 83, 50, 46, ... ]",
+        "MakerNote Tag 0x004F": "[0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 63, 213, 223, 0, 15, 255, 181, 0, 63, 213, 223, 0, 15]",
+        "MakerNote Tag 0x0053": "1",
+        "MakerNote Tag 0x0055": "0",
+        "MakerNote Tag 0x0058": "835",
+        "JPEGThumbnail": "b'\\xff\\xd8\\xff\\xdb\\x00\\x84\\x00\\x01\\x01\\x01\\x01\\x01\\x01\\x02\\x01\\x01\\x02\\x03\\x02\\x02\\x02\\x03\\x04\\x03\\x03\\x03\\x03\\x04\\x05\\x04\\x04\\x04\\x04\\x04\\x05\\x06\\x05\\x05\\x05\\x05\\x05\\x05\\x06\\x06\\x06\\x06\\x06\\x06\\x06\\x06\\x07\\x07\\x07\\x07\\x07\\x07\\x08\\x08\\x08\\x08\\x08\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\x01\\x01\\x01\\x01\\x02\\x02\\x02\\x04\\x02\\x02\\x04\\t\\x06\\x05\\x06\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\xff\\xdd\\x00\\x04\\x00\\x08\\xff\\xc0\\x00\\x11\\x08\\x00\\xa0\\x00x\\x03\\x01\"\\x00\\x02\\x11\\x01\\x03\\x11\\x01\\xff\\xc4\\x01\\xa2\\x00\\x00\\x01\\x05\\x01\\x01\\x01\\x01\\x01\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x02\\x03\\x04\\x05\\x06\\x07\\x08\\t\\n\\x0b\\x10\\x00\\x02\\x01\\x03\\x03\\x02\\x04\\x03\\x05\\x05\\x04\\x04\\x00\\x00\\x01}\\x01\\x02\\x03\\x00\\x04\\x11\\x05\\x12!1A\\x06\\x13Qa\\x07\"q\\x142\\x81\\x91\\xa1\\x08#B\\xb1\\xc1\\x15R\\xd1\\xf0$3br\\x82\\t\\n\\x16\\x17\\x18\\x19\\x1a%&\\'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\\x83\\x84\\x85\\x86\\x87\\x88\\x89\\x8a\\x92\\x93\\x94\\x95\\x96\\x97\\x98\\x99\\x9a\\xa2\\xa3\\xa4\\xa5\\xa6\\xa7\\xa8\\xa9\\xaa\\xb2\\xb3\\xb4\\xb5\\xb6\\xb7\\xb8\\xb9\\xba\\xc2\\xc3\\xc4\\xc5\\xc6\\xc7\\xc8\\xc9\\xca\\xd2\\xd3\\xd4\\xd5\\xd6\\xd7\\xd8\\xd9\\xda\\xe1\\xe2\\xe3\\xe4\\xe5\\xe6\\xe7\\xe8\\xe9\\xea\\xf1\\xf2\\xf3\\xf4\\xf5\\xf6\\xf7\\xf8\\xf9\\xfa\\x01\\x00\\x03\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x02\\x03\\x04\\x05\\x06\\x07\\x08\\t\\n\\x0b\\x11\\x00\\x02\\x01\\x02\\x04\\x04\\x03\\x04\\x07\\x05\\x04\\x04\\x00\\x01\\x02w\\x00\\x01\\x02\\x03\\x11\\x04\\x05!1\\x06\\x12AQ\\x07aq\\x13\"2\\x81\\x08\\x14B\\x91\\xa1\\xb1\\xc1\\t#3R\\xf0\\x15br\\xd1\\n\\x16$4\\xe1%\\xf1\\x17\\x18\\x19\\x1a&\\'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\\x82\\x83\\x84\\x85\\x86\\x87\\x88\\x89\\x8a\\x92\\x93\\x94\\x95\\x96\\x97\\x98\\x99\\x9a\\xa2\\xa3\\xa4\\xa5\\xa6\\xa7\\xa8\\xa9\\xaa\\xb2\\xb3\\xb4\\xb5\\xb6\\xb7\\xb8\\xb9\\xba\\xc2\\xc3\\xc4\\xc5\\xc6\\xc7\\xc8\\xc9\\xca\\xd2\\xd3\\xd4\\xd5\\xd6\\xd7\\xd8\\xd9\\xda\\xe2\\xe3\\xe4\\xe5\\xe6\\xe7\\xe8\\xe9\\xea\\xf2\\xf3\\xf4\\xf5\\xf6\\xf7\\xf8\\xf9\\xfa\\xff\\xda\\x00\\x0c\\x03\\x01\\x00\\x02\\x11\\x03\\x11\\x00?\\x00\\xf8\\x03\\xf6\\x1c\\xfd\\x94|m\\xae\\xdf\\xc3\\xe2\\x8d;D\\xd4\\x9f\\xfe\\x12B\\xfae\\xda\\xdc\\xca\\xd6i\\xe55\\xbb\\xbb*\\xdd\\x81#\\xf9F\\x12\\x8e7aN\\xfeF3W\\xbcu\\xf1\\x07\\xc6\\x1f\\x08\\xbcus\\xfb5|8\\xf1-\\xc6\\xb1\\xa8Xyv\\xf7\\x17\\x12y2ZYAk,\\xd9\\xb5\\xb8\\x10\\xaa\\xcbs*\\xe4\\x01\\x17\\x980\\xa7\\x0e\\xc1\\x1cWC\\xe0\\xaf\\xda\\x87\\xf6\\xae\\xf8\\x8b\\xab\\xeb>\\x16\\xfd\\x9bu)4\\xcb\\xcd*\\x0b\\xbd3U\\xd4r-,\\xf4\\xb8\\xe3d\\xb3\\x8a\\x08\\xa5\\x93\\xf7\\x12\\\\\\x88\\xd7dl\\x91\\xb6\\xdd\\xa1\\xf6\\x8c\\x90|\\xa3\\xe2\\x97\\x85<W\\xf0\\xe0\\xdd\\xf8j\\xe3\\xec\\x1aRXiK\\x0c\\x962DV\\xe6)n\\x18/\\x9dk1\\xce:y\\x8d.C1$\\xf1\\x91_\\x8eq\\x063\\t\\x80\\x82\\xa3F>\\xfaM\\xdf\\xca)k\\xe7\\xb2]\\xefc\\xd5\\xa6\\xa7\\x18)/\\x85\\x7fV?G\\x7f`?\\x86\\xd7\\xdaO\\xed/m\\xe1\\xc9\\x17R\\xbe\\xd3|K\\xa7\\xcd{\\xaf\\xea\\xb0\\xae5O*\\xd9Z\\xfaX\\xd2\\xe1\\x1b\\x9bf\\'\\r\\x16v,r\\xfc\\xf1\\xbb0j\\xfdi\\xf0g\\xc2?\\ni_\\x1ab\\xf8\\xb9\\xe2h?\\xb2Z\\xe6\\xebPK\\xcd=\\xe3\\x82\\xdeI, e\\x9a\\xd6\\xf5\\xf4\\xf9\\x11%7l\\x8f\\xc3m-\\xb5\\xc6\\xe1\\xb88_\\xc6\\xef\\xd8\\xc7R\\xd2u\\x8f\\x0e\\xff\\x00\\xc2\\xa2\\xd7/l\\xa1\\x8fY\\xbb\\x8b\\xedw\\x97h\\xa9u%\\xf2\\xc6\\xa5>\\xcb|eRa#l\\x84E\"\\x87\\x18\\\\2\\x9c\\x1f\\xd2\\x9f\\x88?\\x05\\xb5=_\\xc6F\\xf1-\\xf4\\xc7\\xd7\\x0c\\xb6wW\\x90\\xdc\\x82u$Dg\\x06{\\x05\\x8c\\xc7(3\\x86\\xfd\\xc8>S\\xc9\\xf2\\xe1\\xd8\\x82\\xa3\\xea\\xf8Z\\xeb\\x01\\x16\\xdb\\x9c\\xd4\\x93\\xd6\\xde\\xee\\xd6\\xb7u\\xfa7\\xe8e\\x8b\\xa6\\xa4\\xd3\\xd9vG\\xd2\\x7f\\x18\\xaf>\\x15j\\xfe-\\xbe\\xf1/\\x82\\xbf\\xb2\\xfc^\\xb63\\x7f\\xa5j\\xd1\\xcb\\xb1\\x9e\\xd2\\xcbrL\\x93\\\\\\t!\\xfbm\\xc6\\x1aU\\x8f3\\xb0D\\x0c\\xb9\\xe0\\xabx\\xe6\\xadu\\xf0\\x9f\\xe1\\x1e\\x93\\xe2O\\x1f\\\\\\xfcF\\x93\\xc2\\x9a\\x87\\x8aZ\\xe3N\\xb5\\xb2\\x92\\xd6\\x0b\\x8b{\\x9d\\xe0=\\xcf\\xfcLg\\x8aM\\xbf+\\xa8\\xf37I\\xb5\\x86\\xc4r2O\\xc2\\xba/\\xc1\\x1d;\\xe3\\x8f\\x88\\xf5\\xcd\\x0b\\xc0\\xda\\xc8\\xf0\\xa5\\x97\\x86!\\xc5\\x84/\\xfe\\x8fm}s\\x12\\x1f(\\xb5\\xa24\\xad#\\x88~Yd}\\xc9\\xe6\\xb3\\x90\\xff\\x00)\\x15\\xd8|J\\x83\\xc5\\xdaV\\xa3\\xa1x_L\\xbd\\x83P\\xb3g-coy\\x1aO-\\xab\\xcd\\x0f\\x96\\x18\\xdcD\\xb8\\x13*\\x80\\x16&\\xdf\\xb4\\xbeq[\\xe3\\xb8\\x9a\\xb7\\xd5\\xde&Q\\x8d\\xba>\\x9a\\xfb\\xb7J\\xdf\\xd7\\xa0\\xb2\\xf8\\xfbI{7\\xb7\\x97[\\x1f\\xa3\\xff\\x00\\xf0N\\x1f\\x16\\xfc1\\xf0&\\xb9\\x7f{\\xe2\\x1f\\x13X\\xea>-\\xd4\\x12\\xddm.\\xb4x\\xec/.\\xda8T[K\\x06\\x16\\x00\\xc3\\xca\\t\\x94\\x11\\xae\\xc5\\x85\\xf1\\x8c`W\\xeaG\\xc4\\xcf\\x14\\xfc5\\xf0\\xb6\\x83\\x1f\\x86\\xbcI\\xa9k\\xfa\\xc9\\xbf\\x13-\\x8cv\\x13C\\x1c\\x97\\x12H\\xa4\\x04kh\\xc4\\x11\\xabH_b\\x06O\\xde9\\xe3\\x07\\x15\\xfc\\xbax\\x03\\xc5\\xbf\\x10~\\x1d\\xf8\\xd2\\xe3\\xc6:7\\x87\\xbf\\xb5u-Y\\x9bF\\xd3V\\xf6\\x0f1c\\xb8\\x81\\xa2I\\xa3\\x8dd\\x84\\xbc-\\x85\\xc8\\x93i\\xc4\\xaa\\x10\\xc8\\xbcW\\xefo\\xc7O\\xda\\x92\\xebE\\xfd\\x974M\\n\\xf7\\xc3>f\\xa5\\xe2\\x85hWTX\\xe2\\xd1\\xd6\\x1b\\x8bf\\r\\xe6*\\xca\\x1db\\x9d\\x08.\\x8cN\\xd0\\x14\\xc88\\xc2\\xd7\\xad\\xc3\\xd9\\xd4%A\\xaf\\xe5\\xfe\\x97\\xfc\\x01\\xe6x.j\\x89\\xc7\\xa9\\xf7G\\xc0\\x0b6\\xd4<\\'\\x0e\\x93\\xe1i\\x96\\xdfJ\\xb4Sh,\\xa3\\x81m\\xe4\\xb2R\\xab\\'\\xd9\\xe4q\\xf3\\x06U9\\t\\x1a\\x8c\\x06\\x19f\\xc0c\\xf0\\xaf\\xc4;]\\'\\xe2-\\x97\\x89>\\x12\\xdbk\\x9a\\xe5\\x96\\xa9\\xe1\\xf9%\\xb9\\x92\\xd2\\xd6i\\x8c\\xb2\\xbc\\x01D\\xd1\\xc5\\x12\\xed\\x8fk\\x99?v\\xdf\"\\xb4rcn\\xe8\\xf3V>\\x07|y\\xf8\\xad\\xe2\\xef\\x86\\x9a\\xdc^.\\xbb\\x93\\xc3Z\\xd0\\x94-\\x9d\\xec\\xbb\\x0bj\\xf3[\\xb0\\x880h\\x917.\\xc4H^]\\xc8\\xaaXn\\x1d\\xab\\xe7\\x7f\\x1dk_\\x16\\xad\\xbcS}\\xf1Y \\x87\\xc37\\x9a\\x82\\xa5\\xf4R\\x18\\x9e\\xe6Q\\xa7\\xb81\\xced\\xb9\\x02fQ\\xe6\\x06u\\x181F[-\\xb3\\x01k\\xde\\xfa\\xda\\xab\\x15$\\xb4g\\x16\\x17\\x0f\\xc96\\xef\\xb1\\xd0|?\\x87\\xc5\\x9a\\xcd\\x9f\\x88a\\x1a\\x9b\\x9dM\\x1fO\\xbcH\\x84\\r\\xf6pg\\x86L\\x0f&\\xdc\\xc4`Gw`\\xd9U\\xff\\x00\\x9e\\x8a\\tU#\\x07\\xe2=\\xde\\xaf\\xe2O\\x8a\\xba\\xc5\\xec\\x1aN\\xb1qc&\\x95k\\xe7C\\x11so\\x15\\xc1\\x91o`\\xb7tC\\x9e\\x18,2\\x7f\\x10\\xec\\xa3*j\\xa7\\xec\\xdb\\xf1\\xbbE\\xd7?i]C\\xe1\\xdc%%\\x1a\\xe4o\\xab[\\xdb\\x9d\\xae\\x85\\x91d\\xb8he)#+2\\xf9\\xae\\xa9\\x1e\\xf2\\xa0\\x10Fz\\x8eOC\\xf1\\xc4~9\\xf1C\\xf8\\x93\\xe1\\xe4\\xcdae>\\xb5p\\xf7v\\xda<\\x11\\x9c\\xcc\"kym\\xe0\\x86R\\x88\\xd2\\x98\\x99\\x0cr\\x1f-\\x00_\\x9b\\x94\\x18\\x8cB\\xa1R\\x97,]\\xfc\\xb4=:\\x12\\xad\\n\\xceR\\x8d\\xb4^^\\x9f\\x91\\xf6W\\x8f~9\\xe8\\x0f\\xe1\\x8f\\x0c\\xfcU\\xf8\\xcbki3\\xe8vWS\\xcbv\\xaf0\\xb2\\x8eUH\\xd4\\xad\\xb8\\xf2\\xd3\\xefO\\x03\\xacbB\\x0e\\xed\\xb8s\\x9d\\xb5\\xc9|@\\xfd\\xbc\\x8d\\x9f\\xec\\xe3\\xa2\\xfc`\\xf0\\xa4\\xb6v\\xda\\x8f\\x8ao\\xa6\\x8e\\x18\\xdd\\x83~\\xe2I\\x1cAy#0Q\\x12,i\\x9d\\xa4c\\xcc|\\x1e\\xc4\\xfeO\\xfe\\xdb>\\'\\xf1\\xde\\xcdWI\\xf0\\xf2Oa\\xa0j\\xda\\x95\\xc4\\xade$2<\\xa9#\\xac!\\x04\\xcf\\xb4\\xa2\\xb0\\x061\"\\xf4IC\\x00\\xc5\\x86\\xe3\\xe7?\\x18\\xf5\\x1f\\x8a\\xfe\\x14\\xfd\\x9d\\xaf~\\x11\\xfcN[\\x86\\xf1\\x0e\\xa7ej\\x9a\\x7f\\x99k\\xe4ZZ\\xd8i\\xe6Q$o*\\xfc\\x9b`\\x1bK\\xcacV\\xdd\\x8d\\xd9\\'5\\xc9\\xf5\\xfa\\x89\\xce6\\xb7*\\xdf\\xcf\\xfa\\xdb\\xfe\\x01\\xd1\\xfd\\x95K\\x96\\x9c\\xb7\\xbb\\xdb\\xb2\\xfe\\xb7\\xf4\\xd0\\xfa\\xb8\\xfe\\xd0>$\\xf8\\xbb\\xafh\\x97\\xbav\\xa5g\\xab\\xd87\\x85\\xa5\\x83P\\xd3\\xa2\\x92\\xd67\\xbb\\xd5/\\xae\\x89\\x99\\x8c2\\xb6\\xd8\\xe3\\x88\\xa8\\x9f,US\\x19$/O\\xf2\\xdb\\xaf\\xf4H\\xfd\\x98\\x7ff\\xdf\\x15\\xfcL\\xd6\\xf4\\xdf\\x87L\\xf6\\xdav\\xa7\\xaa\\xc4>\\xc1\\x04\\x9eS]$)\\x16\\x1es+\\xa8\\xda\\xb2<\\xac\"\\x039p\\x01?(\\x15\\xfev\\xf5\\xd7J\\xac\\xe5F.j\\xc7\\x9d\\x98R\\xa7\\n\\xbc\\xb4\\xd9\\xff\\xd0\\xf8c\\xf6\\x15\\xf8w\\xe1?\\x04\\xf8\\x92\\xdb\\xc2\\xde\\x187\\x960\\xe8:\\xc4\\x92}\\x99\\xee$\\x80\\xa8\\xb7\\x971\\x99$\\xdd%\\xb0\\x91\\x99\\x90\\x8f5O8\\x18$\\xd7\\xa3\\xfcS\\xf16\\xcf\\x1ex\\xa1\\xbcc\\xad\\xdekMr\\xa6\\xc3n\\xb4\\x8c.\\x1e$\\xb9\\xf3\\xdd!0\\xef\\x85\\xd6=\\xd1\\xfe\\xf0\\xc7\\'\\xca\\x85\\x94&\\x00\\x12~\\xcc\\xb6\\xf3\\xf8\\x07\\xe2\\xcd\\xde\\xa5\\xa6[\\xcbs\\x14\\xf2\\xdc\\x98\\xe6\\x8b\\x02B\\xb3;\\x1bee \\xedb6&\\xc5\\xcf\\xde\\xe3p\\xaf1\\xf8\\x9d\\xe3\\x9f\\x0ek\\xde)\\xf0\\x98\\xf0\\xf5\\xdc\\xb1kZ|\\xba\\xbd\\xd5\\xd4\\xecXCn\\xbb\\xe7\\x86\\xdd`W\\x00\\x10\\xe4meQ\\x80\\x81B\\x81\\x8cW\\xe5\\x95\\xf0\\xb1\\xabR2\\x85\\xe5\\x1d\\xdfmWE\\xd6\\xebK[M\\xd1\\xf4jp\\xb2\\x94\\x97M\\n\\xde\\x7f\\xfc+\\xaf\\x15iz\\xb7\\x8d4\\xb9b\\xb9k\\x88] \\x84\\x06\\xb5\\x8d\\xe7\\xdc\\xb8Y\\xad\\xd0}\\x9c*HS\\xcc\\xc0`\\xd9e)\\xf7G\\xd2\\xde%\\xfd\\xb0>1|p\\xf1\\xb6\\x96<)iq&\\x9dk#@\\xd6\\xc9+\\xca\\xd7jTEne\\xba\\xcaM$\\x91\\x8d\\xa1]\\x18?\\x96\\xbc\\xed\\x19\\x03\\xc0>0x\\xa7Y\\xf8\\xbd\\xe1}>\\xce\\xe2\\xde\\xc3L\\xb5\\xf0\\xe5\\xe4\\xb1_\\xcb\\t+\\xe6\\\\\\x89\\xa4\\x10+*\\xb1coj\\x84\\x97Tl.\\xe0\\x83\\xf8\\x89\\xfa#\\xe1W\\x85tM7M\\x93\\\\\\x1a\\xd7\\xdbm\\xe0\\x9a\\x079\\xb5\\xdfm\\x0c\\x82\\xdf\\xe7\\xb8d\\xe7i\\xb7\\x91\\xe2\\x8f\\xcc\\x8bc\\x14\\xdf\\x8d\\xa3\\xe6\\x1d0\\xcaiP\\xac\\xed6\\xaf\\xae\\x96\\xb6\\xd6VV\\xe9n\\xe6\\x940\\xebY\\xa5\\xfd\\x7f[\\x1fL~\\xcc?\\x07|[\\xf0\\xdb\\xc5\\xba\\x96\\xbd\\xe3?\\x0e]i6\\xbaE\\xacz\\x8d\\xed\\xa3\\x99\\x0c\\xb1\\xeciV\\x032\\xb4L%\\x0c\\x0e\\xfd\\xb1\\xc9\\x800G&\\xbe\\xb0\\xba\\xf8i\\xe2\\xaf\\x14\\xfcX\\xd2\\xb5\\xbf\\x14\\xcb\\x16\\x90\\xf2^[\\xc2\\xa9i1\\xfbT\\x1bQ\\xa6\\x89\\xd9.\\x1c\\x95\\xda\\x11N1\\xb8\\x9f\\xe2\\xc6@\\xfcb\\xf1N\\xa7\\xfbBY\\xeb\\xab\\x15\\xcf\\x89\\xb5\\xab\\xfb{\\xe8Q\\x89Gsm\\x04/n\\xc6;v\\x8eY\\x15\\x15|\\xb9\\xb6*4\\xa0\\x85b\\xc1x\\x15\\xea~\\x1b\\xfd\\xa6\\xbc+\\xf0\\xe7\\xc2\\xf6\\xd7\\xbe%\\xd5\\xa7\\x93\\xc6:I\\x02\\xd6\\xf4\\xdc;\\xa7\\xda\\x04\\xec\\t\\x9b\\x0b\\xe64P\\xc5\\x141\\xa2\\xc6\\xf8;\\xc8\\xcex\\x12\\xf2\\xdc\\x1c\\xfd\\x9d>_r\\x0e\\xff\\x00r\\xd1Z\\xcd\\xf4Zh)R\\x9c}\\xe8u\\xd0\\xfd\\xc0\\xd3\\xbe\\x17E\\xf0\\xc7V]C\\xe2O\\x8a\\x9d\\xb4}fg\\x11j6N\\x96\\xf3\\xda\\x992\\xed$2!d\\x82Y.\\x11\\xd1U\\xa3do\\xbd\\x90\\xcd_8\\xf8\\xb7\\xc4\\xcb\\xfbU\\xfco\\xd0>\\x1c\\xfc\\x10\\x8e[\\x8f\\r\\xc3\\xa4\\xc3\\xa7\\xde\\xdaE/\\x91\\x0c\\xf3\\xa1\\x91ZS\\xb8\\xaf\\xccT\\xb6\\xd2\\xe0\\xab4K\\xc6\\xdcW\\xe2\\x1f\\x8b?h\\xdf\\x1c\\xfcc\\xf8\\x8btt;\\x04\\x86\\xee\\xf1\\xf6\\xc5\\x10\\x1ff\\xb4\\xb6\\x8d~vE\\xb7\\xc8\\xda\\x87,De\\xb2\\x0e\\x0ey&\\xbe\\x8f\\xf8S\\xf16\\xc3\\xc2\\x1a\\x04Z\\xd6\\x93\\xac-\\xce\\xb7\\x1d\\xd8,n<\\xd0$6\\xad\\x1b\\xc4#]\\xdeP]\\xac\\xc0\\xa9\\x04\\x8c`.\\x1a\\xbes\\x11\\x99\\xba4\\xdc\\xabS\\xe5\\xa2\\x9d\\xdd\\xe5wo\\xd1_\\xa7\\xe8\\x8e\\xafaf\\xb9\\x1d\\xe5\\xe9d\\x7fJ\\x9f\\xb3O\\x81\\xe3\\xb1\\xf0\\xc7\\x88|\\r\\xf1f\\xdc\\xc0|=\\xf6\\x9bU\\xba\\xba\\x0bq2Y^L$`\\x87`Y,\\xd0\\xa6\\xd0bh\\xd5\\x832\\xaa\\x86\\xdb\\x8f8\\xf8\\xf7\\xff\\x00\\x08\\xef\\x8e\\x9bC\\x8b\\xc36B\\xf6;t\\xba\\xb7\\xbb\\x9a\\x0b\\x96\\xb3\\x8a{yp\\xbel\\r\\xf3\\x1d\\xa9\\x1e\\xec\\x9f\\x95\\x01,%\\x19l\\xd7+\\xfb)\\xfe\\xd5:\\xd7\\xc4_\\x05\\x1bO\\x1c@u}{\\xcc\\x95\\xf4\\xfb\\xd9\\xa5\\x10\\xc5/\\xee\\xcf\\x9a\\x86;x$E\\xd9\\x8c\\xc7\\xe6 \\xe8A5\\xad\\xf1zAwey\\xe2\\x1d3G\\x94\\xdbGg\\x13Cw0\\xcc\"\\x08\\x1b\\xcc\\xd4\\xed\\xee$\\x0e\\xc1\\x1a7n3\\x18P2\\x01P\\xe4\\x8f\\xd62\\x1cU\\x1a\\xb88\\xca\\x93\\xf7}?\\xae\\x96>r\\xa4d\\xab\\x7f\\x91\\xf9#\\xf0\\xeb\\xe1\\xb7\\x8f\\xd3\\xe2m\\xdf\\x82|!\\xf6\\x9d\\x0bY\\xb2\\xb5\\xb8\\x1f\\xe9\\x07\\xec\\xee\\xd1\\xc54l\\xa27\\x91@%\\x96@\\xaa\\xa9\\xf3\\x1d\\xa3nz\\x1fK\\xfd\\x93\\xf5\\x1f\\x88V\\x9e5O\\xec\\xff\\x00:\\x17\\x8e\\xe5\\xee\\x1a\\x0bK\\x81\\x04\\x96f\\xdc6\\xe624[A$\\xe1A\\xe0n\\xfe\\xf0\\x02\\xba\\xdf\\x10x\\xef\\\\\\xd5\\x7fiM\\x07\\xe3\\x0e\\x99cm\\x15\\xf7\\x89t\\xfb\\xcb\\x1b\\xd9o.%_\\xdf[}\\x96\\xee\"\\x16\\x10\\xcb\\xbdc\\xda\\x8a\\x886\\xb2\\x05b\\x15\\x8e+\\xd5&\\xd3|S\\xa7x:\\xf9u\\x9b=2\\xc6\\x7f\\x1aY[_\\x97\\xb1\\x8bl\\x96\\x91\\xff\\x00h\\xac\\xd2M,\\xaa\\xaf\\xb5\\xce\\xf5H\\xe1q\\x82$\\xc6\\xfe>eC.\\xa5\\t\\xc6t\\xef\\xa5\\xfd?\\xae\\x87\\xbfS2\\xab(8T\\xb6\\xb6\\xfe\\xbeG\\x93\\xf8\\xd3\\xc5\\x9e$\\xff\\x00\\x84j\\x1d.\\xdeK\\xab(\\xe2\\xb9\\x9a\\xdd\\xee\\xde\\x0f4\\xdf\\xbd\\xe4\\xc05\\xeaL\\x81\\x90\\xca^W\\n\\xbbK\\xc8#\\x189l\\x8f\\x02\\xf1\\xb5\\xbe\\xa1\\xad\\xd8jV\\xef\\xa9_\\xc9s{4Z|\\xfb\\xe5\\xf3e\\xb9\\xd3\\x99\\xd2\\xe6B\\xad\\x1b3F\\xc8\\x9ec\\xc8\\xb2\\x05*Le\\xb0\\xc7\\x15\\xeb\\xf7\\x7f\\x13\\xbe\\'x\\xae\\xcb[\\xd3|u\\xaa\\xd8\\xcb\\x0b\\xcbmw\\xaa[\\x0b\\x18\\xa2\\xbb\\x92(r\\xb0\\xd8\\xaa\\xedu\\x8e$rr#\\xd8F\\x19\\xc9\\xc4`W\\x8fx\\xa1\\xf4\\xef\\x87s\\xa6\\x89\\x15\\xcd\\x85\\xdc\\x1e.u\\x87M\\xd3\\xd4\\xcb,\\xd2\\xdb\\\\\\xecY\\xa4h\\xc2\\xee\\x8aI\\xb9`\\xd1\\x90\\x00\\xde\\xbc\\xe0\\x11\\xd1\\x1aQ\\x97\\xbe\\xf6\\xfe\\x96\\xc2\\xfa\\xc3\\x8a\\xe5\\xd3\\xe5\\xb7\\xe4}S\\xf0s\\xc5\\x9e\\x07\\xf0l\\xda\\xc7\\xc3\\xddF[m\\x0fL\\x90\\xd9\\xc3\\xabLns{uq\\x0c\\x85\\xda\\xda\\xdeU\\xdb$`\\xcecyH\\xcbm\\x04\\x00\\xcd_\\xe6O_\\xe9\\xe5\\xf0S\\xe1\\x8f\\x85\\xa4\\xf0:k\\x7f\\x174\\xbb\\xdb\\xbd:\\xee(Dd\\xb4\\xf2\\x0bK\\xa9\\xae$H@\\x8e$T.7\\xed\\x8a4G\\x92Vq\\xbc\\xaa\\xa9U\\xff\\x000\\xda\\xf4U9\\xc6\\x0b\\x9f\\xfa\\xf2<\\x1c|\\xe0\\xe7\\xee\\x1f\\xff\\xd1\\xf1\\xff\\x00\\xd9\\xf3\\xc6^\\x0f\\xf8\\x8f\\xadx\\x8bO\\xd7\\xad/.\\xad\\xb5+\\xb3\\xaa\\xdb\\\\\\xda\\xb7\\x9f\\x7fg\\x1d\\xe3B\\x0c\\x12\\xc2\\x83\\xcc(\\x92\\xc6\\xab\\x1b\\xc7\\xb3hl\\x0c\\x121\\xf9Y\\xe3)\\xe3\\xf8s\\xe31\\x1d\\xe2\\x87\\xd15K\\xab\\x9b\\xfb\\x0b\\x85\\x0en-`\\x8eQ\\x0b\\xaa 9S\\xb4~\\xee6VV2e\\xb8\\xce3>\\x13|s\\xf1\\x7f\\xc2\\xef\\x18\\xddk\\xd2jw\\x1a{\\r>KD\\x92\\xc7\\xf7\\x12\\xb5\\xd3G/\\xd9\\xfc\\xc5\\xc8\\xccip\\xa8\\xcc\\x8c\\x08\\x01zp+K\\xc5\\x9a\\x05\\xb7\\xc5\\xcb\\xd1\\xa0h\\xda\\xb4\\xb1xz\\xc9\\xad\\xec\\xadu\\xb9 t\\x86\\xd9&\\x8f\\xcc>j\\xabo\\xdd,\\xd2\\x80\\x0f\\xde\\xc4x\\x03\\x1c\\x0f\\xcf#)\\xfb.lK\\xd1~:.\\xd6da\\xb15%\\x0eG\\xab\\xe8}\\xdd\\xe1+\\xcf\\x0fx\\xa3A\\xf0\\xe6\\xa7\\xa4\\x0f/H\\xfb0\\x10\\xc12%\\xbe\\xfco\\xcc\\xa5\\xa1\\xcb0c\\x10wip\\xcc\\xf20^\\x95\\xd5\\xd8\\xf8\\xca\\xe7\\xc0\\xfe\\x1e\\xb3\\x8f\\xc1^V\\xa8\"\\x9e\\x11+\\xccD\\xc69P6\\x12)w\\xc6<\\xb6\\xdcG\\x96U\\x97\\xe5\\xc7\\xdc\\x18<7\\xec\\xff\\x00\\xa0\\xf8n\\xcf\\xe1+[\\xf8\\x06O\\xedm3O\\x9b\\xcd\\xb9\\xd55;rf\\x86\\xe8\\x0f\\'\\xcaH\\xe3R&H\\x83n\\x03\\xfdY\\xe0\\x80O\\x15\\xf5\\r\\xb7\\x87|%.\\xb5\\x1e\\x97\\x017\\x11Ecn\\xd6\\xd71\\xc3\\xb4^\\xce\\x11\\x15\\xd8\\x96)\\x8d\\x8b\\xbc\\x16f\\x1c\\xa9\\xea\\xc3\\x03\\xf3L\\xe3\\x88\\xe1C\\x13,JO\\x927\\xf2\\xdb}7[\\xaf>\\xb6\\xb2?B\\xcb\\xe8^\\x8aO\\x7f\\xeb\\xe4|\\xd9\\xf1\\x7f\\xc7\\x9e\\x1f\\xd7\\xb4{\\x8d\\x16\\xf6\\xe2\\xebN\\xd4\\x7f}4\\rk\\xf3C%\\xd7\\x93\\xe6H\\xf2\\xc6\\xe0\\x1d\\xed\\xb4\\x16\\x19\\x1cc\\x1c\\xe0W\\xc5:r_\\xebzg\\x92\\xd7r\\x15\\xb5\\x11\\x8b{x\\xf3\\xe7\\xb6\\xe2\\x11\\xfc\\xb3\\x82\\x13\\xa2\\x9c\\x9eN\\x06\\xd5\\xe0\\xd7\\xd7\\xff\\x00\\x16\\xbc\\x13\\xe1\\xbd\\x13\\xc7\\xb7V\\xfa\\xcb]\\xeb?l\\xb7\\x9bR\\x9d,\\xbc\\xb8\\x9b\\xed\\r\"\\xc3obb-\\xfb\\xa8Q\\x0bHT\\xa6\\xfc\\x1cd\\x0ca\\xde\\x02\\xf0~\\x87\\xacj/.\\xa7p$\\xb7\\x12HV\\r1\\x98E\\x00\\xc9V\\xf3]\\x90,\\x8c\\x8b\\'\\xca\\xb9\\x07\\x0b\\xf2\\xfc\\xc0\\x1a\\xd7\\t\\x9fR\\xa1\\x85x\\x9a.S\\x8c\\xac\\xd5\\xfai\\xd2\\xea\\xeb\\xce\\xfbtw\\xd0u\\xa0\\xe5>G\\xa7\\xa7\\xf5c;\\xc2\\xdf\\x04\\xf5=\\x02\\r6_\\x89\\xb77p\\xc1\\xc4\\xd3\\xe9\\xd1\\x06\\xf3@\\x12\\x98\\x80y\\xc9e\\x0f\\xc0d\\xd8\\x0e\\x1b\\x86\\xc5}?\\xe1_\\x87\\x1f\\x0b\\x99\\xdfU\\xd7\\x96\\xe7\\xfb>K\\xd6hb\\x82\\xe4\\\\\\xeaQZ\\x98\\x84o,\\xaa\\x88!IX\\x9d\\xc1w\\x9e\\xc3$\\x82\\xc3\\x89\\xb4\\xf1\\x16\\xa1\\xe0\\x7f\\x03\\xcb\\xe1\\xdf\\x05F\\xe3R\\xbe\\xb86\\x88\\x96\\xe4\\xc2n\\x02\\xab\\xa8\\x80\\xbb;\\xb9\\x88\\xbb\\x96\\x7f\\x9c\\x05\\xc6pN\\x05}!\\xe1\\xef\\x8d\\x9e\\x07\\xf8I\\xa0\\xcf\\xe1\\xf94\\x9bk\\x8b\\xad\\x7f\\xcb\\xfbm\\xb5\\xb6b\\x10\\xc1l>\\xd1$0\\xb4\\x85\\xd8a\\xce<\\xc0\\xc8\\x00=\\xb0\\ryu3L5W.y\\xd9KOyh\\x9e\\xfa-;~]\\x8cq\\x14\\xa5N\\xcd\\xab\\xa5\\xdb\\xb1\\xfb\\x1f\\xfb\\x0e\\xf8[\\xf6|\\xd0tx\\xaf<\\x11\\xacX\\xae\\xabk\\x15\\xbd\\x8bG}\\x14_i\\xbe\\xb7\\xbb\\xdcR\\x19<\\xc9\\n}\\xa2DQ\\x1e\\x008`\\xa3;wR\\xf8\\x92M+\\xc3\\x9e1\\xff\\x00\\x84\\'\\xc1Wv\\x97\\xb1\\xd9Z5\\xed\\xe5\\xef\\x9f,\\xb6r\\xdb\\xb3\\xa25\\xbd\\xd4\\x1ej\"\\xfe\\xed\\xdd7~\\xf7*~C\\x9f\\x96\\xbf\\x16<a\\xae\\xe9\\x1e\\x1d\\xb7\\xd4o\\xfe\\r\\xde\\xe9\\x9a\\xde\\x9bp\\xd1\\xdf@\\xdas\\xc8WO\\xbd\\x8fr\\xc9\\xb4\\x86\\xf3\\xbc\\xa0\\xccY\\n\\x82\\xae\\x11U\\xf2\\rs\\x1f\\r\\xff\\x00j/\\x12Z|E\\x9f\\xc4\\x1e9\\x8b\\xca\\x7f\\xec\\xe9~\\xd1\\x0cDm\\xb8\\x91\\xe2\\xd8O\\x95\\x13aP\\xfc\\xa7\\x04(@[\\x91\\xdf\\xf5n\\x1d\\xce\\x1c0\\xd4\\xe8\\xca)Ii\\xa6\\xd6\\xef\\xf9\\x7fZ\\x1c\\x0f+SN\\xb4e\\xee\\xbd\\x8f\\xd5\\x1f\\xda\\x1bL\\xf8yy\\xf1\\x9f\\xc2\\x7f\\x18~\\x1a\\xdf\\xd9hZ\\xef\\x87/\\xb5h\\xaf\\xacw%\\xach\\x1fM\\xbb\\x99#m\\xb9&\\xe2\\xdd\\xa2\\x08\\x8c\\x84\\x82\\xad\\x16\\x08e;x\\xdd+\\xfb%t\\x86\\xf1/\\x8f,,4KkCo\\xf6\\xa8!\\x91\\x9aV\\xf3\\xee\"\\x8e\\x02\\xe4#\\x07\\x968S{\\xc9\\x13m%\\x9f\\x85e\\xc5~Kk\\xff\\x00\\xb4^\\xad\\xe2\\xbb[\\x8d~\\xda\\xc1\\xc4zp\\x86\\xfd\\xee^B\\xf3*\\xb3\\xc7\\x1c\\xc0\\xb0\\x01B\\x14,\\x8a\\x08\\xc0\\x04\\x03\\x93\\x93^\\xa7y\\xfbO\\xe8\\xff\\x00\\x12<7\\xa9\\xdf]X\\xcag\\x8e\\xc5!\\xb1\\xb8\\xf3\\x121\\x83\\x1bB\\x01U@\\x92\\xdc\\x16\\xd8\\xca\\xcd\\xb5T@\\xbd\\xab\\xdf\\x86{Nj\\xfb\\x1a\\xff\\x00c\\xce\\x1a\\\\\\xf7o\\x18i\\x9a-\\xb6\\x88u\\rb\\xff\\x00\\xed\\xad~\\xcfk\\xa6\\xac\\xa4\\xa1\\xfe\\xc9\\x8aB\\xc9%\\xc3\\x04]\\xbfh\\xe5\\xf1&\\x19\\xd3j\\xa3d\\x92;O\\x1bk\\x0f\\xa3Y\\xf8OG\\xf1\\xf46\\xaf{c\\xa8\\x08\\xbc?\\xaa\\xcaWO\\xb8\\xb6\\xd3\\xa0\\xb23\\xc6\\x91 \\x8f1Z7\\x9c\\x0b34\\xac\\xe0|\\xb8\\x93nm\\xde|}\\xf8q\\xf1\\x8f\\xc21\\xf8\\xc4\\xe8\\x89a\\x7f\\xa2\\xfd\\x8d\\xb4\\x88D0O\\xe6\\xdbZ\\xc5=\\xbcP\\x141\\xb0(\\xb7,\\x82Y\\x9c\\x96\\x07\\xa1\\xc6\\xd5\\xaf\\xcf/\\x88^\\x03\\xf1\\xaf\\x89~/\\xdc5\\x85\\xb4\\xd1\\xcbc\\xa4\\xdb^j:\\x86\\xa3$q\\xc6\\xd3jw[ax\\xcb\\xed\\x1b\\x14\\x00\\x13\\nJ\\x859\\x185\\xd1W\\x1d\\xc8\\xdc\\xe9+\\xe8\\x82\\x96\\x1b\\x99(\\xd4\\xd3S\\xf4\\xcf\\xc1\\x9a\\xbe\\xbb\\xe3\\x9d\\x17\\xfe\\x11\\xdb\\xab}WT\\xb5\\x9d\\xe3\\xb9]N\\xfa\\xe4\\xd9Z\\xc3{\\xa8<\\xf1\\x19\\xf4\\xc8b\\x02|M\\x14x\\x0cw\\xacC8\\x04\\xb8\\xcf\\xf9\\xa6W\\xfaW\\xfe\\xcb^\\x03\\xf8\\xa7\\xf1\\xb3\\xc7\\x16Si\\x96\\x9a\\xb6\\x9d\\xe1\\xebk\\x1b\\x9b\\xf8V\\x16u\\xbf\\xd6^\\xd6M\\xa8\\xd1\\xc9\\x0ci\\x0cp\\xcc\\xa8\\xb6\\xf1m\\x1b\\x02\\xa08\\xdc\\x17?\\xe6\\xa1^\\xde\\x1e\\xb7\\xb4\\x82\\x92<\\x0c\\xca\\x1c\\xb3\\xe5?\\xff\\xd2\\xfeY\\xf4/\\x12\\xdd>\\xb7ge \\xf3\\xa2\\xf2\\xdb\\xa3mb\\xe8\\x98B\\x19\\x81\\xcf\\'\\x03#\\xd2\\xbe\\xc1\\xf8_\\xe2\\xebk\\xa5\\xd3\\xb4\\x1f\\x1e\\xdb\\xeaw>\\x1f\\xfbT\\xc9}\\x1d\\xa4\\x89\\x93u\\xb0y9<\\x92@^\\x98\\x18R\\xb88\\x15\\xf2W\\xc2m#W\\xd5\\xb5\\xe8\\xac\\x920\\x92M\\x18\\n\\xce\\x14&\\xe1*\\x9f\\x9b<.UH\\x05\\xb1\\x9a\\xfb\\xb7\\xf6j\\xf0l\\x1a\\x87\\x8c\\xaf|\\t\\xe2\\xb4\\x12\\xd9\\xebv\\xce\\x1a[\\xbf*\\x18\\xe3\\xb8\\x0eV\\'\\x8d\\xdc0fF`\\xc3\\xcb;\\x94\\x02\\xc3\\xa7\\x1f\\x97\\xe7\\xd5\\xe8\\xc7\\x0f(\\xcf\\xa2\\xe9\\xba\\xf3^\\x9d=\\x08\\xc3S\\x9cTTz\\xff\\x00\\x9f\\xfc\\x03\\xeao\\x84\\xdf\\x144o\\r\\xfe\\xce\\x90h\\xb7zi\\xb1\\xd4\\x8c\\xf1A\\xa6\\xcd\\x19X\\xf6\\xc6\\xfb\\x83o\\x95z\\x84\\xfd\\xe7\\r\\x91\\x81\\xc785\\xec\\x9e1\\xf8\\x87i\\xe0\\xfd\\x11|=\\xa3\\xe2\\xebX\\xd4$\\xfb\\r\\xb5\\xb5\\xb1%-4\\xcbY\\x0e\\xe6\\xdc\\xac[\\xf7\\x8c\\xec:`\\xf9\\x84\\xaf\\xcd\\xb2\\xbeZ\\xba\\xf8Y\\xe0o\\x04\\xcf\\xab]\\xc9:%\\xfe\\x858\\xb6\\x8a\\xd9\\xd9\\x7f{!\\xf9C\\x07L\\x1f\\x96$2;\\x07\\xda3\\xb8\\xf2v\\x9fw\\xf8K\\xe1\\xed?\\xc3\\xba\\x1bx\\xef\\xc7\\x93\\xb7\\xf6\\x97\\x89\\xa3i\\x02\\xc2\\xaa`\\xb7W\\xf9\\xed\\xd0\\r\\xdd\\xc3\\x07\\x19\\x1bT\\x86\\x19\\x05+\\xe03\\x1axH\\xa7Z\\xcd\\xa6\\xee\\xa3\\xfc\\xcd\\xd9\\xfd\\xca\\xd7\\xfc:\\x9f_\\x96b+\\xa8\\xfb9id{\\x1f\\x81\\xb4\\x11\\xe1\\x1d\\n\\xf3Q\\xd4\\xa1\\x17\\x96\\xfa\\xab\\x19.\\xe4\\xb9h\\'y.\\t*$ub\\xd8R\\x14\\x8d\\xb1\\x8f\\x91B\\xff\\x00t\\xb1\\xe0/\\xbe-Yx_H\\x9b\\xc1\\xc8\\x8f-\\xb5\\xcd\\xc2\\x08Lq\\x02\\t\\x05\\x82\\xb4\\x91BpYFQ\\x18\\x91\\xdc.2\\xd5\\x97\\xe2\\xaf\\x88\\xdfm\\xb6\\x17\\xde\\x1eF\\x8e\\xc2\\xd6(\\xa1\\x83\\xcd\\x00\\xc4\\xcd\\x82\\xed9\\x85\\xc6\\x0c\\xc4*\\xe0n\\xda\\x83\\x81\\x93\\xba\\xbc\\x95\\xfcO.\\xa0\\x86\\xfe\\xd7M\\xbd\\xdc\\xee\\xb1\\xcap\\x87\\xcc)\\xfd\\xe9<\\xb3\\xb4\\x80:~\\x03\\x15\\xf0\\xf42\\x1a\\x8eU1\\x18\\x85\\xac\\x9f{[\\xb2\\x7f-,\\xb4\\xe9c\\xd3X\\xad\\x14\\x12\\xdb\\xf2:\\x8f\\x86\\x1e\\x14\\xf8\\x83\\xe2\\x8f\\x18I\\xe1\\x1dN9U\\xe5\\x93d&G\\xe2\\xde)\\x1d\\xa3B\\xf1\\xc3\\xce\\xed\\xc1x\\x04\\x04^w\\x1c\\x8a\\xfd6\\xbb\\xf8O\\xfb%\\xfc7\\xf8g\\x7fes\\x17\\x89t\\x7f\\x10\\xf8h\\xc9i\\xa9\\xdej\\xd6\\xf0\\xeaQ\\xdf\\xdc\\x90\\xf14\\xd0F\\xa9\\xb0\\xd83\\xef\\xda\\xac\\xe3\\x1b\\xb7m\\xcd~cxR\\x7f\\x15\\xf8\\xbfP\\x8a\\xc2\\x19\\x8e\\x92\\xee\\x8e\\x96\\xf3\\xa1hW!\\xc4\\xaa\\x1a\\xe6\\'^\\x1a@\\xa0\\xb1\\x00\\xaf|\\xaf\\xca~\\xe1\\xf8\\xab\\xf0\\xe7\\xc7\\xfe\\x05\\xf0\\xe8\\xbe\\xbe\\xd4u\\xab\\x8b\\xedb\\xd7\\xed\\xb1\\x99D\\xa5\\x8c\"!\\x04\\xd1\\x89\\xbe]\\xe8\\x04\\xbeSm\\x88\\x89H\\x0e\\n\\x9c\\x8a\\xfa\\\\\\x97\\x07&\\xaaJp[ke\\xb7\\xa7\\xfc\\x06\\xbb\\\\\\xe2\\xc5V\\x94m\\xcas\\xd6\\xfe\\x12\\xf8C\\xe2=\\x12\\xd6o\\x86\\x96\\xd2@\\x92\\\\\\xb2\\x99\\xe2\\x10B\\xaf,\\xbb]\\x9d\\x06\\xf3\\xe5C\\xd1Yv\\x1cn\\xc9$q^\\x11\\xf1\\x1b\\xe1\\xcf\\x86\\xaen\\xe1\\xd1\\xbe\\xdbzu\\xc5\\xba{im\\xa4\\x8d\\x1e\\xdd\\xd5\\xd9\\x024r+\\x199\\x05\\x83\\x00F@R\\xb9\\x0c+\\xea\\xbf\\x80\\xdf\\x04\\xb4\\xbd7I\\x97\\xe2f\\xab\\xe1_\\xec\\xe8\\xd6\\xd8,k\\xe7\\xbd\\xb4rF\\xb2(Y\\x829\\xdb*\\x80\\xc0\\xefWU\\x050N\\x05u\\x1f\\x1b\\xf5M?T\\xd0t\\xff\\x00\\x88\\x9e\\t\\x8a[=CE\\xd6d\\xb3\\x82\\xfe\\r\\x97\\x16\\x92\\xdbJ\\x98wx\\x80\\x04&\\xc7\\xca <1n\\x84W\\xd6e\\x18\\x1a\\xd1\\xa5\\xed\\xe7\\xd7m?\\xab_\\xee=,\\x0e?\\x9e\\x9c`\\xd5\\xad\\xdb\\xfa\\xfc\\x0f\\xcb\\xaf\\x1c\\xf87N\\xf0\\xbcz\\x8f\\x86\\xfc%i\\xaa\\xbd\\x9b\\xa3Ep\\x8f\\x95b\\x81O\\x92\\xef\\t\\xcf\\n~n\\x00\\x18\\x00\\xe0\\x10@\\xf6\\xbd\"{-o\\xe1\\xba|I\\xb4\\x88\\\\i\\xb6\\xd2\\xda]M\\xa4\\xae\\xe5\\x96\\xeb\\xca\\x96\\x18\\xa5\\xb7\\x88\\x85\\xf9d\\xf2\\xd1\\xdb\\xcc\\xdb\\xb5FS\\xba\\x8a\\xfasM\\xb8\\xd2\\xfe&j\\x1e%\\xf8s\\xf0\\xe6\\xdaE\\xd35{\\xdbxc\\x92x\\\\_3m^\\x13d\\x87\\xcb}\\xec\\xe4\\xbe\\xd3\\xb1\\x0e\\xd00\\xc7\\x1e_u\\xf0\\xca\\x1f\\xd9\\xff\\x00\\xe0\\x97\\x86<\\x7f\\xe2K\\xfb\\x8f\\xf8Eu;\\xeb\\x01\\xab\\xe9\\xae\\xfee\\xdcp\\xa4\\x9eT3Z!\\x8e<\\xc7,\\xb1\\xc6\\x93\\x01)(6\\x11\\x82\\xac\\x95\\xf7X<+\\x92\\xe6\\x8d\\xbfC\\x9a\\xb6!G\\xdd\\x91\\xa8\\x96\\x10\\xe8\\xba\\xa6\\x9fo\\xe0\\x7f\\x10\\xdb\\xc5\\xa6y\\xf0I\\x1f\\xd9>h\\r\\xe4\\x9eRH\\x0b6\\xdf*4\\x12ag\\x7f\\x9b\\xcc\\x07\\x8c\\x91\\xb7\\xad\\xf1t\\x9e\\x12\\xf0\\xbf\\xc5\\xbb\\x8d>K\\xb9`m`\\xe8\\xd1\\xcdgp\\xad\\xfb\\xfd\\x977wS\\xdc-\\xbeO\\x9a\\x90F\\x8aQ\\x86\\xc0Y\\xc1^\\xe2\\xaa\\xfc\\x19\\xf8e\\xe3\\x8f\\x8d\\x17\\x1a\\xcd\\xb7\\x83\\xaca\\x868.\\xad\\xee.g3\\x1bH\\xa2\\x8aI\\x9e)\\x0f\\x96WjD\\x16%vO$H2\\x0b\\x1c\\xee\\x15\\xb5\\xaa\\xfc\\r\\xd7\\xf5/\\xda\\xce\\xc7\\xe1\\xcf\\x88\\xb4\\xd8\\xbe\\xcb\\xe1\\xcf\\x0bG\\xba\\xf2\"W\\xc9\\x9e\\xf2\\xe1\\x92\\x114\\x96\\xe2\\x19\\xa7\\x99\\x96\\tv\\x01\\x9c\\xa7\\x04\\xedS\\x9d%Fq\\xbc\\xf6\\x0fo\\x1br\\xf6?X<;\\xfbx\\xf8\\x1b\\xc2\\x1f\\x0c\\x7f\\xe1\\x13\\xfd\\x9a\\xad\\xf5[\\xfdj\\xfa\\x08!\\xbd\\xbd\\x917\\xcb\\x04l\\xaa\\x8bg\\x1f\\xcc\\x91\\xdb\\x90\\xff\\x00,L\\x14D\\xb8\\xfb\\xc5\\xba\\xff\\x00\\x95E\\x7f\\xa9f\\xaf\\xfb7\\xeb\\xde\\x14\\xba\\xd0\\xbc\\x1b\\x0e\\x9f\\xa5\\xe9\\x1aE\\xd2\\xa4{\\xd28\\xc5\\xd0\\x11\\x95R\\xcb$\\xa1G\\x980\\xa4+\\x11\\xf3(\\xea:\\xff\\x00\\x96\\x9d{\\xf9V&r\\x94\\xa9O\\xec\\xdb\\xf2\\xfe\\xbf\\xa4|\\xb6c\\xc9u(u?\\xff\\xd3\\xfeh\\xfe\\x11\\\\\\xd9X|1\\xf1/\\x8b5+\\xa8!\\xd5\\x1f\\xc8\\x8a\\xc4\\x19q!\\x91Y\\x8b\\xa9\\x8bc\\x06VRB\\x86*23\\xf3\\x01\\x8a\\xf7\\xdf\\t^\\xeb1^Z\\xdb\\xeb\\x13\\x98m\\xa2q=\\x8c\\x8a\\x8a<\\xa3\\x06a\\xf3\\x06\\x02\\xf0\\xaa\\x8c0NI\\x1c\\xf6\\xaf\\x93\\x1c\\xde\\xf8\\x1bQ\\xff\\x00\\x84n\\xea\\xcfe\\xb3\\xda&\\xa0\\xdd\\x00)m\\x96\\x03\\xd3,\\xaf\\xb7\\xd3\\xfa}U\\xe1=\\x0e;o\\x11ZA\\x7fz-t\\xe9\\xe1\\x86\\xe6I\\xe7Y\\x15\\'\\x86o\\x9eT\\x11>N\\xd7\\xff\\x00W\\xf3m\\x07\\xd9K2\\xfey\\x89\\xcb#R\\xfc\\xfd\\x7f\\x00\\x9cl\\xa2\\xd6\\xc9\\x1fJiw\\xd2|A\\xd5\\xb5h\\xfcGr\\xb3i\\xf1ib\\xee\\xdbQ\\x95\\xd6\\x19\\x8c\\x96\\xf6\\xedn$`\\xcb\\xcb\\\\H\\x89\\'\\xcc\\xa7tq\\x8c\\xed\\xde\\xd5\\xf4f\\x8f\\xa6\\xea:V\\x93\\xe1_\\t\\\\\\xfe\\xf6\\xe2\\xd3N\\x88\\xca\\x92e\\x96t\\x8a\\xd9\\x1e2\\xbc\\x80\"\\x93s\\x10\\xa3\\xa6\\xdcw\\n|K\\xc2>5\\xf8C\\x17\\x83\\xbco\\xad\\xc9\\x12\\xc9{1\\xd5,\\xedc\\xba&@\\xf1\\x04kx\\xa2*\\xaa\\x9ea\\x11\\x8f\\x90\\x81\\x18R\\xd9\\x1c S\\xeb\\xde\\x0b6\\x9e,\\xf1\\x07\\x89\\xe4\\xf0\\xc4\\x12\\xde\\xcd\\xa5[\\xcc\\xd1`\\xb1c\\n\\x88\\xa0\\r\\x9cmq\\x19\\x04\\x85\\x1d\\x03`t\\xaf\\xces\\xb8J5\\xa6\\xa9\\xc5\\xda\\x9e\\x8a\\xea\\xca\\xf6QOKh\\xef\\xd2\\xdbt\\xeb\\xf5\\x18\\x1a\\x90\\xe5Q\\xba2\\xbe2\\xf8\\x83\\xedZ\\xdd\\x92\\xeaIn\\xca#\\x8a1\\x0cK\\xe5\\xc5\\xb5\\xc9Q\\xb2OM\\x88P\\x9cz\\xf0*\\xf7\\x83\\xe5\\xd0\\xf5=H\\x85\\x87\\xcb}\\xcc\\x96Ck\\xa7\\x97\\x08m\\xc1c\\xc9\\n\\xc3 \\x8eFNG9\\x18\\xaekA\\xf0.\\xb9\\xf1O\\xc4\\xef\\xaei\\x8e\\xcde\\xa2i\\xd6W:\\x8c\\xe5\\x95PMq\\x00}\\xab\\x9c\\x8c\\xa0iON\\x17o\\x19\\xafd\\xd3?g\\xd5\\x8a(//e\\x83L\\x1e[Hc\\x05V\\xe4\\xa9\\x1e`\\x0c\\xce\\\\\\x92\\xd9\\xe1x zc\\x8el~P\\xbe\\xae\\xa1Rv\\x95\\xbfN\\xdf\\xd7c\\xd3\\xa5^\\xcfC\\xf47\\xfe\\t\\xe9\\xe0\\xff\\x00\\x83\\x1e)\\xf8\\xa3u\\xe1\\x7f\\x8c\\x96\\x0b\\xac[\\xebK\\x1d\\xb40\\x18\\xd3\\xec\\xf2\\xdd\\xa1T\\x1f1\\xc1\\x86M\\xa4\\xab0=~^k\\xf4\\xcb\\xfe\\n\\x13\\xa0x\\x97\\xec\\xba\\x9f\\x85\\xf5m\\x15\\xf5\\x1b9m\\x0cO{lDh\\x9eA\\x0c\\xb6\\xd1\\x06u(\\xc0\\xaa\\x82\\x1b?uXq\\x8a\\xfc.\\xf8!\\xa3hz_\\x8a!\\xd4\\xf4\\xc5\\xf3\\xac-7\\x1d\\x8d\\xe5\\x93\\xbb\\x95R\\x03 t\\xf9\\xc6\\xe5\\xe4\\xe0\\x81\\xd7\\x19\\x1f\\xaa\\xff\\x00\\xb4\\'\\x8e|{\\xf1s\\xc3:s\\xea\\x93\\x8b\\x9b\\x8b;(\\xa2\\x17AJ\\xdc\\xc8\\x85\\x97r\\xcf\\xce\\xd9\\x00\\x08:\\xa1 \\x9c\\x8ek\\xa7\"\\xcc\\x96\\x06\\x8c\\xf0\\x18\\xaf\\x89\\xfc:Z\\xeb\\xaa{\\xed}4&\\xae\\x15V\\xa8\\xa5\\x1d\\xbf\\xad\\x8f\\x8c\\xbc\\x1b\\xf1\\xa3\\xe1\\xa7\\xc3_\\x0c\\xdb\\xf87O\\xb1\\xd4\\xa7+\\x19\\x17\\x925\\xc4M\\xe5\\xeeRe\\x87{N\\x8a\\xfeO\\x04a@\\xc8\\xf9\\xb3\\x8a\\xf2k\\xff\\x00\\x12\\xfc&\\xba\\xf1Dz\\x9f\\x85\\x9a\\xe0\\xd8\\xdd\\xc8\\x92\\\\\\xd9\\x97\\xdb\\x13A\\x04^r\\x89\\x19\\xf0\\x00\\x85\\xd5\\x93\\x90\\xb9\\x18B0xu\\xe7\\xc3\\xdf\\x0e\\xda\\xeb\\x10\\x8b\\xc5\\x8e8.Y\\xe5\\xf3\\xe1\\xc4\\xad\\x1c\\xacw\\x1e\\xa0\\x81\\x93\\xc3\\x06\\x00\\xa6q\\xeak\\xcd<E\\xe1\\xc1\\xe1\\xff\\x00\\x8a:\\x1cv\"X\\xadn7\\xc4\\x1a\\x11\\xf2\\xba\\xcf\\x14\\xa60\\x07V\\xc4\\x8b\\xb4\\x0eH\\xc2\\xfc\\xc5M{\\xb8\\x0cRqQ{Ei\\xd3\\xfa\\xfe\\xbc\\x8e\\xfa\\xf4\\xe3J\\x16\\x89\\xf6\\xb7\\xecT|*\\xf0\\xeb\\xa7V\\xb7K\\x88\"\\xbf\\x97\\x0e\\xcc\\x07\\x96\\xe92\\xfd\\x9c\\x8f/2\\x1c/;\\xd0\\x01\\xc0\\xc7\\xb7\\x84\\\\\\xfcB\\xd1\\xbck6\\x85\\xfb+\\xfcK\\xd2\\xadd\\xf0V\\x87\\xe2\\xdb\\x9b+\\xe9N\\xe4\\x1a\\x87\\x94\\x9a\\x85\\xc5\\xac\"P\\xc3!cp\\xec\\xc0\\x02\\x1d\\xd3\\x039\\x06\\xff\\x00\\xc1x\\xa4\\xf8i{\\xe3k?\\x15\\\\\\xff\\x00cYi\\xfa\\x84\\x97\\x91\\xfc\\xa7\\x11\\xda\\xcfm\\x14\\xaa\\xa7\\x1d\\x97\\'h \\xe3\\xa7\\xbd|\\xc3\\xfb8\\xf8\\x9b\\xc4\\xe3\\xe2\\xe6\\x9d\\xa3\\xf8\\x91Ry\\xac/o<E\\x1f,\\xee\\x8b}h\\x8b\\x1a\\xcc\\x8d\\xf2e\\x16p\\x99E\\x18 \\x8ep+z|UQP\\xa8\\xa0\\xbe\\x05u\\xf7]k\\xb7oC\\xc7\\x9e\\x1a\\x1e\\xd57\\xd4\\xfdk\\xf8\\x05\\x7f\\xf0\\xb7\\xc1\\x87\\xc3\\x1f\\x11\\xee\\xdek/\\x11\\xe9\\xe7Q\\xf0\\xa7\\x8b\\xe0\\x9fdVWr\\xe6(t\\xfdF_4l\\x8eM\\xa2\\xd8\\x0epc\\x99T\\x01\\xb1k\\x0f\\xe0\\x97\\x8b~\\x18\\xfcF\\xf1\\'\\x8d\\xfe*\\x18e\\xf0\\xf5\\xce\\xb1\\xe2X,!\\x9a\\xdd\\xbfsi\\xa7\\xe9\\x11-\\xbcj\\xe8\\x99\\x06?29\\xa5;@$\\xcb\\xc7\\xad|]\\xfbS\\xf8\\xb2?\\x82V\\x9a\\xb7\\xc4\\xbd\\'P\\x16V\\x9e,\\xd1\\xe3\\xb7\\xb8\\x16\\xf23\\xc45=>\\xe6\\x1b\\xdb9\\x163\\x90\\xd2K\\x1cf\\x12\\x19O\\xfa\\xb4\\x1d\\x07\\x15~\\x11\\x8b\\xff\\x00\\nx\\x1bI\\xd5g\\x98\\xda\\xb6\\xa7<\\x9a\\xb11\\x86\\xdc\\xafu1\\xb9\\xdb&\\xd1\\x9f\\x94:\\xafQ\\xc0\\xc68\\xaf7\\x19\\xc6\\xf3\\xad\\x81\\xa7W\\x97}\\x1f\\x9f{z\\x7f]\\x0ez\\xd4\\xe1JrM\\xd9#\\xf6{\\xc4\\x7f\\x0f<\\x17\\xac\\xfc&\\x87\\xc5\\x7f\\x10\\xfcj./\\xac\\x1e\\xe2k(m\\xe4\\x9dg\\x91\\xa2h\\x99#g\\xce\\xf2\\x0f\\xca7\\x0c\\x00\\xbb~n3_\\xe4\\xcd_\\xe8\\xed6\\xa7\\xe3/\\x1ch\\xf6\\xda\\xb5\\x83L\\x9a\\xca\\x06\\xf2\\x1a&%Y\\x8b\\x87\\n\\xaa\\t\\x19\\\\v?^\\x95\\xfeq5\\xf5\\xfe\\x1f\\xe61\\xc4:\\xd2\\x84,\\x97.\\xbd\\xf4\\x7f\\x91\\xf3\\x95\\xaa]\\xda\\xe7\\xff\\xd4\\xfem|e\\xf0\\xebY\\xd0<G\\x1f\\x87\\xf5\\xbbiQ\\xdek\\x8d:m\\xff\\x00s\\xf7K\\x14\\xd7\\x11\\'\\xca\\x06\\xe4R22q\\xe9\\xc8\\x15\\xfbG\\xfb;~\\xc8\\xba\\xf7\\xc4\\x1dST\\xf0\\x9f\\xc3\\xdbS\\xac\\xad\\x97\\x96\\xba\\x8aj\\xc8\\xd0\\xf9Q\\xc3\\x04n\\xb3\\x87m\\xa1[\\xf7\\xf1\\x98\\x94\\xa8\\x8d\\xbe\\xf7!q_\\x9e\\xbe\\t\\xfd\\xa5-\\xbfk\\x9f\\x10h_\\t\\xfc]aa\\xe0\\xdbm\\n\\x7f\\x17\\xf8\\x81\\xb5O\\xb6\\x18|\\xcb\\xcdF\\xcft0\\xb4\\x8d\\xb3di-\\xbcqDw\\x96m\\xde\\xbc\\x1f\\xdb\\x1f\\xd9\\x13\\xfe\\n;\\xfb1\\xfe\\xc2_\\r5\\x17\\xf1\\xea>\\xa3\\xe3\\x0f\\x17]\\xb6\\xa3*\\xe8\\xd0G-\\xbd\\x85\\x96\\x9d\\x12\\xd9\\xd8Z\\xc9#H\\xacP4\\x12\\xba\\x05\\xdcU\\x1co\\xc1\\xe2\\xb804p\\xcaW\\xab/u\\x7f\\x91\\xcd\\x8e\\xc4\\xfe\\xe3\\xdd\\xfe\\xb5\\xd3\\xf2g\\xe0%\\x84rj\\x9f\\x08\\xeeuk\\xf8\\x1e\\xe24\\x8a\\xe6X\\xde\\x17\\xf9\\x08\\x8d\\x9c\\xe5\\xb1\\xc9\\xe5x5\\xf4\\\\\\x7f\\x18\\xad\\xfe\\x18\\xf8V\\xc54\\x1by-\\xf5]f\\xc1\\xed\\xdeI\\xa5u\\x05\\xb7,\\xd8P\\xa5K.\\x19\\xc6\\x1b*\\xd9\\xe9\\xc5ym\\xfe\\xa1\\xa6\\xe9\\xff\\x00\\x0f\\xe5\\xd14\\x9b\\xa8\\x92\\xf7S\\xd0\\xac\\xe3\\x9a\\'\\xd8\\x91\\x97\\x92!\\xe6\\x83\\x93\\xc3\\x07/\\x83\\x81\\xd7\\xae+\\x13P\\xd3,\\xec\\xbcee\\xaf\\\\<S\\xday-\"\\x84\\x90JT\\xec1\\x0e\\x0b\\xe0*\\xee\\x1c(\\xed\\xd0\\x9e+\\xe7\\xe5\\x82\\xc2\\xbb\\xc2rMv\\xfe\\xbd\\x05F\\xac\\x14\\xdbR\\xb6\\xbf\\xa5\\x8fT\\xf8o\\xf1\\xafQ\\xf0\\xff\\x00\\x805+\\xeb\\xadb\\xd7\\xfb;P\\xd5&\\xb9\\xbd\\xb1E+ry\\x10E\"\\xae<\\xb4\\x88\\xed\\xd8\\xa3\\xf8{\\n\\xf7\\x1d\\x07\\xe3t\\xba\\x96\\xafh\\xb3]\\xacp\\xeaGs\\xdc<\\x86/\\x9d\\x17\\xf7@\\x9d\\xac\\x163\\xb9r\\xaa\\x00\\x1d\\x0f^>V\\xf0w\\xc1\\xeb\\x7f\\x14\\xb6\\xads\\xe1\\xeb\\xbbc\\xf6\\xb8\\x1d\\xe3\\x80\\xc9\\xb6(\\xd0<\\x84#\\x16\\xe4I\\xf7@R0z\\x93\\xe9\\xc7Ei\\xe2o\\x0e\\xe9Z%\\xb5\\xdbyo\\x1cH\\x98f\\n\\xaa\\xf2le\\x04\\xf4]\\xbd\\xc6{\\n\\xde\\xa6WB\\xad/eM\\xad};~\\x87\\xa1\\x1c^\\xbc\\xdc\\xda\\x1f|\\xe8\\xdf\\x18<q\\xa4\\x88-4\\xcbO&\\xf5\\x9f\\xcb\\xb8&]\\xc8Kdm\\x03\\xfb\\xd8<\\x008\\xceNk\\xf5\\xbfP\\xf1\\'\\x8e\\xfc\\x17\\xf0\\xe2\\xc3S\\xf8\\x9b\\xa4\\xdci3Ife\\xb5Y\\x88iL8\\x04\\x9d\\xcc1\\xfe\\xe8e\\xce\\xde}\\xc7\\xe5O\\x83l\\xfcI\\xf6\\x9d\\x0bN\\xd3\\xfc<\\x97skF\\rAZY\\x11\\xca@\\x00\\x0cv\\xa6\\xfc\\x16e\\xdd\\x92\\x0bl\\xc6E~\\x83~\\xde\\xbf\\x16\\xfcYw\\xa9k:V\\xb1\\x04\\x13\\xfd\\x8f\\xecc\\xe5f\\x8cG\\x0c\\xa1\\xbc\\xb8\\xc4L\\x03\\x0c\\xed}\\xbc\\x06\\xdb\\xeck\\xe6\\xab\\xf0eJ\\xf3\\x86&\\xacU\\x96\\x97\\xfe\\xbf#,6}*u\\xa5\\x19_\\xf4<\\x9e\\xd7\\xe2\\x84\\x1a\\xcf\\x8b\\x9d\\xe0\\xf2\\xf5\\x15\\x92\\xd9\\xb7\\xa3r\\x8d1\\xd9\\xd5\\xb2\\x84\\x8c\\xe0\\xf1\\xe81\\x8ek\\x88\\xf1_\\x8e\\xe2\\xd1t\\xcf\\nx\\xd0\\xbf\\xd9\\xf1\\xa8,i\\x08`V9L\\x88\\xb13\\xf4dW%\\x95\\xc8\\xe3\\xf8\\x87\\xa5|s\\xe1\\xdb\\xbdo\\xc5o\\xacj\\xfe\\t\\x8emM`\\xf2\\xe1\\x8a\\xd6=\\x99\\x95\\n\\'C\\xf2e\\xd4g\\x07\\x1d>\\xb5\\x7fU\\xb4\\xf1\\xb5\\xe4\\xbao\\x87\\xd3E\\xba\\xfbV\\xbf%\\xbc\\xc9\\x19\\x1b\\n\\xa5\\xbc\\xc2ga\\xb8\\x81\\x90P\\x82}\\xab,fW\\x18\\xcb\\xdc\\xb5\\x97\\xe5c\\xde\\xc0\\xe3+\\xe2jF\\x8d\\x18\\xf39Y$\\xb7m\\xe8\\x92\\xfc4>\\xd4\\xf8\\xdd\\xe3]@\\xfe\\xd4\\xbe\\x0e\\xf0\\x86\\x88\\xa8\\x9a\\x17\\x8c\\xd3\\xcb\\xbd\\x85^l\\xbaZ\\x17`fUp\\x18\\xbcM\\xb7\\r\\xc6\\x06q\\xda\\xb7\\xb4M\\x0f\\xce\\xfd\\xb8|c\\xa7i6A-m\\xf4m7\\xc8\\n\\xa1\\xf7;\\xc6\\xa1\\x94\\xaf\\xde\\x05\\xb6\\xb6w\\x1e6\\xf0+\\x9f\\xd4\\xbc=\\xe3=k\\xe2\\x1f\\x82<sg\\xa5\\xf9?\\xf0\\x8b\\xc7\\xa9\\xcf<2\\xa1y\\x1d\\xe1\\xb2\\x9a\\xe8\\xbeP>\\xe5\\xf2\\xe2|\\xa7\\xca\\x06\\xdf\\x98\\x85<}Y\\xa1\\xfc\\x11\\xf1O\\x8f>&\\xfc}\\xf1~\\x97\\xa2]\\xd8\\xeb>\\x1c\\xf0\\xdf\\x86\\xbcM\\xa4i\\xf3\\x98\\xd6\\xeeV6\\xcd}\\x18\\x94\\xc6\\xc5\"\\x92x\\xa2\\xdb\\xe5\\xe4\\x85/\\xb0\\xe4\\xd7\\xcf\\xd3\\xc8q5\\xf0\\xd1\\x86\\x1fU\\xca\\xe3\\xf3\\xe6\\xff\\x00\\xe4R:\\xb3\\xfe\\x1f\\xc7\\xe5\\xb8\\x97\\x0c\\xce\\x93\\xa5.[\\xd9\\xaeWk\\xda\\xf6\\xe9\\xb7\\xe0x\\x07\\xed\\xdb\\xe0a\\xa5~\\xcf-\\xa9kV2,\\xdav\\xb3e\\xa8\\xbc3r$\\x8e)\\x95%_,\\x14\\xf9B\\x92Ns\\x81\\x8ct\\xaf\\xa1~\\x1f\\xe8\\x9e+\\xf8\\x8b\\xa3\\xda\\xc5\\xe15I\\xad\\xb5q\\xfb\\xb9K\\xabl\\x99\\x01x\\xe3#\\x809\\xc6?\\x84\\x02\\x17\\xadv\\xdf\\x12\\xbc\\x07\\xe2\\x7f\\x8b\\x9f\\xf0O\\x8d\\x7f\\xf6\\x8c\\xf8\\x83ma\\xa5C\\xaf\\xf8|\\xeazu\\xad\\xcd\\xd2#\\xaa\\xdc\\x04\\x92\\xda8\\xc0_\\xde\\xb9E\\x0cT`\\x96-\\xd0\\x1a\\xf3\\xcf\\x08x\\xfbG\\xd2\\xbf`;\\xb9\\xfe\\x00\\xf8\\xcfF\\xd1\\xfe$\\xe8\\x9ad\\x17\\x90Y\\xdd\\xdd[5\\xdc\\x8d\\xa7\\xcf\\x04\\xf7\\x10\\xa8b\\xa0=\\xc4a\\xba{\\xaf=\\xbc\\x8c\\x0f\\x01f+\\x0fN\\x8e&\\xdc\\xc9\\xb7\\xbd\\x95\\x9a_\\xe4|\\xb6/0\\xa5\\xf0\\xa7\\xd6\\xdf\\x91\\xf4e\\xbf\\xc0\\x8f\\x88k\\xe4x`jq\\xc7\"\\xdc\\xcbl|\\xbf\\x91\\xe1I<\\xc4\\xdd\\x1b\\x1cwG\\xcfM\\xb9\\x18\\xeb_\\xe69_\\xdc\\x89\\xff\\x00\\x82\\x92x\\xf1\\xa2\\xd5/|D\\xd6Wz\\x97\\x88\\xa6\\x86\\xefV\\x9e-\\xf2[\\xc1-\\xbc\\x0b\\x1aCj\\x86B\\xb1B\\x81F\\xe5\\x192\\xbeX\\xf6\\x03\\xf8n\\xaf\\xd0\\xf8\\x06\\x87$\\xabZ6^\\xef_S\\x9e\\x84\\xa2\\xfe\\x13\\xff\\xd5\\xfef<\\x1d\\xe2\\x9f\\x87\\x9a\\xa4w^\\x19\\xd4\\xf4\\x0b(\\x1af\\x89\\r\\xc4%\\xd0\\x85R\\xa5B\\xee!F\\xed\\x99\\xf9\\x91\\x86x\\xe3\\xa5R\\xbb\\xd5t\\xab\\x8f\\x15O\\xe1\\xbdCO\\x8a{v\\x8dbIT\\x84\\x97\\xca\\x91A\\x0c\\x19\\x00\\x00\\xe0\\xff\\x00\\x0eG\\x07\\x8a\\xf9\\xd3\\xc2\\xe6\\xfe\\x0b\\tu\\x98.C*K\\x1cO\\xe6\\x0f\\xde\\x1f\\x94\\x91\\xd7\\x1fw\\x00g\\xa9\\xce=\\x05z\\xcd\\x9d\\x9f\\x8c\\xfcC\\xad\\xa7\\x8c,4\\xc2c\\x83\\xec\\xf0:\\xac{q\\xf2\\x80\\xd9\\xc8\\xdb\\x92:\\x01\\xd7\\xf0\\xaf\\xcd\\x1d%\\th\\xf4<\\\\>Y\\x89\\xa9\\xa7Dv\\x97\\xfa\\xc4\\xf0x\\x91\\xec\\xe2s%\\xa5\\xc3\\xb0xI-\\xb4\\xab\\xed\\xc7\\x19=Tm>\\x98\\xae\\x92=F\\xf0\\xd9M\\xa7[]3I\\x02\\xc8\\xed\\x12\\xee\\xc1P\\xea\\xa0`\\x13\\xd0\\x1e=\\xeb\\xebo\\x81\\xff\\x00\\xb0\\xbf\\xc4?\\x8a\\x90[x\\xab\\xc5\\x1akh\\x1a|\\xa0\\x03ux\\xc2\\x02\\xdf3H\\xa0\"\\xfe\\xf5\\xd8\\x0cc\\x0b\\xb7\\xa0&\\xbf_>\\x0f\\xfe\\xc9\\x7f\\x06\\xfe\\x17\\xdb\\xc1-\\xad\\xbcww\\xe7q\\x92\\xe2\\xe25\\x1b\\x98\\xf0p\\x83v8<\\x02\\xcd\\xec\\x01\\xaa\\xfa\\xa5I\\xbfr\\'\\xd1R\\xca\\xa9E\\xa9Tz\\x9f\\x97\\xdf\\xb1\\xe7\\xec\\xe9\\xf1;\\xc7\\xf3\\x9f\\x12\\xd9\\xcal\\r\\xa405\\xaa\\xdcD\\x1do\\x1d\\x1f{B\\xe5\\xc8X\\x86\\xd1\\xb7,\\x1c\\x0e\\x9bk\\xf6\\x87\\xc3\\xff\\x00\\xf0I\\x9f\\xd9\\xd7S\\xd5\\x9b\\xc5^=\\xf1\\x8c\\xb7\\xb2K<wqY\\xf9H\\xb1C\"\\xa6\\xd1\\x1b \\xdc\\xae\\xaa\\x066\\xf4\\xe3\\xd2\\xbd\\xafL\\x96\\xd7I\\xb6k;3\\x02/o/+\\x91\\xea=:\\x7f/j\\xde\\x83_\\xc2\\x00\\xa4\\x01\\xecO\\x03\\xde\\xbe\\x9b(\\xca\\xdc\\x1f4\\xbf\\xc8U\\xe9R\\x8a\\xb2=_\\xc0?\\xb3\\'\\x80\\xfc\\x01\\xf6x<\\r\\xe2\\xc1\\xa7\\xa5\\xa9s\\x08\\xb5\\xb5\\x82\"\\x9ec3>\\xd6X\\xc1PK6@=\\xcdz\\xa7\\x8a?f\\xcf\\x00|S\\xd3\\xa7\\xd3\\xfe#x\\x83\\xfbT]\\xed\\xf3d\\x9a8\\x8c\\xa4\\xa0\\xc27\\x99\\xb7pe\\x07\\xe59\\xe2\\xbe\\x7f\\xd3u\\xc97\\x8f-\\xf6\\xfdN+\\xbc\\x83\\xc4\\x13\\x95\\xf9\\xddN=\\xf9\\xfe\\\\W\\xd4J\\x949yR8aS]Y\\xf2o\\xc4\\x9f\\xf8$\\xaf\\xc2\\x8f\\x08hW\\x17\\xbf\\x04\\xfcSq\\xa4\\x99_\\xce\\x9b;\\xae\\x95F\\xe4w\\xfd\\xce\\xf0\\xd8m\\x98\\xcc}\\x01\\xfb\\xb5\\xf9\\xa9\\xf1\\xbb\\xc0_\\xb5/\\xc2H\\x12\\xef\\xc2\\xda\\x8ak\\xda,2\\x92\\xb7Zq\\xde\\n\"\\xc9\\xcbD\\xc0\\x94\\xd8\\xa7nzn=k\\xf7\\xde\\xcf]\\x9e9\\x0e\\xf6\\x05X\\xfc\\xb8\\'?O\\xcb\\xb601^y\\xe2\\xdf\\x86>\\x15\\xf1\\x82\\xb6\\xa7\\x05\\xb4VZ\\x81r\\xc6u\\x8d$\\x0e\\xd9\\xe9\"\\x11\\x86\\xce\\x06H\\xc3z0\\xaf\\xcf\\xb3\\xee\\x0e\\xa9Z~\\xdb\\x0f/\\xfbu\\xea\\xbeOu\\xf8\\xaf#\\xdc\\xc0f\\x9e\\xc6q\\xa9N\\\\\\xb2Vi\\xad,\\xd6\\xcd[f\\xbc\\x8f\\xe5\\xc7Y\\xfd\\xa4>$\\xeaOo\\x06\\xa7\\xa9\\xcb\\x1b,\\xd2\\xc0\\xef\\x0f\\xee[~\\xd9\\x14\\x06+\\x8caA\\x04\\xf7\\xce:W]\\xa4\\xfe\\xd4?\\x16l\\xcd\\xed\\xf6\\x93\\xac][>\\xb6-\\xd2\\xf2\\xe2\\xde\\xe1\\x91\\xaec\\xb2O.\\x05i7n\\xda\\x8ap\\x07\\x00\\xe7\\xa5~\\x91~\\xd4\\x9f\\xb2.\\x97\\xe3\\x9b\\xebI5\\xbd>\\xdf\\xc37\\x10y\\xa1o\\xac#\\xce\\x9fw$\\x91\\xb2\\xa9\\x99\\xf7)\\x89\\x81;\\xf6I\\xb4\\x120$`k\\xf3+\\xc7\\xbf\\xb2\\x1f\\xc4\\x1f\\x87\\x1e(\\xd2\\xf4K\\xd8\\xee/\\xecg\\x8aH\\xa7\\x92\\x18^3\\x06\\x06\\xe0\\xcc\\xad\\x8c\\xa3\\x1e\\x85w\\x00\\x00\\'\\xb5|\\x94\\xb0\\xce\\x84y*G\\x93\\xf2>\\x8f6\\xa7\\x8c\\xcd\\xeb\\xbc^&\\xbb\\xab7m[m\\xdb\\xa2\\xd7[/\\xb8\\xf9G\\xe2\\xef\\xc5\\x9f\\x17x\\xa7\\xc5\\x0f\\xa5\\xeb7Wwp[\\xf9\\x16V\\x104\\xf8\\x8a(\\x94\\x00\\xa1F\\xee\\x83\\x80\\x14t\\xf7\\x15\\xea\\x17\\x9e4\\x9a\\xca\\xc2_\\x0c\\xe8\\x90Ae\\xf6h\\x1a1,\\xeb\\xb9\\xe4\\xda\\x01v\\x120\\x01\\x86s\\x821\\xc6\\x06\\x075\\xe1\\xb7>\\n\\xbf\\xb1\\xd2\\xb5\\xbdz\\xeeBF\\x8f\\xe6A!e]\\x8eclF@?7$s\\xf8b\\xa9x/7\\x17sjZ\\x8b#G\\x12N\\x8d\\xb8\\xfc\\xdf.\\xd00\\xbf\\xf0.\\x07a\\xc9\\xae\\x99\\xce\\xf4\\xec|6/\\x85\\xeaS\\xf7\\xa4\\xb4(\\xe9><\\xf1\\xce\\x9d\\xe2\\x08\\x1e\\'\\x86\\t\\'\\x9f\\xc8\\x0e\\x18\\x82\\xe5\\x06\\xe0\\xfbB\\xec\\x1f6\\x00=x\\xe2\\xbf\\x14\\xab\\xf5\\xee\\r?G\\xba\\xd7\\xa1[\\xd4x\"g\\xfd\\xe4\\x8a7\\x90\\x07 \\x848\\xecq\\xfd+\\xf2\\x12\\xbe\\xc3\\x84\\xf6\\x9a\\xf4\\xfdKxoed\\x7f\\xff\\xd6\\xfc\\xa4\\xfd\\x9d\\x7f\\xe0\\x9d\\x96\\xfa>\\x93\\'\\xfc.\\x9b\\xe8\\xed\\xa1\\x9ao\\xb5\\x0b\\x08\\xa3\\x13L00\\xab\\xf2\\x13\\x14X\\xe0\\xe0\\xcb\\x9fa\\xc5~\\x9f\\xf8\\x07\\xc0?\\x08~\\x19Y\\xb5\\x9f\\x86\\xf4;H.\\xc9v\\x92\\xfa\\xe8}\\xaao0\\x0c\\x02\\x9b\\xc3\\x08\\xb3\\xd1B\\xa0\\xc1=q\\xcdrV\\xd7\\xfa\\x9c\\xe6+[\\xa5r\\x83\\xee\\xc62\\x13\\x9f\\x97!T{c\\x81]e\\x8c-4\"\\xf5\\x17\\xcaR\\xa5\\x90s\\xc8R\\x14\\xed\\'</\\xf9\\xe9^\\x0e\\x1b#\\xa3M\\xf3\\xcb\\x7f\\xeb\\xfa\\xd1#\\xae\\xa6aR^\\xefN\\xdb\\x1e\\x80g\\x9bR>}\\xcb>\\xdf\\xba\\xccA<\\x8e\\x84\\x93\\xcf8\\xe3=GJ\\xdf\\x8a\\xea\\xd2\\x08\\xc3\\xa0 \\x16\\xc0\\xe3\\x03\\x00v\\x1d=9\\xe3\\xe9^n\\xfa\\x8cEq\\x0b\\xe4\\x0e\\xaa\\xa4\\x91\\xc0\\xeb\\x8e\\x9e\\xfe\\x9c\\xf4\\x1d)\\xf0j\\x12@\\xcbp\\x9f0\\x8c\\x83\\xb4\\xe0\\xfec\\xb8\\xe3\\xa5{\\x94\\xa8\\xc6\\xda+\\x1e}J\\xac\\xf5\\xb8\\xf5X\\xfc\\xa8\\xd3q\\xdc\\xb9\\xf9y\\xc8\\xfav\\x15\\xa5k\\xacc\\xe5Q\\x85<\\xf1\\xd0\\xfb\\x1f\\xe9^(\\xba\\x86\\xf1\\x91/\\xe5\\xe9\\xfd*\\xdcZ\\x86\\xe8\\xf2\\x1f\\xe6\\x188\\xfa\\x7f\\x80\\xae\\x9b\\x18\\'s\\xe8\\xcd?^Q\\x85\\xff\\x00\\n\\xed\\xac|C\\x80\\x11q\\xd3\\xb7\\xf9\\xf4\\xaf\\x99\\xec\\xf5\\xb0B\\xf3\\x91\\x9c\\x8eH\\xc7\\xb6+~\\xdf^0\\x10ZLg\\xd2\\x99\\x1b\\x1fH\\xc3\\xae\\xcd\"\\xed\\xb5\\x91\\x18\\x8c\\x1c9\\xda:\\x8e\\xe3=\\xba\\x0cWQm\\xa9^\\x7f\\xad_\\x93\\'\\x9c\\x0c\\x16\\xc7C\\xf8\\xf6\\xf6\\xaf\\x9b\\xb4\\xef\\x16\\xcd\\x01\"\\xdc\\x86L\\x82x\\x07\\xa7Nq\\xfc\\xab\\xb6\\xb0\\xf1)\\t\\x1b\\xf0\\xca\\xe3\\x83\\x9f\\xc3\\xa7\\xff\\x00\\xaa\\xa6\\xe6\\xabm\\x0fm\\x8a\\xee\\xfa\\xea\\x17\\xb4\\xb8p\\xd1\\xcap\\xc9\\x81\\x82\\xbd\\xc1\\x04c\\x91\\xd4zW\\x96\\xeb\\x7f\\x06~\\xd3\\x14\\x8d\\xe1}\\x862w\\xff\\x00g]\\x82\\xf6\\xa5\\xbb\\xacX\\xf9\\xad\\xf3\\xfe\\xc1\\xd9\\xd8\\xa1\\xad\\xbb?\\x11~\\xf5\",\\xd9f\\xday\\x18Q\\xeay\\xe8=\\xab\\xbc\\xb7\\xd6\\xed\\xd6\\x16\\x90;\\xe3\\x07\\x84\\x1f1\\x1e\\xd8\\xe4\\xfe\\x15\\xc5\\x8a\\xc2S\\xaa\\xb9d\\x8e\\xbc>*t\\xdaqg\\xe6\\x7f\\xc6\\xcf\\xd9\\xaa\\xd7\\xc7\\x91?\\x86$\\xb6\\xb6\\xd3\\xee.c\\xd84\\xcdJ\\xde\\x15\\xf3\\xb6\\x90\\xa0\\xc1q\\x94\\x82e\\x0cs\\xb7\\x01\\xcf\\xf7;\\xd7\\xe3\\xe7\\x8c\\xbfa\\xff\\x00\\x88\\xde\\x04:\\x94\\x17fY\\'[\\x92\\xe2\\'\\xb7>xv\\xea\\xa8#\\xe9\\xf2\\xfbq\\xc1\\xe2\\xbf\\xab\\xaf\\x10Xxw\\xc5z3\\xf8s\\xc4PE{g0\\xc3\\xc3(\\xdc8\\xef\\xea\\x08\\xecG#\\xd6\\xbeY\\xf1\\x7f\\xc2\\xbf\\x1cx\\x0bHF\\xf0\\x03\\xa7\\x894t*?\\xb2\\xf5\\t\\n\\xdd@\\xa7\\x19\\xf2.\\x89\\xc9\\x00t\\x0e@\\xe9\\xd6\\xbe\\x1b2\\xe1\\xdfd\\x9c\\xa9;~_\\xf0?\\xad\\x8f\\xaf\\xc1\\xf1\\x0b\\x93J\\xb2\\xbf\\xe7\\xfeL\\xfeR\\xac~\\x0e\\xfcM\\xf0\\xc6\\xbfw6\\xab\\xa1\\xdcKk\\x04\\x80#O\\x0e\\xdf2<\\xaf\\x18\\x1b\\xbf\\xdd\\xc1\\xc5~\\x18W\\xf7_\\xf1{\\xc0\\xde8\\xf1f\\x99u\\xa6~\\xcf~*\\x87O\\xbf\\xf2H}+PH\\xe2\\xd4\\x12L\\xe7\\xf7S\\x1f\\xdd\\xcc\\xab\\xc6\\xd0\\x9b[\\xa7\\x07\\xa5\\x7f\\n\\x15\\xdb\\xc2P\\xa8\\xbd\\xa7:\\xd3\\xdd\\xb7g\\xbe\\xc7\\x9d\\x9e\\xd5\\xa3\\'\\x1fe\\xe7\\xfa\\x1f\\xff\\xd7\\xf1m\\x12d\\xd4.\\x16\\x04\\xde\\xc8\\x08,#`>A\\xd4\\xe4\\xe7\\x1f\\x95o&\\xa7k\\x1d\\xb7\\xfa4\\xe5Llc\\xd8w\\r\\xa3\\xa8\\x198\\x04\\x9ezq^6\\xda\\x94\\xb3\\xea_\\xf19\\x9fqp\\xbb\\xa4B\\xb2\\xf1\\xb7\\x8c`\\x80OA\\x8c\\xf1\\xf5\\xabvz\\xd4Q\\x9d\\x93\\x82\\xc8\\xc3\\r\\x83\\xb7\\xe9\\xc8\\x07\\xa7\\xd2\\xa7]\\xccS=w\\xfbx\\xc2#\\x8a3\\xf3\\x9c\\x8cc\\x9d\\xa7\\x18\\x19\\xf4>\\x94\\xeb}|0b\\xc7n\\xd0\\x1b\\x19\\x03\\x03\\xa7\\x03\\xae~\\x9d\\xab\\xc7\\x06\\xbd+\\xb2\\x99\\xdf,\\x00\\x00\\x9eq\\x8e\\x00\\xfa\\x0e\\xd53kV\\x80\\xf9\\x8e~\\xe9\\x00\\xa7F\\xf7=\\x08\\x15\\xa5\\xf4$\\xf5\\xb1\\xe2ID?dP<\\xb2\\xc1\\xc8\\xc6\\x0eT\\x109\\xc6{\\xf4\\xe9V\\x9bW\\xf3I\\x9eC\\x85\\xdb\\x9d\\xab\\xc0\\x03\\xd0\\x9c\\xe7\\xa5x\\xe1\\xd5LWG\\xcc\\x05@\\xfb\\xa0\\x90p:\\x8eG\\xb5K\\'\\x88\\xa2\\x96&\\x01\\xd4\\xb7\\x03\\xe6\\xe9\\x81\\x8fOj\\xa4\\xba\\xa0\\xb1\\xee6\\x9a\\xf4\\r\\xf3+\\x8e9\\xce\\xee?*\\xe8!\\xf1$d\\x91\\x13\\x04@x\\xc9\\x19\\xc7\\xd7\\x02\\xbc&\\xdf\\xc4\\xb1\\x17P:\\x15\\xc6N\\x7f\\xa9\\xeb\\xdb\\xa7\\xe1ZP\\xf8\\x85\\x89\\x04\\xbeq\\xc0\\xc7\\x15H\\xcaZ\\x1e\\xff\\x00a\\xe2%k\\x85X\\x9dw?\\x1c\\x10:\\xf1\\xf8Wc\\xa3x\\x96\\xcf\\xed\\n\\x93\\\\y17\\xc8\\xec\\x06\\xec/\\xd3\\xfc+\\xe6{O\\x11\\x88e\\xf3\\x1b\\xba\\x95\\x1d\\xf1\\x9e\\xfd;WO\\xa6x\\x82\\x19e\\x8e;\\xa7e\\x8f \\xb1\\n\\x18\\x81\\xea\\x01*2>\\xa2\\x87\\xb0\\xa2\\xcf\\xa64\\xdf\\x15[FBD\\xc8\\x15\\x80P\\xab\\x8c\\x0f\\xa0\\xed]\\xcd\\x9f\\x8b\\xa3y\"\\x02UP\\xa4\\x02\\x0eKm\\xc7A\\xce\\x00\\xff\\x00\\xf5W\\xcc\\x16>0\\xf2d\\x8eA)\\'\\xa0 \\x1f\\x97\\xb0\\'\\x1d\\xc7\\xb6q]~\\x9d\\xad\\xfd\\xa60-\\x99\\x99\\x91wpW\\x84^{\\xff\\x00\\x9cT3d}K\\xa7\\xf8\\xd6\\xd9\\xa3+\\xb8(\\xcfn\\xfe\\x9fJ\\xde\\x7f\\x11i\\xf2E\\x11\\x84\\x86q\\x9c\\xa1\\xc0\\x05x\\x1ds\\xcf\\x1c\\xf0\\x07J\\xf9\\x83H\\xd4\\xe2\\x89\\x89\\x87\\xcb\\x84JY\\x98\\xe3\\x198\\x1c\\xb6\\xde\\xe7\\xd7\\x1f\\xca\\xb6!\\xd7,\\x1c,\\xb7A]\\xe29\\x8c\\x13\\x8c\\x12\\x08\\xdc\\x0flt\\xc7\\xa5s\\xd5\\x8d\\xd1\\xad9X\\xea~.\\xf8o\\xe1f\\xbd\\xa6%\\xe7\\x8f\\x80\\xb5\\x82\\xd5\\xa1\\x8a\\x1b\\xce\\xb3D\\xe1\\xf0\\xa8\\x8e\\x80\\x10\\x99n\\x9f09\\xe4`q\\xfem\\x15\\xfe\\x91q\\xf8\\x99B\\x84B\\xe6\\x1c\\xe4\\x02\\xd9\\xc7\\x1c\\xf4\\xe0t\\xaf\\xf3t\\xae\\x0c\\xbb\\x02\\xa8\\xb98\\xec\\xce\\xca\\xf8\\x87Q+\\xf4?\\xff\\xd0\\xf8\\x02\\xda\\xfc\\xc8\\x00\\xdf\\xc2\\x9e\\x06{\\x9e\\xf5\\xd6\\xe8\\xb7Z#\\xcaN\\xb9=\\xca\\xc7\\xe5\\xb1\\xff\\x00F\\x8d\\x0b\\x07\\xe8\\xb9\\xdc\\xca6c\\x04\\x91\\xcflw\\xaf2\\x8c\\x14c\\xe52\\xf0\\x07#>\\x9d\\x06Eh[\\xcc\\xe1\\x00S\\x83\\xc09\\xe9\\xedG-\\xd5\\x8es\\xa1\\x9a\\xea8\\xe6\\xc5\\xbb\\x1c\\xae\\x08\\'\\xd2\\xaeZ\\x1bY\\'Q\\xa8I$Q\\x15$\\xbch\\x1d\\xbap0Y\\x07<\\x0e\\xa2\\xb9\\'\\xb9!\\xbag\\x1d{})\\xa6A0T\\x8c\\xe7=\\x8f\\x7fo\\xc2\\x98\\x1dl\\x17\\xe9\\xe5\\x12\\xbf2g\\x1c\\x7f\\x85\\rq(\\xdd\\xe5\\xaf*2\\x00\\xeb\\xeb\\xc0\\xae^\\xc1\\xec\\xbc\\xc3\\r\\xe4\\x92\\xc7\\x1e\\xd6\\xc7\\x94\\xa1\\xd8\\xb8\\x1f(\\xc1*\\x00\\xdd\\xc1=\\x87bx\\xaa\\x82\\xfaUL\\x93\\x9cq\\x91\\xd7?\\xe7\\x8a|\\xdd\\x02\\xc7c\\x05\\xecc\\n\\xc4)\\xc6s\\xd8\\x1e\\xfdMti\\xa8\\xc3#e\\x88M\\xdc\\xfc\\xa3\\x8f\\xc0\\n\\xf2\\xebK\\xdbx&Ip\\x8c\\x8b\\xfc\\x0f\\xc0\\xe3\\xb1\\xc6?O\\xd2\\xaeC\\xa9\\x05\\x188\\xe3\\xa1\\x1dy\\xed\\xe9\\x8e=(\\x8c\\xac&\\x8fQ\\xf3\\x1de\\x0fi)\\xcb\\x0c\\x12O>\\xdf\\x95t6S\\xdc\\xaa,\\x84\\xb1\\x1e\\x95\\xe6v7\\x10\\xdfZM\\x15\\xace\\xaeb\\x06Q#M\\x1cQ\\xac(\\xbf8\\xda\\xc0\\x16oM\\xad\\x9f\\xf6M-\\xbe\\xadq:l\\xder\\xbd\\x87A\\x8aJ\\xad\\xdd\\x87k\\x1fD\\x1b\\xf5\\xb5\\xb5\\x86&\\xdf\\x15\\xe4R0bF\\x06\\xde1\\xc6~\\xf2\\x91\\x8cc\\x18\\xad\\xbb]F\\xf2\\xfa\\xf7\\xed\\x17wxw;\\xa4r\\x80\\xe7\\x1d\\xb6\\xae\\xdf\\xbd\\xd3#\\xa5|\\xfb\\xa7k\\x9a\\x95\\xbc\\x12\\xc6\\x13+\\xf2\\x06~2\\xbc\\xf1\\x8e\\xe3\\xd3\\x8a\\xe9m\\xf5\\xd9c\\x85n$\\xb8B\\xdb\\xb0\\x13i\\xce\\x00\\xeb\\xe9\\x8e\\xdd{VvE\\xd9\\xda\\xc7\\xd2\\x16\\xba\\xbc\\xd1a\\x94dz\\x16\\xff\\x00\\xeb\\n\\xd5}nyv\\x97\\x18\\x07\\xa7\\xa0\\xaf\\x08\\xb2\\xf1a\\xf2\\x8cN\\xd8\\xcf~\\xf5\\xd2\\xdbx\\x89^1\\x1b\\xee\\xdd\\x8e1\\xc8\\xc5Y6\\xb1\\xec\\xb7:\\xe8\\x8d\\xd6\\xda!\\x19X\\xb0\\xa6HY\\x99_\\xdf\\xe6\\xfe@\\x0f\\xa5\\x7f\\x9f\\x15\\x7fw\\xa7S@\\xacPl\\xc7#\\x8c\\x0f\\xf0\\xe6\\xbf\\x84*\\xce\\x9a\\xb2\\xb1\\xacO\\xff\\xd9'"
+      }
+    },
+    "pixel_analysis": {
+      "color_distribution": {
+        "red": {
+          "mean": 125.32152666236247,
+          "std": 56.876305372077404,
+          "min": 0,
+          "max": 255,
+          "skew": 0.383055488125058,
+          "kurtosis": -0.18849911876590753
+        },
+        "green": {
+          "mean": 122.35656497359746,
+          "std": 57.62571554848234,
+          "min": 0,
+          "max": 255,
+          "skew": 0.46962787377570203,
+          "kurtosis": -0.08978757076420552
+        },
+        "blue": {
+          "mean": 108.98057143382044,
+          "std": 62.40141047360834,
+          "min": 0,
+          "max": 255,
+          "skew": 0.519339983343901,
+          "kurtosis": -0.1069824688338219
+        }
+      },
+      "noise_analysis": {
+        "laplacian_variance": 1392.3845932995664,
+        "edge_std": 126.7286970885344,
+        "noise_ratio": 0.47183008152338035,
+        "is_high_noise": true
+      },
+      "entropy": {
+        "red_entropy": 7.712774781540818,
+        "green_entropy": 7.6730048934080575,
+        "blue_entropy": 7.718503672942659,
+        "mean_entropy": 7.701427782630511
+      },
+      "blockiness": {
+        "blockiness_score": 922.624755859375,
+        "is_blocky": false
+      },
+      "pixel_patterns": {
+        "unique_colors": 339611,
+        "total_pixels": 12192768,
+        "color_diversity": 0.027853478389812714,
+        "color_correlation": {
+          "rg": 0.9823385651998111,
+          "rb": 0.9270408403952576,
+          "gb": 0.9500114878438591
+        }
+      },
+      "compression_artifacts": {
+        "high_low_freq_ratio": -0.06989786773920059,
+        "has_compression_artifacts": true
+      }
+    },
+    "steg_detection": {
+      "lsb_analysis": {
+        "lsb_entropies": {
+          "red": 0.9999929712483908,
+          "green": 0.9998766044778822,
+          "blue": 0.9999747116433686,
+          "average": 0.9999480957898804
+        },
+        "is_suspicious": true,
+        "confidence": 1.0
+      },
+      "parity_analysis": {
+        "parity_deviations": {
+          "red": 0.0015607612643823154,
+          "green": 0.006539450270849123,
+          "blue": 0.0029604434366339305,
+          "average": 0.0036868849906217895
+        },
+        "is_suspicious": true,
+        "confidence": 0.9926262300187564
+      },
+      "size_analysis": {
+        "file_size_bytes": 5367068,
+        "expected_raw_size_bytes": 36578304,
+        "compression_ratio": 6.815323375817113,
+        "is_suspicious": false,
+        "confidence": 0.3184676624182887
+      },
+      "dct_analysis": {
+        "avg_high_freq_energy": 1.5116337537765503,
+        "is_suspicious": false,
+        "confidence": 0.1
+      },
+      "total_suspicious_tests": 2,
+      "overall_confidence": 0.6027734731092613,
       "is_likely_stego": true
     }
   }
