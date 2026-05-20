@@ -1,0 +1,10 @@
+README.md
+setup.py
+src/imageforai/__init__.py
+src/imageforai/cli.py
+src/imageforai.egg-info/PKG-INFO
+src/imageforai.egg-info/SOURCES.txt
+src/imageforai.egg-info/dependency_links.txt
+src/imageforai.egg-info/entry_points.txt
+src/imageforai.egg-info/requires.txt
+src/imageforai.egg-info/top_level.txt

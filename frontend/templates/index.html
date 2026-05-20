@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI图片检测工具</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .upload-area {
+            transition: all 0.3s ease;
+        }
+        .upload-area:hover {
+            transform: scale(1.02);
+        }
+        .upload-area.dragover {
+            border-color: #3b82f6;
+            background-color: #dbeafe;
+        }
+        .progress-bar {
+            transition: width 0.5s ease;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .probability-bar {
+            height: 20px;
+            border-radius: 10px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        .probability-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .status-yes {
+            background-color: #fee2e2;
+            color: #dc2626;
+        }
+        .status-no {
+            background-color: #dcfce7;
+            color: #16a34a;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .nav-tabs .nav-link.active {
+            border-bottom: 2px solid #3b82f6;
+            color: #3b82f6;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <header class="text-center mb-10">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-search text-white text-xl"></i>
+                </div>
+                <h1 class="text-3xl font-bold text-gray-800">AI图片检测工具</h1>
+            </div>
+            <p class="text-gray-500">上传图片进行AI生成检测、元数据分析和隐写检测</p>
+        </header>
+
+        <div id="upload-section" class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <div 
+                class="upload-area border-2 border-dashed border-gray-300 rounded-xl p-12 text-center cursor-pointer"
+                id="upload-area"
+            >
+                <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-upload text-blue-500 text-3xl"></i>
+                </div>
+                <p class="text-lg font-medium text-gray-700 mb-2">点击或拖拽上传图片</p>
+                <p class="text-sm text-gray-400">支持 PNG, JPG, JPEG 格式</p>
+                <input type="file" id="file-input" accept="image/png,image/jpeg" class="hidden">
+            </div>
+            
+            <div id="progress-container" class="mt-6 hidden">
+                <div class="flex justify-between text-sm text-gray-600 mb-2">
+                    <span>正在分析...</span>
+                    <span id="progress-text">0%</span>
+                </div>
+                <div class="probability-bar">
+                    <div class="probability-fill bg-gradient-to-r from-blue-500 to-purple-500" id="progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="results-section" class="hidden">
+            <div class="flex gap-4 mb-6">
+                <button 
+                    class="nav-tabs nav-link active px-6 py-2 font-medium text-gray-600"
+                    data-tab="ai"
+                >AI检测结果</button>
+                <button 
+                    class="nav-tabs nav-link px-6 py-2 font-medium text-gray-600"
+                    data-tab="metadata"
+                >元数据</button>
+                <button 
+                    class="nav-tabs nav-link px-6 py-2 font-medium text-gray-600"
+                    data-tab="pixel"
+                >像素分析</button>
+                <button 
+                    class="nav-tabs nav-link px-6 py-2 font-medium text-gray-600"
+                    data-tab="steg"
+                >隐写检测</button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 space-y-6">
+                    <div id="ai-tab" class="tab-content active">
+                        <div class="card-hover bg-white rounded-2xl shadow-lg p-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-xl font-bold text-gray-800">AI生成检测</h3>
+                                <span class="status-badge" id="ai-status"></span>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                    <span>AI概率</span>
+                                    <span id="ai-probability">0%</span>
+                                </div>
+                                <div class="probability-bar">
+                                    <div class="probability-fill" id="ai-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                    <span>置信度</span>
+                                    <span id="ai-confidence">0%</span>
+                                </div>
+                                <div class="probability-bar">
+                                    <div class="probability-fill bg-gradient-to-r from-green-400 to-green-600" id="confidence-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div id="ai-indicators" class="hidden">
+                                <h4 class="text-sm font-semibold text-gray-700 mb-3">检测指标</h4>
+                                <ul class="space-y-2" id="indicators-list"></ul>
+                            </div>
+                        </div>
+
+                        <div id="metadata-tab" class="tab-content">
+                            <div class="card-hover bg-white rounded-2xl shadow-lg p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6">图片元数据</h3>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">文件名</p>
+                                        <p class="font-semibold text-gray-800" id="meta-filename"></p>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">文件大小</p>
+                                        <p class="font-semibold text-gray-800" id="meta-size"></p>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">格式</p>
+                                        <p class="font-semibold text-gray-800" id="meta-format"></p>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">尺寸</p>
+                                        <p class="font-semibold text-gray-800" id="meta-dimensions"></p>
+                                    </div>
+                                </div>
+
+                                <div id="png-chunks" class="hidden">
+                                    <h4 class="text-sm font-semibold text-gray-700 mb-3">PNG Chunks</h4>
+                                    <div class="grid grid-cols-2 gap-2" id="chunks-list"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="pixel-tab" class="tab-content">
+                            <div class="card-hover bg-white rounded-2xl shadow-lg p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6">像素分析</h3>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">颜色多样性</p>
+                                        <p class="font-semibold text-gray-800" id="pixel-diversity"></p>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">平均熵值</p>
+                                        <p class="font-semibold text-gray-800" id="pixel-entropy"></p>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">噪声等级</p>
+                                        <p class="font-semibold" id="pixel-noise"></p>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">块效应</p>
+                                        <p class="font-semibold" id="pixel-blockiness"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="steg-tab" class="tab-content">
+                            <div class="card-hover bg-white rounded-2xl shadow-lg p-6">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h3 class="text-xl font-bold text-gray-800">隐写检测</h3>
+                                    <span class="status-badge" id="steg-status"></span>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                        <span>可疑检测项</span>
+                                        <span id="steg-suspicious">0/4</span>
+                                    </div>
+                                    <div class="probability-bar">
+                                        <div class="probability-fill bg-gradient-to-r from-yellow-400 to-orange-500" id="steg-bar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                        <span>总体置信度</span>
+                                        <span id="steg-confidence">0%</span>
+                                    </div>
+                                    <div class="probability-bar">
+                                        <div class="probability-fill bg-gradient-to-r from-orange-400 to-red-500" id="steg-confidence-bar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-1">
+                        <div class="card-hover bg-white rounded-2xl shadow-lg p-6 sticky top-8">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4">操作</h3>
+                            
+                            <div class="space-y-3">
+                                <button 
+                                    class="w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+                                    id="btn-export-md"
+                                >
+                                    <i class="fas fa-file-alt"></i>
+                                    导出为 Markdown
+                                </button>
+                                <button 
+                                    class="w-full py-3 px-4 bg-gray-100 text-gray-700 rounded-xl font-medium flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors"
+                                    id="btn-export-txt"
+                                >
+                                    <i class="fas fa-file-text"></i>
+                                    导出为 TXT
+                                </button>
+                                <button 
+                                    class="w-full py-3 px-4 bg-gray-100 text-gray-700 rounded-xl font-medium flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors"
+                                    id="btn-export-json"
+                                >
+                                    <i class="fas fa-file-code"></i>
+                                    导出为 JSON
+                                </button>
+                            </div>
+
+                            <div class="mt-6 pt-6 border-t border-gray-100">
+                                <button 
+                                    class="w-full py-3 px-4 bg-red-50 text-red-600 rounded-xl font-medium flex items-center justify-center gap-2 hover:bg-red-100 transition-colors"
+                                    id="btn-reset"
+                                >
+                                    <i class="fas fa-upload"></i>
+                                    重新上传
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center mt-12 text-gray-400 text-sm">
+            <p>AI Image Detection Toolkit - 检测AI生成图片、提取元数据、检测隐写信息</p>
+        </footer>
+    </div>
+
+    <script>
+        let currentResult = null;
+
+        const uploadArea = document.getElementById('upload-area');
+        const fileInput = document.getElementById('file-input');
+        const progressContainer = document.getElementById('progress-container');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+        const uploadSection = document.getElementById('upload-section');
+        const resultsSection = document.getElementById('results-section');
+
+        uploadArea.addEventListener('click', () => fileInput.click());
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            if (!file.type.startsWith('image/')) {
+                alert('请上传图片文件');
+                return;
+            }
+
+            uploadSection.classList.add('opacity-50');
+            progressContainer.classList.remove('hidden');
+            
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 90) progress = 90;
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `${Math.round(progress)}%`;
+            }, 200);
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            fetch('/api/analyze', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                clearInterval(progressInterval);
+                progressBar.style.width = '100%';
+                progressText.textContent = '100%';
+                
+                setTimeout(() => {
+                    uploadSection.classList.add('hidden');
+                    resultsSection.classList.remove('hidden');
+                    displayResults(data);
+                    currentResult = data;
+                }, 500);
+            })
+            .catch(error => {
+                clearInterval(progressInterval);
+                alert('分析失败: ' + error.message);
+                uploadSection.classList.remove('opacity-50');
+                progressContainer.classList.add('hidden');
+            });
+        }
+
+        function displayResults(data) {
+            if (data.ai_detection) {
+                const ai = data.ai_detection;
+                const aiProb = Math.round(ai.ai_probability * 100);
+                const confidence = Math.round(ai.confidence * 100);
+                
+                document.getElementById('ai-probability').textContent = `${aiProb}%`;
+                document.getElementById('ai-confidence').textContent = `${confidence}%`;
+                document.getElementById('ai-bar').style.width = `${aiProb}%`;
+                document.getElementById('ai-bar').style.background = aiProb > 60 
+                    ? 'linear-gradient(to right, #ef4444, #f97316)' 
+                    : 'linear-gradient(to right, #22c55e, #10b981)';
+                document.getElementById('confidence-bar').style.width = `${confidence}%`;
+                
+                const statusBadge = document.getElementById('ai-status');
+                statusBadge.textContent = ai.is_likely_ai ? '可能是AI生成' : '不太可能是AI生成';
+                statusBadge.className = 'status-badge ' + (ai.is_likely_ai ? 'status-yes' : 'status-no');
+
+                if (ai.metadata_indicators && ai.metadata_indicators.length > 0) {
+                    document.getElementById('ai-indicators').classList.remove('hidden');
+                    const list = document.getElementById('indicators-list');
+                    list.innerHTML = ai.metadata_indicators.map(i => 
+                        `<li class="flex items-start gap-2">
+                            <i class="fas fa-info-circle text-blue-500 mt-0.5"></i>
+                            <span class="text-sm text-gray-600">${i}</span>
+                        </li>`
+                    ).join('');
+                }
+            }
+
+            if (data.metadata) {
+                const meta = data.metadata;
+                document.getElementById('meta-filename').textContent = data.filename;
+                document.getElementById('meta-size').textContent = `${meta.file_size?.toLocaleString()} bytes`;
+                document.getElementById('meta-format').textContent = meta.image_info?.format || 'N/A';
+                document.getElementById('meta-dimensions').textContent = 
+                    `${meta.image_info?.width || 'N/A'} × ${meta.image_info?.height || 'N/A'}`;
+
+                if (meta.png_chunks) {
+                    document.getElementById('png-chunks').classList.remove('hidden');
+                    const list = document.getElementById('chunks-list');
+                    list.innerHTML = Object.entries(meta.png_chunks).map(([type, info]) => 
+                        `<div class="bg-blue-50 rounded-lg px-3 py-2">
+                            <span class="font-mono text-sm text-blue-700">${type}</span>
+                            <span class="text-xs text-gray-500 ml-2">${info.description || 'Unknown'}</span>
+                        </div>`
+                    ).join('');
+                }
+            }
+
+            if (data.pixel_analysis) {
+                const pixel = data.pixel_analysis;
+                document.getElementById('pixel-diversity').textContent = 
+                    pixel.pixel_patterns?.color_diversity?.toFixed(4) || '0';
+                document.getElementById('pixel-entropy').textContent = 
+                    pixel.entropy?.mean_entropy?.toFixed(2) || '0';
+                document.getElementById('pixel-noise').textContent = 
+                    pixel.noise_analysis?.is_high_noise ? '高' : '正常';
+                document.getElementById('pixel-noise').className = 'font-semibold ' + 
+                    (pixel.noise_analysis?.is_high_noise ? 'text-orange-500' : 'text-green-500');
+                document.getElementById('pixel-blockiness').textContent = 
+                    pixel.blockiness?.is_blocky ? '存在' : '无';
+                document.getElementById('pixel-blockiness').className = 'font-semibold ' + 
+                    (pixel.blockiness?.is_blocky ? 'text-orange-500' : 'text-green-500');
+            }
+
+            if (data.steg_detection) {
+                const steg = data.steg_detection;
+                const suspicious = steg.total_suspicious_tests || 0;
+                const confidence = Math.round((steg.overall_confidence || 0) * 100);
+                
+                document.getElementById('steg-suspicious').textContent = `${suspicious}/4`;
+                document.getElementById('steg-confidence').textContent = `${confidence}%`;
+                document.getElementById('steg-bar').style.width = `${(suspicious / 4) * 100}%`;
+                document.getElementById('steg-confidence-bar').style.width = `${confidence}%`;
+                
+                const statusBadge = document.getElementById('steg-status');
+                statusBadge.textContent = steg.is_likely_stego ? '可能包含隐藏数据' : '未检测到隐藏数据';
+                statusBadge.className = 'status-badge ' + (steg.is_likely_stego ? 'status-yes' : 'status-no');
+            }
+        }
+
+        document.querySelectorAll('.nav-tabs .nav-link').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.nav-tabs .nav-link').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab + '-tab').classList.add('active');
+            });
+        });
+
+        document.getElementById('btn-export-md').addEventListener('click', () => exportResult('md'));
+        document.getElementById('btn-export-txt').addEventListener('click', () => exportResult('txt'));
+        document.getElementById('btn-export-json').addEventListener('click', () => exportResult('json'));
+
+        function exportResult(format) {
+            if (!currentResult) return;
+
+            fetch('/api/export', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    filename: currentResult.filename?.replace(/\.[^/.]+$/, '') || 'result',
+                    format: format,
+                    result: currentResult
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const filename = data.path.split('/').pop();
+                window.location.href = `/api/export/download/${filename}`;
+            })
+            .catch(error => alert('导出失败: ' + error.message));
+        }
+
+        document.getElementById('btn-reset').addEventListener('click', () => {
+            resultsSection.classList.add('hidden');
+            uploadSection.classList.remove('hidden');
+            uploadSection.classList.remove('opacity-50');
+            progressContainer.classList.add('hidden');
+            progressBar.style.width = '0%';
+            progressText.textContent = '0%';
+            fileInput.value = '';
+            currentResult = null;
+        });
+    </script>
+</body>
+</html>

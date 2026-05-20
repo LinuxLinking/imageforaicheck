@@ -1,0 +1,2 @@
+[console_scripts]
+imageforai = imageforai.cli:main
