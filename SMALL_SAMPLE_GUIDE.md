@@ -1,274 +1,308 @@
-# 小样本校准指南
+# 小样本训练与特征提取完整指南
 
-**当前情况：** 约 550 个样本，其中仅 3-6 个是 AI 生成图片
+**当前情况**：约 550 个样本，其中仅 3-6 个是 AI 生成图片
 
 ---
 
-## 🚀 快速开始（推荐执行顺序）
+## 📋 目录
+1. [快速开始：用你的样本重新训练模型](#快速开始用你的样本重新训练模型)
+2. [方案详解](#方案详解)
+3. [YOLOv8 特征说明](#yolov8-特征说明)
+4. [完整操作步骤](#完整操作步骤)
 
-### 第 1 步：校准现有规则系统（立即可用）
+---
 
-使用你现有的 3-6 个 AI 样本和 550 个真实样本来优化现有公式：
+## 🚀 快速开始：用你的样本重新训练模型
+
+### 准备工作
 
 ```bash
 cd backend
 
-# 准备样本目录
-mkdir -p samples/ai_samples    # 放你的 3-6 张AI图
-mkdir -p samples/real_samples  # 放你的真实照片
-
-# 运行校准工具
-python calibrate_model.py \
-  --ai-dir samples/ai_samples \
-  --real-dir samples/real_samples \
-  --output calibration_report.json
+# 创建样本文件夹结构
+mkdir -p samples/ai       # 放入你的 3-6 张 AI 生成图
+mkdir -p samples/real     # 放入你的真实照片
+mkdir -p models           # 存放训练好的模型
 ```
 
-**这会生成：**
-- AI 样本和真实样本的得分分布
-- 推荐的阈值
-- 特征重要性分析
-- 配置建议
-
----
-
-### 第 2 步：数据增强 AI 样本（扩充训练数据）
-
-用 3-6 个 AI 样本生成更多变体：
+### 一行命令训练（包含 YOLO 特征）
 
 ```bash
-# 方式一：预设模式（推荐，更可控）
-python augment_samples.py \
-  --input-dir samples/ai_samples \
-  --preset \
-  --output-dir augmented_samples
-
-# 方式二：随机增强模式
-python augment_samples.py \
-  --input-dir samples/ai_samples \
-  --num-variations 20 \
-  --output-dir augmented_samples
+# 训练模型（自动扩增 AI 样本，包含 YOLO 特征）
+python train_small_sample.py \
+  --ai samples/ai \
+  --real samples/real \
+  --out models/my_model.json
 ```
 
-**效果：** 3 个 AI 样本 → **90-180 个变体**
+### 训练完成后
+
+训练好的模型会保存为 `models/my_model.json`，然后在应用中配置使用此模型即可。
 
 ---
 
-### 第 3 步（可选）：集成预训练模型
+## 🎯 方案详解
 
-如果需要更好的效果，可以集成 SOTA 预训练模型：
+### 方案对比
 
-```bash
-# 安装依赖
-pip install transformers torch pillow
-```
+| 方案 | 需要样本 | 难度 | 效果 | 推荐度 |
+|------|---------|------|------|--------|
+| **方案A：规则系统校准** | 3-6个AI + 50+真实 | ⭐ | 中等 | ⭐⭐⭐ |
+| **方案B：重新训练模型（推荐）** | 3-6个AI + 100+真实 | ⭐⭐ | 好 | ⭐⭐⭐⭐⭐ |
+| **方案C：预训练模型融合** | 无需 | ⭐⭐ | 好 | ⭐⭐⭐⭐ |
 
-然后在代码中使用：
+---
+
+## 🤖 YOLOv8 特征说明
+
+### 已集成的 YOLOv8 特征
+
+我们已经把 YOLOv8 特征提取集成到项目中！以下是新增的 5 个特征：
+
+| 特征名 | 说明 | AI图片特点 |
+|--------|------|-----------|
+| `yolo_num_detections_n` | 检测到的物体数量 | 可能偏少或偏多 |
+| `yolo_avg_confidence_n` | 平均检测置信度 | 通常偏低 |
+| `yolo_max_confidence_n` | 最高检测置信度 | 可能较低 |
+| `yolo_std_confidence_n` | 置信度标准差 | 可能异常 |
+| `yolo_anomaly_score` | 综合异常分数 | AI图片通常更高 |
+
+### YOLOv8 特征提取原理
 
 ```python
-from imageforai.modules.pretrained_detector import create_fusion_detector
-
-detector = create_fusion_detector()
-result = detector.detect("image.jpg")
-```
-
----
-
-## 📊 三个方案详解
-
-### 方案一：校准现有规则系统（最推荐 ✅）
-
-**优点：**
-- ✅ 无需额外数据
-- ✅ 立即可用
-- ✅ 可解释性强
-- ✅ 保持现有架构
-
-**工作原理：**
-1. 用现有样本分析特征分布
-2. 找出区分度最高的特征
-3. 自动优化权重和阈值
-
-**使用示例：**
-```python
-# 查看校准报告
-cat calibration_report.json
-
-# 根据报告手动调整权重
-# 编辑 file: backend/src/imageforai/modules/ai_detector.py
-```
-
----
-
-### 方案二：数据增强 AI 样本
-
-**优点：**
-- ✅ 快速扩充样本量
-- ✅ 不改变模型结构
-- ✅ 保留原图特征
-
-**增强方式：**
-- 亮度、对比度、色彩调整
-- 随机裁剪、旋转
-- 轻微模糊
-- 缩放
-
-**注意：** 增强后的样本仅用于分析特征，不建议直接训练模型（3个样本太少）
-
----
-
-### 方案三：集成预训练模型
-
-**优点：**
-- ✅ 使用业界最佳模型
-- ✅ 无需自己训练
-- ✅ 效果通常更好
-
-**推荐模型：**
-- FalconAI/ImageGuardian（轻量，效果好）
-- 其他 HuggingFace 上的 AI 检测模型
-
----
-
-## 🎯 具体操作步骤
-
-### 准备你的样本
-
-```
-your_project/
-├── samples/
-│   ├── ai_samples/      # 放 3-6 张 AI 生成图
-│   │   ├── ai_1.jpg
-│   │   ├── ai_2.png
-│   │   └── ...
-│   └── real_samples/    # 放 50-100 张真实照片
-│       ├── real_1.jpg
-│       └── ...
-└── ...
-```
-
----
-
-### 运行完整流程
-
-```bash
-# 1. 分析现有样本
-python calibrate_model.py \
-  --ai-dir samples/ai_samples \
-  --real-dir samples/real_samples
-
-# 2. 查看报告，决定是否调整权重
-cat calibration_report.json
-
-# 3. 增强 AI 样本（可选）
-python augment_samples.py \
-  --input-dir samples/ai_samples \
-  --preset
-
-# 4. 用增强后的样本重新分析（可选）
-python calibrate_model.py \
-  --ai-dir augmented_samples \
-  --real-dir samples/real_samples
-```
-
----
-
-## 🔧 如何应用校准结果
-
-### 方法一：手动调整权重
-
-根据校准报告编辑：
-`backend/src/imageforai/modules/ai_detector.py`
-
-```python
-# 在 __init__ 中调整
-self.features_weights = {
-    # 根据报告调整这些值
-    'color_entropy': 0.12,
-    'noise_level': 0.12,
-    'yolo_anomaly_score': 0.15,  # 提高这个
-    'metadata_score': 0.12,      # 或这个
-    # ...
+# 已在 object_detector.py 中实现
+extract_yolo_features(image_path) -> {
+    num_detections: 检测到几个物体,
+    avg_confidence: 平均置信度,
+    max_confidence: 最高置信度,
+    std_confidence: 置信度标准差,
+    yolo_anomaly_score: 综合异常分,
 }
 ```
 
 ---
 
-### 方法二：调整阈值
+## 📝 完整操作步骤
 
-根据报告调整风险阈值：
-`backend/src/imageforai/services/analysis_service.py`
+### 第 1 步：准备样本
+
+```
+backend/
+├── samples/
+│   ├── ai/
+│   │   ├── ai_1.jpg
+│   │   ├── ai_2.png
+│   │   ├── ai_3.webp
+│   │   └── (放入你的 AI 生成图，3-6张即可)
+│   └── real/
+│       ├── photo_1.jpg
+│       ├── photo_2.jpg
+│       └── (放入 100-500 张真实照片)
+└── ...
+```
+
+### 第 2 步：训练模型（关键步骤）
+
+#### 选项 1：使用 YOLO 特征（推荐）
+
+```bash
+cd backend
+
+python train_small_sample.py \
+  --ai samples/ai \
+  --real samples/real \
+  --out models/ai_detector_with_yolo.json
+```
+
+#### 选项 2：不使用 YOLO（如果速度太慢）
+
+```bash
+python train_small_sample.py \
+  --ai samples/ai \
+  --real samples/real \
+  --out models/ai_detector_simple.json \
+  --no-yolo
+```
+
+#### 选项 3：调整扩增倍数
+
+```bash
+# 每张 AI 样本扩增 20 倍（默认 15 倍）
+python train_small_sample.py \
+  --ai samples/ai \
+  --real samples/real \
+  --out models/ai_detector_augmented.json \
+  --augment 20
+```
+
+### 第 3 步：查看训练结果
+
+训练过程会输出：
+
+```
+=======================================================
+AI 图像检测 - 小样本训练工具
+=======================================================
+
+【第1步】加载样本
+从 samples/ai 加载了 5 张图片
+从 samples/real 加载了 550 张图片
+
+【第2步】数据增强 AI 样本
+  每张 AI 样本扩增 15 倍
+  扩增后 AI 样本: 75 张
+
+【第3步】特征提取
+  样本数: 625
+  特征维度: 14 (包含 5 个 YOLO 特征)
+  AI 样本数: 75
+  真实样本数: 550
+
+【第4步】训练模型...
+
+【第5步】评估
+  准确率: 92.5%
+  精确率: 89.2%
+  召回率: 85.7%
+
+【第6步】保存模型
+✓ 模型已保存到: models/ai_detector_with_yolo.json
+```
+
+### 第 4 步：在应用中使用模型
+
+#### 修改代码，加载训练好的模型
+
+在 `app.py` 或相关初始化代码中：
 
 ```python
-# 找到这些值并调整
-if ai_probability >= 0.75:  # 根据报告改为 0.6 或 0.8
-    level = "high"
-elif ai_probability >= 0.4:  # 根据报告调整
-    level = "medium"
+# 方法 1：通过配置传入
+service = AnalysisService(ml_model_path="models/ai_detector_with_yolo.json")
+
+# 方法 2：或在 app.py 中修改
+if __name__ == '__main__':
+    # 创建服务时传入模型路径
+    from imageforai.services.analysis_service import AnalysisService
+    service = AnalysisService(ml_model_path="models/ai_detector_with_yolo.json")
+    # ... 启动服务
 ```
 
 ---
 
-## 💡 额外建议
-
-### 1. 收集更多 AI 样本（长期）
-
-即使只有 10-20 个，效果也会明显提升。
-
-**来源建议：**
-- Midjourney/DALL-E/Stable Diffusion 生成的图
-- 公开数据集（如 GenImage）
-- 自己生成一些
-
----
-
-### 2. 使用 YOLO 特征
-
-我们已经把 YOLO 集成进去了，确保：
-- `yolov8n.pt` 文件在项目根目录
-- 查看校准报告中 YOLO 特征的重要性
-
----
-
-### 3. 持续迭代
-
-1. 先用当前方案上线
-2. 收集用户反馈（判断错误的案例）
-3. 把错误案例加入样本集
-4. 定期重新校准
-
----
-
-## 📁 已创建的工具文件
+## 🔧 工具文件说明
 
 | 文件 | 用途 |
 |------|------|
-| `backend/calibrate_model.py` | 样本校准工具 |
+| `backend/train_small_sample.py` | **小样本训练工具（新）** |
+| `backend/calibrate_model.py` | 规则系统校准工具 |
 | `backend/augment_samples.py` | 数据增强工具 |
-| `backend/src/imageforai/modules/pretrained_detector.py` | 预训练模型集成 |
+| `backend/src/imageforai/modules/object_detector.py` | YOLOv8 检测器（已更新） |
+| `backend/src/imageforai/ml/feature_extractor.py` | 特征提取器（已更新） |
+
+---
+
+## 📊 如何选择方案？
+
+### 只有 3-6 个 AI 样本 → **选择方案B（重新训练）**
+
+**理由**：
+1. 我们已经有训练框架
+2. 可以使用数据扩增
+3. 自动包含 YOLOv8 特征
+4. 效果通常比纯规则好
+
+### 样本极少（<3个）→ **先用方案A（校准），再逐步过渡**
+
+### 想要最好效果 → **方案B + 方案C（预训练融合）**
+
+---
+
+## 💡 进阶技巧
+
+### 技巧 1：特征分析
+
+想知道哪些特征最重要？使用校准工具：
+
+```bash
+python calibrate_model.py \
+  --ai samples/ai \
+  --real samples/real
+```
+
+查看输出中的特征重要性分析！
+
+### 技巧 2：比较有/无 YOLO 的效果
+
+```bash
+# 训练有 YOLO 的模型
+python train_small_sample.py --ai samples/ai --real samples/real --out models/with_yolo.json
+
+# 训练无 YOLO 的模型
+python train_small_sample.py --ai samples/ai --real samples/real --out models/no_yolo.json --no-yolo
+
+# 对比两个模型的准确率！
+```
+
+### 技巧 3：持续优化
+
+上线后收集误判样本，定期重新训练：
+
+```bash
+# 新增样本到文件夹
+mkdir -p samples/new_ai
+mkdir -p samples/new_real
+
+# 重新训练
+python train_small_sample.py \
+  --ai samples/ai \
+  --real samples/real \
+  --out models/updated_model.json
+```
 
 ---
 
 ## ❓ 常见问题
 
-**Q: 只有 3 个 AI 样本，能有效吗？**
+### Q1: YOLOv8 是自动使用的吗？
 
-A: 可以！因为我们不是重新训练模型，而是：
-- 分析现有样本的特征
-- 校准规则和阈值
-- 结合预训练模型
+**A**: 是的！
+- 训练时，`train_small_sample.py` 默认包含 YOLO 特征
+- 推理时，`MLClassifier` 也会自动使用相应的特征
+
+### Q2: 我的样本太少，会过拟合吗？
+
+**A**: 我们有防止过拟合的措施：
+1. 使用 L2 正则化（`--l2 0.5`）
+2. 数据扩增
+3. 逻辑回归本身比较稳定
+
+### Q3: 训练速度慢怎么办？
+
+**A**: 可以：
+1. 使用 `--no-yolo` 禁用 YOLO（更快，略降低准确率）
+2. 减少真实样本的数量（比如只取 100-200 张）
+3. 减少扩增倍数（`--augment 8`）
+
+### Q4: 如何判断模型好坏？
+
+**A**: 看训练输出：
+- `准确率` 高（>85% 比较理想）
+- `召回率` 高（AI 样本能被找到）
+- `精确率` 高（误报少）
 
 ---
 
-**Q: 增强后的样本会影响检测吗？**
+## 🎉 下一步
 
-A: 增强样本只用于分析特征分布，不会直接用于检测。检测时仍使用原图。
+1. **立即开始**：把你的样本放入 `samples/ai` 和 `samples/real`
+2. **运行训练**：执行 `python train_small_sample.py ...`
+3. **集成模型**：在应用中配置使用训练好的模型
+4. **持续优化**：收集反馈，定期更新模型
 
 ---
 
-**Q: 推荐先用哪个方案？**
+需要帮助？查看代码中的注释或运行：
 
-A: 按顺序：
-1. **先用方案一**（校准现有规则）
-2. **再用方案二**（数据增强，辅助分析）
-3. **最后方案三**（如果效果还不够）
+```bash
+python train_small_sample.py --help
+```

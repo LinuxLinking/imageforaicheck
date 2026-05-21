@@ -1,6 +1,7 @@
 from ultralytics import YOLO
 from typing import Dict, Any, List
 import os
+import numpy as np
 
 class ObjectDetector:
     def __init__(self, model_name: str = 'yolov8n.pt'):
@@ -106,3 +107,81 @@ class ObjectDetector:
             'class_counts': class_counts,
             'scene_description': ', '.join(scene_description) if scene_description else 'Unknown scene',
         }
+    
+    def extract_yolo_features(self, image_path: str) -> Dict[str, Any]:
+        """
+        提取 YOLOv8 相关的特征用于 AI 检测
+        返回可以用于训练的数值特征
+        """
+        try:
+            results = self.model(image_path, conf=0.1)
+            
+            detections = []
+            confidences = []
+            class_ids = []
+            
+            for result in results:
+                if result.boxes is not None:
+                    for box in result.boxes:
+                        detections.append({
+                            'class': result.names[int(box.cls)],
+                            'confidence': float(box.conf),
+                            'bbox': [float(x) for x in box.xyxy[0]],
+                        })
+                        confidences.append(float(box.conf))
+                        class_ids.append(int(box.cls))
+            
+            # 计算数值特征
+            num_detections = len(detections)
+            avg_confidence = float(np.mean(confidences)) if confidences else 0.0
+            max_confidence = float(np.max(confidences)) if confidences else 0.0
+            min_confidence = float(np.min(confidences)) if confidences else 0.0
+            std_confidence = float(np.std(confidences)) if confidences else 0.0
+            
+            # 类别多样性
+            unique_classes = list(set(class_ids)) if class_ids else []
+            num_unique_classes = len(unique_classes)
+            
+            # 检测到的类别统计（常见类别）
+            common_classes = ['person', 'car', 'dog', 'cat', 'chair', 'table', 'cup', 'bottle']
+            class_features = {}
+            for cls in common_classes:
+                class_features[f'has_{cls}'] = 1.0 if any(d['class'] == cls for d in detections) else 0.0
+            
+            # 综合异常分数
+            # AI 生成图片通常检测置信度较低，或检测到奇怪的物体组合
+            anomaly_score = 0.0
+            if num_detections == 0:
+                anomaly_score += 0.3  # 什么都没检测到
+            elif avg_confidence < 0.3:
+                anomaly_score += 0.4  # 整体置信度低
+            elif std_confidence > 0.4:
+                anomaly_score += 0.2  # 置信度差异大
+            
+            return {
+                'success': True,
+                'num_detections': num_detections,
+                'num_unique_classes': num_unique_classes,
+                'avg_confidence': avg_confidence,
+                'max_confidence': max_confidence,
+                'min_confidence': min_confidence,
+                'std_confidence': std_confidence,
+                'yolo_anomaly_score': min(anomaly_score, 1.0),
+                'class_features': class_features,
+                'detections': detections,
+            }
+        
+        except Exception as e:
+            return {
+                'success': False,
+                'error': str(e),
+                'num_detections': 0,
+                'num_unique_classes': 0,
+                'avg_confidence': 0.0,
+                'max_confidence': 0.0,
+                'min_confidence': 0.0,
+                'std_confidence': 0.0,
+                'yolo_anomaly_score': 0.0,
+                'class_features': {},
+                'detections': [],
+            }
