@@ -7,13 +7,15 @@ import math
 class AIDetector:
     def __init__(self):
         self.features_weights = {
-            'color_entropy': 0.15,
-            'noise_level': 0.15,
-            'blockiness': 0.15,
-            'edge_quality': 0.15,
-            'color_abnormality': 0.15,
-            'texture_score': 0.15,
-            'metadata_score': 0.10,
+            'color_entropy': 0.12,
+            'noise_level': 0.12,
+            'blockiness': 0.12,
+            'edge_quality': 0.12,
+            'color_abnormality': 0.12,
+            'texture_score': 0.12,
+            'metadata_score': 0.08,
+            'yolo_object_score': 0.10,
+            'yolo_anomaly_score': 0.10,
         }
 
     def _normalize_log(self, value: float, min_log: float, max_log: float) -> float:
@@ -162,6 +164,10 @@ class AIDetector:
         features['color_abnormality'] = self.analyze_color_abnormality(image_path)
         features['texture_score'] = self.analyze_texture(image_path)
         
+        # 添加 YOLO 特征
+        yolo_features = self.analyze_yolo_features(image_path)
+        features.update(yolo_features)
+        
         block_size = 8
         img = Image.open(image_path).convert('RGB')
         img_array = np.array(img)
@@ -189,6 +195,8 @@ class AIDetector:
         normalized_features["color_abnormality"] = self._normalize_log(features["color_abnormality"], min_log=2.4, max_log=5.6)
         normalized_features["texture_score"] = self._normalize_log(features["texture_score"], min_log=4.8, max_log=7.0)
         normalized_features["metadata_score"] = 1.0 if metadata_indicators else 0.0
+        normalized_features["yolo_object_score"] = float(features.get("yolo_object_score", 0.0))
+        normalized_features["yolo_anomaly_score"] = float(features.get("yolo_anomaly_score", 0.0))
 
         color_diversity = 0.0
         avg_correlation = 0.0
@@ -247,6 +255,42 @@ class AIDetector:
             'is_likely_ai': ai_probability > 0.7,
             'metadata_indicators': metadata_indicators,
         }
+    
+    def analyze_yolo_features(self, image_path: str) -> Dict[str, float]:
+        """分析 YOLO 检测结果作为特征"""
+        try:
+            from .object_detector import ObjectDetector
+            detector = ObjectDetector()
+            result = detector.detect_objects(image_path, conf_threshold=0.3)
+            
+            if not result or not result.get('success'):
+                return {'yolo_object_score': 0.0, 'yolo_anomaly_score': 0.0}
+            
+            detections = result.get('detections', [])
+            classes = result.get('classes', [])
+            count = result.get('count', 0)
+            
+            # AI 生成图片常见的异常模式
+            # 1. 物体数量异常（太少或太多不自然的物体）
+            object_score = min(count / 10.0, 1.0)
+            
+            # 2. 检测到"奇怪"或罕见类别（AI 容易生成奇怪的组合）
+            anomaly_classes = {'toothbrush', 'hair drier', 'scissors', 'parking meter'}
+            anomaly_count = sum(1 for d in detections if d.get('class') in anomaly_classes)
+            anomaly_score = min(anomaly_count / 3.0, 1.0)
+            
+            # 3. 检测置信度普遍偏低（AI 生成物体可能边缘模糊）
+            low_conf_count = sum(1 for d in detections if d.get('confidence', 0) < 0.5)
+            if count > 0:
+                low_conf_ratio = low_conf_count / count
+                anomaly_score = max(anomaly_score, low_conf_ratio)
+            
+            return {
+                'yolo_object_score': object_score,
+                'yolo_anomaly_score': anomaly_score
+            }
+        except Exception:
+            return {'yolo_object_score': 0.0, 'yolo_anomaly_score': 0.0}
     
     def detect(self, image_path: str, metadata_indicators: List[str] = [], context: Dict[str, Any] | None = None) -> Dict[str, Any]:
         try:
